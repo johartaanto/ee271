@@ -58,18 +58,23 @@ bool testRast()
   BoundingBox bbox = get_bounding_box(triangle, screen, config);
 
   if( ! bbox.valid ){
+    fprintf(stderr, "bbox not valid\n");
     abort_("Fail Test 1"); 
   }
   if( bbox.lower_left.x != (556 << ( config.r_shift - 2 )) ){
+    fprintf(stderr, "bbox.lower_left.x = %d, expected %d\n", bbox.lower_left.x, 556 << (config.r_shift - 2));
     abort_("Fail Test 1"); 
   }
   if( bbox.lower_left.y != (660 << ( config.r_shift - 2 )) ){
+    fprintf(stderr, "bbox.lower_left.x = %d, expected %d\n", bbox.lower_left.y, 660 << (config.r_shift - 2));
     abort_("Fail Test 1"); 
   }
   if( bbox.upper_right.x != (562 << ( config.r_shift - 2 )) ){
+    fprintf(stderr, "bbox.upper_right.x = %d, expected %d\n", bbox.upper_right.x, 562 << (config.r_shift - 2));
     abort_("Fail Test 1"); 
   }
   if( bbox.upper_right.y != (679 << ( config.r_shift - 2 )) ){
+      fprintf(stderr, "bbox.upper_right.x = %d, expected %d\n", bbox.upper_right.x, 679 << (config.r_shift - 2));
     abort_("Fail Test 1"); 
   }
 

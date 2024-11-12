@@ -13,7 +13,9 @@
 */
 int min(int a, int b)
 {
-  return (a < b) ? a : b;
+  // START CODE HERE
+  return (a<b) ? a:b;
+  // END CODE HERE
 }
 
 /*
@@ -22,7 +24,9 @@ int min(int a, int b)
 */
 int max(int a, int b)
 {
-  return (a > b) ? a : b;
+  // START CODE HERE
+  return (a>b) ? a:b;
+  // END CODE HERE
 }
 
 /*
@@ -31,47 +35,40 @@ int max(int a, int b)
 */
 int floor_ss(int val, int r_shift, int ss_w_lg2)
 {
-  int adjusted shift = (r_shift - 2)  - ss_w_lg2;
-  int mask = ~((1<< adjusted shift-1));
+  // START CODE HERE
+  int mask = ~((1 << (r_shift - ss_w_lg2)) - 1);
   return val & mask;
+  // END CODE HERE
 }
-
 
 /*
  *  Function: rastBBox_bbox_fix
  *  Function Description: Determine a bounding box for the triangle.
  *  Note that this is a fixed point function.
 */
-BoundingBox get_bounding_box(Triangle triangle, Screen screen, Config config) {
-    BoundingBox bbox;
+BoundingBox get_bounding_box(Triangle triangle, Screen screen, Config config)
+{
+  BoundingBox bbox;
 
-    // Initialize the bounding box to the first vertex, rounded down to the subsample grid
-    bbox.lower_left.x = floor_ss(triangle.v[0].x, config.r_shift, config.ss_w_lg2);
-    bbox.lower_left.y = floor_ss(triangle.v[0].y, config.r_shift, config.ss_w_lg2);
-    bbox.upper_right.x = bbox.lower_left.x;
-    bbox.upper_right.y = bbox.lower_left.y;
+  // START CODE HERE
+    // Calculate clamped bounding box for the triangle vertices, rounding down to subsample grid
+    bbox.lower_left.x = floor_ss(min(triangle.v[0].x, min(triangle.v[1].x, triangle.v[2].x)), config.r_shift, config.ss_w_lg2);
+    bbox.upper_right.x = floor_ss(max(triangle.v[0].x, max(triangle.v[1].x, triangle.v[2].x)), config.r_shift, config.ss_w_lg2);
+    bbox.lower_left.y = floor_ss(min(triangle.v[0].y, min(triangle.v[1].y, triangle.v[2].y)), config.r_shift, config.ss_w_lg2);
+    bbox.upper_right.y = floor_ss(max(triangle.v[0].y, max(triangle.v[1].y, triangle.v[2].y)), config.r_shift, config.ss_w_lg2);
 
-    // Iterate over remaining vertices to find min and max coordinates, rounding down to subsample grid
-    for (int i = 1; i < 3; ++i) {
-        bbox.lower_left.x = min(bbox.lower_left.x, floor_ss(triangle.v[i].x, config.r_shift, config.ss_w_lg2));
-        bbox.lower_left.y = min(bbox.lower_left.y, floor_ss(triangle.v[i].y, config.r_shift, config.ss_w_lg2));
-        bbox.upper_right.x = max(bbox.upper_right.x, floor_ss(triangle.v[i].x, config.r_shift, config.ss_w_lg2));
-        bbox.upper_right.y = max(bbox.upper_right.y, floor_ss(triangle.v[i].y, config.r_shift, config.ss_w_lg2));
-    }
-
-    // Clip bounding box to screen dimensions
+    // Clip bounding box to visible screen space
     bbox.lower_left.x = max(bbox.lower_left.x, 0);
     bbox.lower_left.y = max(bbox.lower_left.y, 0);
-    bbox.upper_right.x = min(bbox.upper_right.x, screen.width - 1);
-    bbox.upper_right.y = min(bbox.upper_right.y, screen.height - 1);
+    bbox.upper_right.x = min(bbox.upper_right.x, screen.width);
+    bbox.upper_right.y = min(bbox.upper_right.y, screen.height);
 
-    // Check if the bounding box is valid
+    // Check if bounding box is valid (i.e., lower-left is not greater than upper-right)
     bbox.valid = (bbox.lower_left.x <= bbox.upper_right.x) && (bbox.lower_left.y <= bbox.upper_right.y);
 
-    return bbox;
+  // END CODE HERE
+  return bbox;
 }
-
-
 
 /*
  *  Function: sample_test
@@ -79,34 +76,31 @@ BoundingBox get_bounding_box(Triangle triangle, Screen screen, Config config) {
  *
  *
  */
+bool sample_test(Triangle triangle, Sample sample)
+{
+  bool isHit;
 
-bool sample_test(Triangle triangle, Sample sample) {
-    // Shift vertices such that the sample point is treated as the origin
-    int v0_x = triangle.v[0].x - sample.x;
-    int v0_y = triangle.v[0].y - sample.y;
-    int v1_x = triangle.v[1].x - sample.x;
-    int v1_y = triangle.v[1].y - sample.y;
-    int v2_x = triangle.v[2].x - sample.x;
-    int v2_y = triangle.v[2].y - sample.y;
+  // START CODE HERE
+  int v0_x = triangle.v[0].x - sample.x;
+  int v0_y = triangle.v[0].y - sample.y;
+  int v1_x = triangle.v[1].x - sample.x;
+  int v1_y = triangle.v[1].y - sample.y;
+  int v2_x = triangle.v[2].x - sample.x;
+  int v2_y = triangle.v[2].y - sample.y;
+  
+  int dist0 = v0_x * v1_y - v1_x * v0_y;
+  int dist1 = v1_x * v2_y - v2_x * v1_y;
+  int dist2 = v2_x * v0_y - v0_x * v2_y;
+  
+  bool b0 = dist0 <= 0.0;
+  bool b1 = dist1 < 0.0;
+  bool b2 = dist2 <= 0.0;
+  
+  isHit = b0 && b1 && b2;
+  // END CODE HERE
 
-    // Distance calculation using cross products for each edge
-    int dist0 = v0_x * v1_y - v1_x * v0_y; // Edge from v0 to v1
-    int dist1 = v1_x * v2_y - v2_x * v1_y; // Edge from v1 to v2
-    int dist2 = v2_x * v0_y - v0_x * v2_y; // Edge from v2 to v0
-
-    // Test if the origin is on the right side of each shifted edge
-    bool b0 = dist0 <= 0;
-    bool b1 = dist1 < 0;
-    bool b2 = dist2 <= 0;
-
-    // Check if the sample point is within the triangle with backface culling
-    bool isHit = b0 && b1 && b2;
-
-    return isHit;
+  return isHit;
 }
-
-
-
 
 int rasterize_triangle(Triangle triangle, ZBuff *z, Screen screen, Config config)
 {
