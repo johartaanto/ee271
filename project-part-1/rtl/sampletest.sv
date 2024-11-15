@@ -108,6 +108,50 @@ module sampletest
     // (2) Organize edges (form three edges for triangles)
     // (3) Calculate distance x_1 * y_2 - x_2 * y_1
     // (4) Check distance and assign hit_valid_R16H.
+    
+    //shift x,y
+    always_comb begin
+    // Shift triangle vertices relative to the sample location
+	    for (int i = 0; i < VERTS; i++) begin
+		tri_shift_R16S[i][0] = tri_R16S[i][0] - sample_R16S[0]; // x-coordinate
+		tri_shift_R16S[i][1] = tri_R16S[i][1] - sample_R16S[1]; // y-coordinate
+	    end
+    end
+
+    //Organize edges
+    
+    always_comb begin
+    // Form edges based on the shifted vertices
+	    for (int i = 0; i < EDGES; i++) begin
+		edge_R16S[i][0][0] = tri_shift_R16S[(i+1)%VERTS][0]; // x_2
+		edge_R16S[i][0][1] = tri_shift_R16S[(i+1)%VERTS][1]; // y_2
+		edge_R16S[i][1][0] = tri_shift_R16S[i][0];           // x_1
+		edge_R16S[i][1][1] = tri_shift_R16S[i][1];           // y_1
+	    end
+    end
+
+    //calculating distance
+    always_comb begin
+	    for (int i = 0; i < EDGES; i++) begin
+		// Calculate x_1 * y_2 - x_2 * y_1
+		dist_lg_R16S[i] = (edge_R16S[i][0][0] * edge_R16S[i][1][1]) - 
+		                  (edge_R16S[i][1][0] * edge_R16S[i][0][1]);
+	    end
+    end
+
+    //Check distance and hit validity
+    always_comb begin
+    // Default hit validity
+	    hit_valid_R16H = 0;
+
+	    if (validSamp_R16H) begin
+		// Check all edges for backface culling (distances must all be > 0)
+		hit_valid_R16H = (dist_lg_R16S[0] > 0) && 
+		                 (dist_lg_R16S[1] > 0) && 
+		                 (dist_lg_R16S[2] > 0);
+	    end
+    end
+
     // END CODE HERE
 
     //Assertions to help debug

@@ -171,6 +171,19 @@ module bbox
     // and assigning box_R10S to be the proper coordinates
 
     // START CODE HERE
+	
+
+
+	always_comb begin
+	    // Calculate lower left x and y by finding the minimum x and y among the vertices
+	    box_R10S[0][0] = (tri_R10S[0][0] < tri_R10S[1][0]) ? ((tri_R10S[0][0] < tri_R10S[2][0]) ? tri_R10S[0][0] : tri_R10S[2][0]) : ((tri_R10S[1][0] < tri_R10S[2][0]) ? tri_R10S[1][0] : tri_R10S[2][0]);
+	    box_R10S[0][1] = (tri_R10S[0][1] < tri_R10S[1][1]) ? ((tri_R10S[0][1] < tri_R10S[2][1]) ? tri_R10S[0][1] : tri_R10S[2][1]) : ((tri_R10S[1][1] < tri_R10S[2][1]) ? tri_R10S[1][1] : tri_R10S[2][1]);
+
+	    // Calculate upper right x and y by finding the maximum x and y among the vertices
+	    box_R10S[1][0] = (tri_R10S[0][0] > tri_R10S[1][0]) ? ((tri_R10S[0][0] > tri_R10S[2][0]) ? tri_R10S[0][0] : tri_R10S[2][0]) : ((tri_R10S[1][0] > tri_R10S[2][0]) ? tri_R10S[1][0] : tri_R10S[2][0]);
+	    box_R10S[1][1] = (tri_R10S[0][1] > tri_R10S[1][1]) ? ((tri_R10S[0][1] > tri_R10S[2][1]) ? tri_R10S[0][1] : tri_R10S[2][1]) : ((tri_R10S[1][1] > tri_R10S[2][1]) ? tri_R10S[1][1] : tri_R10S[2][1]);
+	end
+
 
     // This select signal structure may help you in selecting your bbox coordinates
     logic [2:0] bbox_sel_R10H [1:0][1:0];
@@ -193,6 +206,9 @@ module bbox
     // 2) Upper right coordinate is never less than lower left
 
     // START CODE HERE
+    
+    
+    
     //Assertions to check if all cases are covered and assignments are unique 
     // (already done for you if you use the bbox_sel_R10H select signal as declared)
     assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
@@ -227,6 +243,7 @@ module bbox
 
 //Round LowerLeft and UpperRight for X and Y
 generate
+
 for(genvar i = 0; i < 2; i = i + 1) begin
     for(genvar j = 0; j < 2; j = j + 1) begin
 
@@ -237,12 +254,21 @@ for(genvar i = 0; i < 2; i = i + 1) begin
 
             //////// ASSIGN FRACTIONAL PORTION
             // START CODE HERE
+            
+            
+	    case (subSample_RnnnnU)
+		    4'b1000: rounded_box_R10S[i][j][RADIX-1:0] = box_R10S[i][j][RADIX-1:0];  // 1x MSAA (no rounding)
+		    4'b0100: rounded_box_R10S[i][j][RADIX-1:1] = {box_R10S[i][j][RADIX-1:1], 1'b0};  // 4x MSAA
+		    4'b0010: rounded_box_R10S[i][j][RADIX-1:2] = {box_R10S[i][j][RADIX-1:2], 2'b00};  // 16x MSAA
+		    4'b0001: rounded_box_R10S[i][j][RADIX-1:3] = {box_R10S[i][j][RADIX-1:3], 3'b000};  // 64x MSAA
+	    	    default: rounded_box_R10S[i][j][RADIX-1:0] = box_R10S[i][j][RADIX-1:0];  // Default to no rounding
             // END CODE HERE
-
+            endcase
         end // always_comb
 
     end
 end
+
 endgenerate
 
     //Assertion to help you debug errors in rounding
@@ -266,6 +292,18 @@ endgenerate
 
         //////// ASSIGN "out_box_R10S" and "outvalid_R10H"
         // START CODE HERE
+        
+        // Clamp lower-left corner to screen origin
+    out_box_R10S[0][0] = (rounded_box_R10S[0][0] < 0) ? 0 : rounded_box_R10S[0][0];
+    out_box_R10S[0][1] = (rounded_box_R10S[0][1] < 0) ? 0 : rounded_box_R10S[0][1];
+
+    // Clamp upper-right corner to screen dimensions
+    out_box_R10S[1][0] = (rounded_box_R10S[1][0] > screen_RnnnnS[0]) ? screen_RnnnnS[0] : rounded_box_R10S[1][0];
+    out_box_R10S[1][1] = (rounded_box_R10S[1][1] > screen_RnnnnS[1]) ? screen_RnnnnS[1] : rounded_box_R10S[1][1];
+
+    // Set validity if bounding box is within screen bounds and triangle data is valid
+    outvalid_R10H = validTri_R10H && (out_box_R10S[0][0] <= out_box_R10S[1][0]) && (out_box_R10S[0][1] <= out_box_R10S[1][1]);
+        
         // END CODE HERE
 
     end
