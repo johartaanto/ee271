@@ -1,0 +1,85 @@
+Warning: Design 'rast' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : qor
+Design : rast
+Version: M-2016.12-SP2
+Date   : Fri Nov 15 10:15:07 2024
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              25.00
+  Critical Path Length:          1.14
+  Critical Path Slack:          -0.88
+  Critical Path Clk Period:      1.20
+  Total Negative Slack:        -57.78
+  No. of Violating Paths:       96.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          1
+  Hierarchical Port Count:        484
+  Leaf Cell Count:              17053
+  Buf/Inv Cell Count:            3749
+  Buf Cell Count:                 211
+  Inv Cell Count:                3538
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     14997
+  Sequential Cell Count:         2056
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    18815.244006
+  Noncombinational Area: 10907.596352
+  Buf/Inv Area:           2106.720013
+  Total Buffer Area:           186.47
+  Total Inverter Area:        1920.25
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             29722.840358
+  Design Area:           29722.840358
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         19048
+  Nets With Violations:             2
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  Max Fanout Violations:            2
+  -----------------------------------
+
+
+  Hostname: caddy13.stanford.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                  105.67
+  Logic Optimization:                 53.22
+  Mapping Optimization:               77.51
+  -----------------------------------------
+  Overall Compile Time:              501.12
+  Overall Compile Wall Clock Time:   526.18
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.88  TNS: 57.78  Number of Violating Paths: 96
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

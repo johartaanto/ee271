@@ -1,0 +1,75 @@
+Warning: Design 'rast' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rast
+Version: M-2016.12-SP2
+Date   : Fri Nov 15 10:15:06 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: tri_R10S[1][1][9]
+              (input port clocked by clk)
+  Endpoint: bbox/clk_r_REG49_S1
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rast               1K_hvratio_1_4        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                   0.9000     0.9000 r
+  tri_R10S[1][1][9] (in)                 0.0218     0.9218 r
+  U270/ZN (INV_X1)                       0.0380     0.9597 f
+  U290/ZN (NAND2_X1)                     0.0377     0.9975 r
+  U597/ZN (NAND2_X1)                     0.0316     1.0291 f
+  U601/ZN (NAND3_X1)                     0.0292     1.0583 r
+  U514/ZN (NAND2_X1)                     0.0224     1.0807 f
+  U611/ZN (AND2_X1)                      0.0341     1.1148 f
+  U642/ZN (OAI21_X1)                     0.0430     1.1577 r
+  U702/ZN (NAND3_X1)                     0.0351     1.1928 f
+  U116/ZN (AND2_X2)                      0.0452     1.2380 f
+  U100/Z (BUF_X2)                        0.0492     1.2872 f
+  U1010/ZN (NAND2_X1)                    0.0323     1.3195 r
+  U1011/ZN (OAI211_X1)                   0.0521     1.3716 f
+  U519/ZN (NAND2_X1)                     0.0327     1.4043 r
+  U512/ZN (AND2_X1)                      0.0442     1.4485 r
+  U467/ZN (NAND4_X1)                     0.0432     1.4917 f
+  U1029/ZN (NOR2_X1)                     0.0537     1.5453 r
+  U1040/ZN (NAND4_X1)                    0.0580     1.6033 f
+  U367/ZN (AND4_X2)                      0.0597     1.6630 f
+  U1082/ZN (INV_X2)                      0.0571     1.7201 r
+  U1231/Z (MUX2_X1)                      0.0998     1.8199 f
+  U2037/ZN (AOI22_X1)                    0.0511     1.8711 r
+  U2043/ZN (OAI211_X1)                   0.0378     1.9089 f
+  U2044/ZN (AOI21_X1)                    0.0553     1.9641 r
+  U2206/ZN (OAI22_X1)                    0.0324     1.9965 f
+  U2336/ZN (AND2_X1)                     0.0354     2.0320 f
+  bbox/clk_r_REG49_S1/D (DFFR_X1)        0.0069     2.0389 f
+  data arrival time                                 2.0389
+
+  clock clk (rise edge)                  1.2000     1.2000
+  clock network delay (ideal)            0.0000     1.2000
+  bbox/clk_r_REG49_S1/CK (DFFR_X1)       0.0000     1.2000 r
+  library setup time                    -0.0395     1.1605
+  data required time                                1.1605
+  -----------------------------------------------------------
+  data required time                                1.1605
+  data arrival time                                -2.0389
+  -----------------------------------------------------------
+  slack (VIOLATED)                                 -0.8783
+
+
+1
