@@ -289,13 +289,13 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                     // Start with lower-left of the bounding box
                     next_sample_R14S = box_R13S[0];
                     next_state_R14H = TEST_STATE;
-                    validSamp_R14H = 1;
+                    //validSamp_R14H = 1;
                 end
             end
 
             TEST_STATE: begin
-                validSamp_R14H = 1;
-                halt_RnnnnL = 0;
+                //validSamp_R14H = 1;
+                //halt_RnnnnL = 0;
 
                 if (at_end_box_R14H) begin
                     // Reached the end of the bounding box
