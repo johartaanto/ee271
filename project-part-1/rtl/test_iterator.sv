@@ -253,9 +253,9 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     always_comb begin
         // START CODE HERE
         // Right and top boundaries based on subsample width
-        at_right_edge = (sample_R14S[0] + subSample_RnnnnU >= box_R14S[1][0]);
-        at_top_edge   = (sample_R14S[1] + subSample_RnnnnU >= box_R14S[1][1]);
-        at_end_box    = at_right_edge && at_top_edge;
+        at_right_edg_R14H = (sample_R14S[0] + subSample_RnnnnU >= box_R14S[1][0]);
+        at_top_edg_R14H   = (sample_R14S[1] + subSample_RnnnnU >= box_R14S[1][1]);
+        at_end_box_R14H    = at_right_edg_R14H && at_top_edg_R14H;
 
         // Define the next sample location based on direction
         next_rt_samp_R14S[0] = sample_R14S[0] + subSample_RnnnnU;
@@ -280,8 +280,8 @@ if(MOD_FSM == 0) begin // Using baseline FSM
         // Default outputs
         next_state_R14H = state_R14H;
         next_sample_R14S = sample_R14S;
-        validSamp_R14H = 0;
-        halt_RnnnnL = 1;
+        //validSamp_R14H = 0;
+        //halt_RnnnnL = 1;
 
         case (state_R14H)
             WAIT_STATE: begin
@@ -297,11 +297,11 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                 validSamp_R14H = 1;
                 halt_RnnnnL = 0;
 
-                if (at_end_box) begin
+                if (at_end_box_R14H) begin
                     // Reached the end of the bounding box
                     next_state_R14H = WAIT_STATE;
                     next_sample_R14S = box_R13S[0];  // Reset sample to bottom-left
-                end else if (at_right_edge) begin
+                end else if (at_right_edg_R14H) begin
                     // Move up one row if at right edge
                     next_sample_R14S = next_up_samp_R14S;
                 end else begin

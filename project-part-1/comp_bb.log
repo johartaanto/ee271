@@ -21,7 +21,7 @@ Warning-[DBGACC_DBG] Multiple debug options being used
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error
                          Chronologic VCS (TM)
-         Version M-2017.03_Full64 -- Fri Nov 15 10:03:43 2024
+         Version M-2017.03_Full64 -- Fri Nov 15 17:34:38 2024
                Copyright (c) 1991-2017 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -39,27 +39,6 @@ Parsing design file 'rtl/hash_jtree.sv'
 Parsing design file 'rtl/rast.sv'
 Parsing design file 'rtl/sampletest.sv'
 Parsing design file 'rtl/test_iterator.sv'
-
-Error-[IND] Identifier not declared
-rtl/test_iterator.sv, 256
-  Identifier 'at_right_edge' has not been declared yet. If this error is not 
-  expected, please check if you have set `default_nettype to none.
-  
-
-
-Error-[IND] Identifier not declared
-rtl/test_iterator.sv, 257
-  Identifier 'at_top_edge' has not been declared yet. If this error is not 
-  expected, please check if you have set `default_nettype to none.
-  
-
-
-Error-[IND] Identifier not declared
-rtl/test_iterator.sv, 258
-  Identifier 'at_end_box' has not been declared yet. If this error is not 
-  expected, please check if you have set `default_nettype to none.
-  
-
 Parsing design file 'rtl/tree_hash.sv'
 Parsing design file 'rtl/DW_pl_reg.v'
 Parsing design file 'verif/bbx_sb.sv'
@@ -79,7 +58,81 @@ $unit
   See the System Verilog LRM(1800-2005), section 19.2.1.
 
 Parsing design file 'verif/zbuff.sv'
-3 errors
+Top Level Modules:
+       top_rast
+TimeScale is 1 ns / 1 ns
+
+Warning-[TFIPC] Too few instance port connections
+verif/testbench.sv, 146
+"bbx_sb #(.SIGFIG(SIGFIG), .RADIX(RADIX), .VERTS(VERTS), .AXIS(AXIS), .COLORS(COLORS), .PIPE_DEPTH(PIPES_BOX)) bbx_sb( .tri_R10S (tri_R10S),  .validTri_R10H (validTri_R10H),  .tri_R13S (top_rast.rast.tri_R13S),  .box_R13S (top_rast.rast.box_R13S),  .validTri_R13H (top_rast.rast.validTri_R13H),  .clk (clk),  .rst (rst),  .halt_RnnnnL (top_rast.rast.halt_RnnnnL),  .screen_RnnnnS (screen_RnnnnS),  .subSample_RnnnnU (subSample_RnnnnU));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Error-[ICPSD] Illegal combination of drivers
+rtl/test_iterator.sv, 103
+  Illegal combination of structural and procedural drivers.
+  Variable "halt_RnnnnL" is driven by an invalid combination of structural and
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "rtl/test_iterator.sv", 103: logic halt_RnnnnL;
+  The first driver is at "rtl/test_iterator.sv", 277: always_comb  begin
+  genblk1.next_state_R14H = genblk1.state_R14H;
+   ...
+  The second driver is at "rtl/test_iterator.sv", 182: dff #(2, 1, 0) d304( 
+  .clk (clk),  .reset (rst),  .en (1'b1),  .in ({next_validSamp_R14H, 
+  next_halt_RnnnnL}),  .out ({validSamp_R14H, halt_RnnnnL}));
+
+
+Error-[ICPSD] Illegal combination of drivers
+rtl/test_iterator.sv, 103
+  Illegal combination of structural and procedural drivers.
+  Variable "halt_RnnnnL" is driven by an invalid combination of structural and
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "rtl/test_iterator.sv", 103: logic halt_RnnnnL;
+  The first driver is at "rtl/test_iterator.sv", 277: always_comb  begin
+  genblk1.next_state_R14H = genblk1.state_R14H;
+   ...
+  The second driver is at "rtl/test_iterator.sv", 182: dff #(2, 1, 0) d304( 
+  .clk (clk),  .reset (rst),  .en (1'b1),  .in ({next_validSamp_R14H, 
+  next_halt_RnnnnL}),  .out ({validSamp_R14H, halt_RnnnnL}));
+
+
+Error-[ICPSD] Illegal combination of drivers
+rtl/test_iterator.sv, 113
+  Illegal combination of structural and procedural drivers.
+  Variable "validSamp_R14H" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "rtl/test_iterator.sv", 113: logic 
+  validSamp_R14H;
+  The first driver is at "rtl/test_iterator.sv", 277: always_comb  begin
+  genblk1.next_state_R14H = genblk1.state_R14H;
+   ...
+  The second driver is at "rtl/test_iterator.sv", 182: dff #(2, 1, 0) d304( 
+  .clk (clk),  .reset (rst),  .en (1'b1),  .in ({next_validSamp_R14H, 
+  next_halt_RnnnnL}),  .out ({validSamp_R14H, halt_RnnnnL}));
+
+
+Error-[ICPSD] Illegal combination of drivers
+rtl/test_iterator.sv, 113
+  Illegal combination of structural and procedural drivers.
+  Variable "validSamp_R14H" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "rtl/test_iterator.sv", 113: logic 
+  validSamp_R14H;
+  The first driver is at "rtl/test_iterator.sv", 277: always_comb  begin
+  genblk1.next_state_R14H = genblk1.state_R14H;
+   ...
+  The second driver is at "rtl/test_iterator.sv", 182: dff #(2, 1, 0) d304( 
+  .clk (clk),  .reset (rst),  .en (1'b1),  .in ({next_validSamp_R14H, 
+  next_halt_RnnnnL}),  .out ({validSamp_R14H, halt_RnnnnL}));
+
+1 warning
+4 errors
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error
