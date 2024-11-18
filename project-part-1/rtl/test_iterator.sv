@@ -252,17 +252,42 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     always_comb begin
         // START CODE HERE
-        // Right and top boundaries based on subsample width
-        at_right_edg_R14H = (sample_R14S[0] + subSample_RnnnnU >= box_R14S[1][0]);
-        at_top_edg_R14H   = (sample_R14S[1] + subSample_RnnnnU >= box_R14S[1][1]);
-        at_end_box_R14H    = at_right_edg_R14H && at_top_edg_R14H;
+        case (subSample_RnnnnU)
+            4'b1000: begin
+                next_up_samp_R14S[0] = box_R14S[0][0];
+                next_up_samp_R14S[1] = sample_R14S[1] + (1 << RADIX);
 
-        // Define the next sample location based on direction
-        next_rt_samp_R14S[0] = sample_R14S[0] + subSample_RnnnnU;
-        next_rt_samp_R14S[1] = sample_R14S[1];
-        next_up_samp_R14S[0] = box_R14S[0][0];  // Reset x to left boundary
-        next_up_samp_R14S[1] = sample_R14S[1] + subSample_RnnnnU;
-        
+                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << RADIX);
+                next_rt_samp_R14S[1] = sample_R14S[1];
+            end
+            4'b0100: begin
+                next_up_samp_R14S[0] = box_R14S[0][0];
+                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 1));
+
+                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 1));
+                next_rt_samp_R14S[1] = sample_R14S[1];
+            end
+            4'b0010: begin
+                next_up_samp_R14S[0] = box_R14S[0][0];
+                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 2));
+
+                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 2));
+                next_rt_samp_R14S[1] = sample_R14S[1];
+            end
+            4'b0001: begin
+                next_up_samp_R14S[0] = box_R14S[0][0];
+                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 3));
+
+                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 3));
+                next_rt_samp_R14S[1] = sample_R14S[1];
+            end
+        endcase
+
+        // Edge checks for the current sample
+        at_right_edg_R14H = (sample_R14S[0] == box_R14S[1][0]);
+        at_top_edg_R14H = (sample_R14S[1] == box_R14S[1][1]);
+        at_end_box_R14H = (sample_R14S == box_R14S[1]);
+
         // END CODE HERE
     end
 
@@ -276,41 +301,43 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     // Combinational logic for state transitions
     always_comb begin
         // START CODE HERE
-        
-        // Default outputs
-        next_state_R14H = state_R14H;
-        next_sample_R14S = sample_R14S;
-        //validSamp_R14H = 0;
-        //halt_RnnnnL = 1;
-
+        // Try using a case statement on state_R14H
         case (state_R14H)
             WAIT_STATE: begin
-                if (validTri_R13H) begin
-                    // Start with lower-left of the bounding box
-                    next_sample_R14S = box_R13S[0];
-                    next_state_R14H = TEST_STATE;
-                    //validSamp_R14H = 1;
-                end
+                // Transition to TEST_STATE when a valid triangle is present
+                next_tri_R14S = tri_R13S;
+                next_color_R14U = color_R13U;
+                next_sample_R14S = box_R13S[0];
+                next_validSamp_R14H = validTri_R13H;
+                next_halt_RnnnnL = ~validTri_R13H;
+                next_box_R14S = box_R13S;
+                next_state_R14H = (validTri_R13H) ? TEST_STATE : WAIT_STATE;
             end
 
             TEST_STATE: begin
-                //validSamp_R14H = 1;
-                //halt_RnnnnL = 0;
+                // Continue iterating over samples in TEST_STATE
+                next_tri_R14S = tri_R14S;
+                next_color_R14U = color_R14U;
+                next_box_R14S = box_R14S;
 
                 if (at_end_box_R14H) begin
-                    // Reached the end of the bounding box
+                    next_sample_R14S = box_R14S[0];
+                    next_validSamp_R14H = 1'b0;
+                    next_halt_RnnnnL = 1'b1;
                     next_state_R14H = WAIT_STATE;
-                    next_sample_R14S = box_R13S[0];  // Reset sample to bottom-left
                 end else if (at_right_edg_R14H) begin
-                    // Move up one row if at right edge
                     next_sample_R14S = next_up_samp_R14S;
+                    next_validSamp_R14H = 1'b1;
+                    next_halt_RnnnnL = 1'b0;
+                    next_state_R14H = TEST_STATE;
                 end else begin
-                    // Otherwise, move right
                     next_sample_R14S = next_rt_samp_R14S;
+                    next_validSamp_R14H = 1'b1;
+                    next_halt_RnnnnL = 1'b0;
+                    next_state_R14H = TEST_STATE;
                 end
             end
         endcase
-        // Try using a case statement on state_R14H
         // END CODE HERE
     end // always_comb
 
@@ -324,6 +351,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     //Your assertions goes here
     // START CODE HERE
+   
     // END CODE HERE
     // Assertion ends
 
@@ -332,7 +360,8 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     //////
 
     //Some Error Checking Assertions
-
+    assert property (@(posedge clk) (state_R14H == WAIT_STATE && validTri_R13H) |-> (next_state_R14H == TEST_STATE));
+    assert property (@(posedge clk) (state_R14H == TEST_STATE && at_end_box_R14H) |-> (next_state_R14H == WAIT_STATE));
     //Define a Less Than Property
     //
     //  a should be less than b
@@ -342,6 +371,10 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     //Check that Proposed Sample is in BBox
     // START CODE HERE
+    assert property (rb_lt(rst, next_sample_R14S[0], next_box_R14S[1][0], next_validSamp_R14H));
+    assert property (rb_lt(rst, next_sample_R14S[1], next_box_R14S[1][1], next_validSamp_R14H));
+    assert property (rb_lt(rst, next_box_R14S[0][0], next_sample_R14S[0], validTri_R13H));
+    assert property (rb_lt(rst, next_box_R14S[0][1], next_sample_R14S[1], validTri_R13H));
     // END CODE HERE
     //Check that Proposed Sample is in BBox
 
