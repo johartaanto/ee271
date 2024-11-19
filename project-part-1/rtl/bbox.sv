@@ -183,28 +183,30 @@ module bbox
     // x-coordinate of triangle "vertex a". 
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
-always_comb begin
-    // Identify minimum and maximum x-coordinates for the bounding box
-    box_R10S[0][0] = tri_R10S[0][0]; // Default initialization
-    box_R10S[1][0] = tri_R10S[0][0];
-    for (int i = 1; i < VERTS; i++) begin
-        if (tri_R10S[i][0] < box_R10S[0][0]) box_R10S[0][0] = tri_R10S[i][0];
-        if (tri_R10S[i][0] > box_R10S[1][0]) box_R10S[1][0] = tri_R10S[i][0];
-    end
+    logic signed [SIGFIG-1:0] box_R10S[1:0][1:0];         // Bounding box coordinates (before rounding).
+    logic signed [SIGFIG-1:0] rounded_box_R10S[1:0][1:0]; // Rounded bounding box coordinates.
+    logic signed [SIGFIG-1:0] out_box_R10S[1:0][1:0];     // Clamped and clipped bounding box.
+    logic outvalid_R10H;                                  // Validity of the output.
 
-    // Identify minimum and maximum y-coordinates for the bounding box
-    box_R10S[0][1] = tri_R10S[0][1]; // Default initialization
-    box_R10S[1][1] = tri_R10S[0][1];
-    for (int i = 1; i < VERTS; i++) begin
-        if (tri_R10S[i][1] < box_R10S[0][1]) box_R10S[0][1] = tri_R10S[i][1];
-        if (tri_R10S[i][1] > box_R10S[1][1]) box_R10S[1][1] = tri_R10S[i][1];
-    end
-end
+    always_comb begin
+            // Find the minimum and maximum coordinates for x and y.
+            box_R10S[0][0] = (tri_R10S[0][0] < tri_R10S[1][0]) ?
+                            (tri_R10S[0][0] < tri_R10S[2][0] ? tri_R10S[0][0] : tri_R10S[2][0]) :
+                            (tri_R10S[1][0] < tri_R10S[2][0] ? tri_R10S[1][0] : tri_R10S[2][0]);
+
+            box_R10S[1][0] = (tri_R10S[0][0] > tri_R10S[1][0]) ?
+                            (tri_R10S[0][0] > tri_R10S[2][0] ? tri_R10S[0][0] : tri_R10S[2][0]) :
+                            (tri_R10S[1][0] > tri_R10S[2][0] ? tri_R10S[1][0] : tri_R10S[2][0]);
+
+            box_R10S[0][1] = (tri_R10S[0][1] < tri_R10S[1][1]) ?
+                            (tri_R10S[0][1] < tri_R10S[2][1] ? tri_R10S[0][1] : tri_R10S[2][1]) :
+                            (tri_R10S[1][1] < tri_R10S[2][1] ? tri_R10S[1][1] : tri_R10S[2][1]);
+
+            box_R10S[1][1] = (tri_R10S[0][1] > tri_R10S[1][1]) ?
+                            (tri_R10S[0][1] > tri_R10S[2][1] ? tri_R10S[0][1] : tri_R10S[2][1]) :
+                            (tri_R10S[1][1] > tri_R10S[2][1] ? tri_R10S[1][1] : tri_R10S[2][1]);
+        end
 // END CODE HERE
-
-
-	
-
 
     // Try declaring an always_comb block to assign values to box_R10S
     // END CODE HERE
@@ -251,27 +253,15 @@ end
 generate
 for(genvar i = 0; i < 2; i = i + 1) begin
     for(genvar j = 0; j < 2; j = j + 1) begin
-
         always_comb begin
-            //Integer Portion of LL and UR Remains the Same
-            rounded_box_R10S[i][j][SIGFIG-1:RADIX]
-                = box_R10S[i][j][SIGFIG-1:RADIX];
-
-            //////// ASSIGN FRACTIONAL PORTION
-            // START CODE HERE
-            case (subSample_RnnnnU)
-                4'b1000: rounded_box_R10S[i][j][RADIX-1:0] = {RADIX{1'b0}}; // No subsampling
-                4'b0100: rounded_box_R10S[i][j][RADIX-1:1] = box_R10S[i][j][RADIX-1:1] & {RADIX-1{1'b0}};
-                4'b0010: rounded_box_R10S[i][j][RADIX-1:2] = box_R10S[i][j][RADIX-1:2] & {RADIX-2{1'b0}};
-                4'b0001: rounded_box_R10S[i][j][RADIX-1:3] = box_R10S[i][j][RADIX-1:3] & {RADIX-3{1'b0}};
-                default: rounded_box_R10S[i][j][RADIX-1:0] = box_R10S[i][j][RADIX-1:0];
-            endcase
-    // Integer portion remains the same
-    rounded_box_R10S[i][j][SIGFIG-1:RADIX] = box_R10S[i][j][SIGFIG-1:RADIX];
-            // END CODE HERE
-
-        end // always_comb
-
+                    rounded_box_R10S[i][j][SIGFIG-1:RADIX] = box_R10S[i][j][SIGFIG-1:RADIX];
+                    case (subSample_RnnnnU)
+                        4'b1000: rounded_box_R10S[i][j][RADIX-1:0] = box_R10S[i][j][RADIX-1:0] & {RADIX{1'b0}};
+                        4'b0100: rounded_box_R10S[i][j][RADIX-1:1] = box_R10S[i][j][RADIX-1:1];
+                        4'b0010: rounded_box_R10S[i][j][RADIX-1:2] = box_R10S[i][j][RADIX-1:2];
+                        4'b0001: rounded_box_R10S[i][j][RADIX-1:3] = box_R10S[i][j][RADIX-1:3];
+                    endcase
+                end
     end
 end
 endgenerate
@@ -296,20 +286,17 @@ endgenerate
     always_comb begin
         //////// ASSIGN "out_box_R10S" and "outvalid_R10H"
         // START CODE HERE
-        // Clip lower-left corner
         out_box_R10S[0][0] = (rounded_box_R10S[0][0] < 0) ? 0 : rounded_box_R10S[0][0];
         out_box_R10S[0][1] = (rounded_box_R10S[0][1] < 0) ? 0 : rounded_box_R10S[0][1];
-
-        // Clip upper-right corner
         out_box_R10S[1][0] = (rounded_box_R10S[1][0] > screen_RnnnnS[0]) ? screen_RnnnnS[0] : rounded_box_R10S[1][0];
         out_box_R10S[1][1] = (rounded_box_R10S[1][1] > screen_RnnnnS[1]) ? screen_RnnnnS[1] : rounded_box_R10S[1][1];
 
-        // Validate bounding box
-        outvalid_R10H = validTri_R10H && 
-                        (out_box_R10S[0][0] < out_box_R10S[1][0]) && 
-                        (out_box_R10S[0][1] < out_box_R10S[1][1]);
+        outvalid_R10H = (out_box_R10S[0][0] <= out_box_R10S[1][0] &&
+                         out_box_R10S[0][1] <= out_box_R10S[1][1] &&
+                         validTri_R10H);
         // END CODE HERE
     end
+
 
     //Assertion for checking if outvalid_R10H has been assigned properly
     assert property( @(posedge clk) (outvalid_R10H |-> out_box_R10S[1][0] <= screen_RnnnnS[0] ));
