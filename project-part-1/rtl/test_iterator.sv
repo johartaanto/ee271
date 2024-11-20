@@ -248,48 +248,29 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     // check the comments 'A Note on Signal Names'
     // at the begining of the module for the help on
+
+    logic signed [SIGFIG-1:0] sample_step;
     // understanding the signals here
+    assign sample_step = {{(SIGFIG-RADIX-1){1'b0}},{subSample_RnnnnU},{(RADIX-3){1'b0}}};
 
-    always_comb begin
+    always_comb begin 
         // START CODE HERE
-        case (subSample_RnnnnU)
-            4'b1000: begin
-                next_up_samp_R14S[0] = box_R14S[0][0];
-                next_up_samp_R14S[1] = sample_R14S[1] + (1 << RADIX);
+        next_up_samp_R14S[0] = box_R14S[0][0];
+        
+        next_up_samp_R14S[1] = sample_R14S[1] + sample_step;
 
-                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << RADIX);
-                next_rt_samp_R14S[1] = sample_R14S[1];
-            end
-            4'b0100: begin
-                next_up_samp_R14S[0] = box_R14S[0][0];
-                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 1));
+        next_rt_samp_R14S[0] = sample_R14S[0] + sample_step;
 
-                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 1));
-                next_rt_samp_R14S[1] = sample_R14S[1];
-            end
-            4'b0010: begin
-                next_up_samp_R14S[0] = box_R14S[0][0];
-                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 2));
+        next_rt_samp_R14S[1] = sample_R14S[1];
 
-                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 2));
-                next_rt_samp_R14S[1] = sample_R14S[1];
-            end
-            4'b0001: begin
-                next_up_samp_R14S[0] = box_R14S[0][0];
-                next_up_samp_R14S[1] = sample_R14S[1] + (1 << (RADIX - 3));
-
-                next_rt_samp_R14S[0] = sample_R14S[0] + (1 << (RADIX - 3));
-                next_rt_samp_R14S[1] = sample_R14S[1];
-            end
-        endcase
-
-        // Edge checks for the current sample
-        at_right_edg_R14H = (sample_R14S[0] == box_R14S[1][0]);
         at_top_edg_R14H = (sample_R14S[1] == box_R14S[1][1]);
-        at_end_box_R14H = (sample_R14S == box_R14S[1]);
 
+        at_right_edg_R14H = (sample_R14S[0] == box_R14S[1][0]);
+
+        at_end_box_R14H = at_right_edg_R14H && at_top_edg_R14H;
         // END CODE HERE
     end
+
 
     //////
     ////// Then complete the following combinational logic defining the
@@ -299,47 +280,111 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     ////// COMPLETE THE FOLLOW ALWAYS_COMB BLOCK
 
     // Combinational logic for state transitions
-    always_comb begin
+    // always_comb begin
+    //     // START CODE HERE
+    //     // Try using a case statement on state_R14H
+    //     case (state_R14H)
+    //         WAIT_STATE: begin
+    //             // Transition to TEST_STATE when a valid triangle is present
+    //             next_tri_R14S = tri_R13S;
+    //             next_color_R14U = color_R13U;
+    //             next_sample_R14S = box_R13S[0];
+    //             next_validSamp_R14H = validTri_R13H;
+    //             next_halt_RnnnnL = ~validTri_R13H;
+    //             next_box_R14S = box_R13S;
+    //             next_state_R14H = (validTri_R13H) ? TEST_STATE : WAIT_STATE;
+    //         end
+
+    //         TEST_STATE: begin
+    //             // Continue iterating over samples in TEST_STATE
+    //             next_tri_R14S = tri_R14S;
+    //             next_color_R14U = color_R14U;
+    //             next_box_R14S = box_R14S;
+
+    //             if (at_end_box_R14H) begin
+    //                 next_sample_R14S = box_R14S[0];
+    //                 next_validSamp_R14H = 1'b0;
+    //                 next_halt_RnnnnL = 1'b1;
+    //                 next_state_R14H = WAIT_STATE;
+    //             end else if (at_right_edg_R14H) begin
+    //                 next_sample_R14S = next_up_samp_R14S;
+    //                 next_validSamp_R14H = 1'b1;
+    //                 next_halt_RnnnnL = 1'b0;
+    //                 next_state_R14H = TEST_STATE;
+    //             end else begin
+    //                 next_sample_R14S = next_rt_samp_R14S;
+    //                 next_validSamp_R14H = 1'b1;
+    //                 next_halt_RnnnnL = 1'b0;
+    //                 next_state_R14H = TEST_STATE;
+    //             end
+    //         end
+    //     endcase
+    //     // END CODE HERE
+    // end // always_comb
+
+always_comb begin
         // START CODE HERE
-        // Try using a case statement on state_R14H
-        case (state_R14H)
+        // Try using a case statement on state_R14H   
+        case(state_R14H)
             WAIT_STATE: begin
-                // Transition to TEST_STATE when a valid triangle is present
-                next_tri_R14S = tri_R13S;
-                next_color_R14U = color_R13U;
-                next_sample_R14S = box_R13S[0];
-                next_validSamp_R14H = validTri_R13H;
-                next_halt_RnnnnL = ~validTri_R13H;
-                next_box_R14S = box_R13S;
-                next_state_R14H = (validTri_R13H) ? TEST_STATE : WAIT_STATE;
+                (* parallel_case *)
+                case(validTri_R13H)
+                    1'b1: begin
+                        next_tri_R14S = tri_R13S;
+                        next_color_R14U = color_R13U;
+                        next_sample_R14S = box_R13S[0];
+                        next_validSamp_R14H = 1'b1;
+                        next_halt_RnnnnL = 1'b0;
+                        next_box_R14S = box_R13S;
+                        next_state_R14H  = TEST_STATE;
+                    end
+                    default: begin
+                        next_tri_R14S = tri_R13S;
+                        next_color_R14U = color_R13U;
+                        next_sample_R14S = box_R13S[0];
+                        next_validSamp_R14H = 1'b0;
+                        next_halt_RnnnnL = 1'b1;
+                        next_box_R14S = box_R13S;
+                        next_state_R14H  = WAIT_STATE; 
+                    end
+                endcase 
             end
-
-            TEST_STATE: begin
-                // Continue iterating over samples in TEST_STATE
-                next_tri_R14S = tri_R14S;
-                next_color_R14U = color_R14U;
-                next_box_R14S = box_R14S;
-
-                if (at_end_box_R14H) begin
-                    next_sample_R14S = box_R14S[0];
-                    next_validSamp_R14H = 1'b0;
-                    next_halt_RnnnnL = 1'b1;
-                    next_state_R14H = WAIT_STATE;
-                end else if (at_right_edg_R14H) begin
-                    next_sample_R14S = next_up_samp_R14S;
-                    next_validSamp_R14H = 1'b1;
-                    next_halt_RnnnnL = 1'b0;
-                    next_state_R14H = TEST_STATE;
-                end else begin
-                    next_sample_R14S = next_rt_samp_R14S;
-                    next_validSamp_R14H = 1'b1;
-                    next_halt_RnnnnL = 1'b0;
-                    next_state_R14H = TEST_STATE;
-                end
-            end
+            TEST_STATE:begin // check: why not checking the valid_triangle
+                case({at_end_box_R14H,at_right_edg_R14H,at_top_edg_R14H})
+                    3'b111: begin
+                        next_tri_R14S = tri_R13S;
+                        next_color_R14U = color_R13U;
+                        next_sample_R14S = box_R13S[0];
+                        next_validSamp_R14H = 1'b0;
+                        next_halt_RnnnnL = 1'b1;
+                        next_box_R14S = box_R13S;
+                        next_state_R14H  = WAIT_STATE;
+                    end
+                    3'b010: begin
+                        next_tri_R14S = tri_R14S;
+                        next_color_R14U = color_R14U;
+                        next_sample_R14S = next_up_samp_R14S;
+                        next_validSamp_R14H = 1'b1;
+                        next_halt_RnnnnL = 1'b0;
+                        next_box_R14S = box_R14S;
+                        next_state_R14H  = TEST_STATE; 
+                    end
+                    default: begin
+                        next_tri_R14S = tri_R14S;
+                        next_color_R14U = color_R14U;
+                        next_sample_R14S = next_rt_samp_R14S; 
+                        next_validSamp_R14H = 1'b1;
+                        next_halt_RnnnnL = 1'b0;
+                        next_box_R14S = box_R14S;
+                        next_state_R14H  = TEST_STATE;   
+                    end
+                endcase
+            end 
         endcase
         // END CODE HERE
     end // always_comb
+
+
 
     //Assertions for testing FSM logic
 

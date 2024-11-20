@@ -1,48 +1,20 @@
 {
+    "LVLData": [
+        "SIM"
+    ],
     "MlibObjs": {},
-    "PrevCompiledModules": {},
     "NameTable": {
-        "std": [
-            "std",
-            "reYIK",
-            "module",
-            2
-        ],
-        "rast_params": [
-            "rast_params",
-            "mT84W",
-            "module",
-            3
-        ],
-        "hash_jtree": [
-            "hash_jtree",
-            "sE4tC",
-            "module",
-            27
-        ],
-        "smpl_cnt_sb": [
-            "smpl_cnt_sb",
-            "hVvAG",
-            "module",
-            34
-        ],
         "_vcs_unit__4140305405": [
             "_vcs_unit__4140305405",
             "INiNY",
             "module",
             1
         ],
-        "dff3_0000": [
-            "dff3_0000",
-            "Fgck4",
+        "std": [
+            "std",
+            "reYIK",
             "module",
-            15
-        ],
-        "dff2_0001_0001": [
-            "dff2_0001_0001",
-            "UfTMx",
-            "module",
-            11
+            2
         ],
         "bbox_0000": [
             "bbox_0000",
@@ -50,119 +22,17 @@
             "module",
             4
         ],
-        "perf_monitor": [
-            "perf_monitor",
-            "wiPAj",
-            "module",
-            32
-        ],
-        "dff2_0002": [
-            "dff2_0002",
-            "yW5CM",
-            "module",
-            7
-        ],
-        "dff2_0000": [
-            "dff2_0000",
-            "HpNpL",
-            "module",
-            5
-        ],
-        "dff2_0001_0000": [
-            "dff2_0001_0000",
-            "tpBAT",
-            "module",
-            10
-        ],
-        "dff_0000_0006": [
-            "dff_0000_0006",
-            "KE3qb",
-            "module",
-            25
-        ],
-        "dff2_0001": [
-            "dff2_0001",
-            "YYTYE",
-            "module",
-            6
-        ],
-        "rast": [
-            "rast",
-            "NNwFS",
-            "module",
-            28
-        ],
-        "dff2_0003": [
-            "dff2_0003",
-            "FMRfU",
-            "module",
-            8
-        ],
         "dff2_0000_0000": [
             "dff2_0000_0000",
             "m1pCR",
             "module",
             9
         ],
-        "sampletest": [
-            "sampletest",
-            "gPJxK",
-            "module",
-            29
-        ],
-        "dff2_0002_0000": [
-            "dff2_0002_0000",
-            "KUIDG",
-            "module",
-            12
-        ],
-        "dff2_0002_0001": [
-            "dff2_0002_0001",
-            "mv96h",
-            "module",
-            13
-        ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
-            "module",
-            39
-        ],
-        "dff2_0003_0000": [
-            "dff2_0003_0000",
-            "zxvEq",
-            "module",
-            14
-        ],
         "dff3_0001": [
             "dff3_0001",
             "wrGcc",
             "module",
             16
-        ],
-        "test_iterator_0000": [
-            "test_iterator_0000",
-            "adgUT",
-            "module",
-            30
-        ],
-        "dff3_0000_0000": [
-            "dff3_0000_0000",
-            "EJn6A",
-            "module",
-            17
-        ],
-        "dff_0000_0002": [
-            "dff_0000_0002",
-            "xKfGv",
-            "module",
-            22
-        ],
-        "dff3_0000_0001": [
-            "dff3_0000_0001",
-            "RmIf7",
-            "module",
-            18
         ],
         "dff_retime_0000": [
             "dff_retime_0000",
@@ -176,53 +46,35 @@
             "module",
             19
         ],
-        "dff3_0000_0003": [
-            "dff3_0000_0003",
-            "fjDt2",
-            "module",
-            20
-        ],
-        "dff3_0001_0000": [
-            "dff3_0001_0000",
-            "aWGfp",
-            "module",
-            21
-        ],
         "dff_0000_0003": [
             "dff_0000_0003",
             "ACtd6",
             "module",
             23
         ],
-        "dff_0000_0005": [
-            "dff_0000_0005",
-            "qncW9",
+        "rast": [
+            "rast",
+            "NNwFS",
             "module",
-            24
+            28
         ],
-        "zbuff": [
-            "zbuff",
-            "K6ha2",
+        "rast_params": [
+            "rast_params",
+            "mT84W",
             "module",
-            38
+            3
         ],
-        "bbx_sb": [
-            "bbx_sb",
-            "a8g0Z",
+        "dff3_0000_0003": [
+            "dff3_0000_0003",
+            "fjDt2",
             "module",
-            31
+            20
         ],
-        "rast_driver": [
-            "rast_driver",
-            "ZD3VR",
+        "hash_jtree": [
+            "hash_jtree",
+            "sE4tC",
             "module",
-            33
-        ],
-        "smpl_sb": [
-            "smpl_sb",
-            "xTIPv",
-            "module",
-            35
+            27
         ],
         "testbench": [
             "testbench",
@@ -230,67 +82,228 @@
             "module",
             36
         ],
+        "smpl_cnt_sb": [
+            "smpl_cnt_sb",
+            "hVvAG",
+            "module",
+            34
+        ],
+        "dff2_0001_0001": [
+            "dff2_0001_0001",
+            "UfTMx",
+            "module",
+            11
+        ],
+        "dff2_0000": [
+            "dff2_0000",
+            "HpNpL",
+            "module",
+            5
+        ],
+        "dff2_0002_0000": [
+            "dff2_0002_0000",
+            "KUIDG",
+            "module",
+            12
+        ],
+        "bbx_sb": [
+            "bbx_sb",
+            "a8g0Z",
+            "module",
+            31
+        ],
+        "sampletest_0000": [
+            "sampletest_0000",
+            "fRYw9",
+            "module",
+            29
+        ],
+        "dff2_0002": [
+            "dff2_0002",
+            "yW5CM",
+            "module",
+            7
+        ],
+        "dff_0000_0006": [
+            "dff_0000_0006",
+            "KE3qb",
+            "module",
+            25
+        ],
+        "perf_monitor": [
+            "perf_monitor",
+            "wiPAj",
+            "module",
+            32
+        ],
+        "dff2_0001": [
+            "dff2_0001",
+            "YYTYE",
+            "module",
+            6
+        ],
+        "dff3_0000_0000": [
+            "dff3_0000_0000",
+            "EJn6A",
+            "module",
+            17
+        ],
+        "dff2_0003_0000": [
+            "dff2_0003_0000",
+            "zxvEq",
+            "module",
+            14
+        ],
+        "rast_driver": [
+            "rast_driver",
+            "ZD3VR",
+            "module",
+            33
+        ],
+        "dff2_0003": [
+            "dff2_0003",
+            "FMRfU",
+            "module",
+            8
+        ],
+        "dff3_0001_0000": [
+            "dff3_0001_0000",
+            "aWGfp",
+            "module",
+            21
+        ],
+        "dff2_0001_0000": [
+            "dff2_0001_0000",
+            "tpBAT",
+            "module",
+            10
+        ],
+        "dff3_0000": [
+            "dff3_0000",
+            "Fgck4",
+            "module",
+            15
+        ],
+        "dff2_0002_0001": [
+            "dff2_0002_0001",
+            "mv96h",
+            "module",
+            13
+        ],
+        "dff_0000_0005": [
+            "dff_0000_0005",
+            "qncW9",
+            "module",
+            24
+        ],
+        "dff3_0000_0001": [
+            "dff3_0000_0001",
+            "RmIf7",
+            "module",
+            18
+        ],
+        "dff_0000_0002": [
+            "dff_0000_0002",
+            "xKfGv",
+            "module",
+            22
+        ],
+        "test_iterator_0000": [
+            "test_iterator_0000",
+            "adgUT",
+            "module",
+            30
+        ],
+        "smpl_sb": [
+            "smpl_sb",
+            "xTIPv",
+            "module",
+            35
+        ],
         "top_rast": [
             "top_rast",
             "xFwH6",
             "module",
             37
+        ],
+        "zbuff": [
+            "zbuff",
+            "K6ha2",
+            "module",
+            38
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module",
+            39
         ]
     },
     "SIMBData": {
+        "archive": "archive.0/_1300021_archive_1.a",
         "out": "amcQwB.o",
-        "bytes": 143199,
-        "archive": "archive.0/_1640977_archive_1.a"
+        "bytes": 143780
+    },
+    "stat": {
+        "quadSpeed": 28396.846371464806,
+        "nQuads": 19212,
+        "Frontend(%)": 42.586190216754844,
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.50182800000000005,
+            "ru_nvcsw": 411,
+            "ru_stime_sec": 0.080862000000000003,
+            "ru_maxrss_kb": 93848,
+            "ru_nivcsw": 17,
+            "ru_minflt": 8022,
+            "ru_majflt": 0
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.013975,
+            "ru_nvcsw": 31,
+            "ru_stime_sec": 0.052103999999999998,
+            "ru_maxrss_kb": 91756,
+            "ru_nivcsw": 2,
+            "ru_minflt": 1854,
+            "ru_majflt": 0
+        },
+        "nMops": 45815,
+        "ru_self_end": {
+            "ru_utime_sec": 1.178382,
+            "ru_nvcsw": 586,
+            "ru_stime_sec": 0.12576200000000001,
+            "ru_maxrss_kb": 102084,
+            "ru_nivcsw": 24,
+            "ru_minflt": 9381,
+            "ru_majflt": 0
+        },
+        "totalObjSize": 1265515,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.013975,
+            "ru_nvcsw": 31,
+            "ru_stime_sec": 0.052103999999999998,
+            "ru_maxrss_kb": 91756,
+            "ru_nivcsw": 2,
+            "ru_minflt": 1854,
+            "ru_majflt": 0
+        },
+        "mopSpeed": 67718.171794121386,
+        "mop/quad": 2.3847074744951073,
+        "outputSizePerQuad": 65.871070164480528,
+        "CodeGen(%)": 57.413809783245156,
+        "peak_mem_kb": 216312
+    },
+    "PrevCompiledModules": {},
+    "Misc": {
+        "cwd": "/home/users/jh99/Desktop/ee271/project-part-1",
+        "csrc": "csrc",
+        "archive_dir": "archive.0",
+        "daidir": "simv.daidir",
+        "csrc_abs": "/home/users/jh99/Desktop/ee271/project-part-1/csrc",
+        "daidir_abs": "/home/users/jh99/Desktop/ee271/project-part-1/simv.daidir",
+        "default_output_dir": "csrc"
     },
     "CompileStrategy": "fullobj",
-    "stat": {
-        "CodeGen(%)": 55.995734200487234,
-        "ru_self_cgstart": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.49473600000000001,
-            "ru_stime_sec": 0.080287999999999998,
-            "ru_maxrss_kb": 94488,
-            "ru_nivcsw": 24,
-            "ru_minflt": 7680,
-            "ru_nvcsw": 386
-        },
-        "nQuads": 19273,
-        "mopSpeed": 72190.674365226252,
-        "ru_childs_cgstart": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.019869000000000001,
-            "ru_stime_sec": 0.043651000000000002,
-            "ru_maxrss_kb": 91536,
-            "ru_nivcsw": 3,
-            "ru_minflt": 1854,
-            "ru_nvcsw": 31
-        },
-        "nMops": 45448,
-        "Frontend(%)": 44.004265799512766,
-        "outputSizePerQuad": 65.554039329632133,
-        "totalObjSize": 1263423,
-        "ru_self_end": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 1.1242909999999999,
-            "ru_stime_sec": 0.138737,
-            "ru_maxrss_kb": 102684,
-            "ru_nivcsw": 29,
-            "ru_minflt": 9065,
-            "ru_nvcsw": 553
-        },
-        "ru_childs_end": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.019869000000000001,
-            "ru_stime_sec": 0.043651000000000002,
-            "ru_maxrss_kb": 91536,
-            "ru_nivcsw": 3,
-            "ru_minflt": 1854,
-            "ru_nvcsw": 31
-        },
-        "quadSpeed": 30613.687445894328,
-        "mop/quad": 2.3581175738079176,
-        "peak_mem_kb": 216424
-    },
+    "CurCompileUdps": {},
     "CurCompileModules": [
         "...MASTER...",
         "...MASTER...",
@@ -350,8 +363,8 @@
         "hash_jtree",
         "rast",
         "rast",
-        "sampletest",
-        "sampletest",
+        "sampletest_0000",
+        "sampletest_0000",
         "test_iterator_0000",
         "test_iterator_0000",
         "bbx_sb",
@@ -372,21 +385,8 @@
         "zbuff"
     ],
     "PEModules": [],
-    "CurCompileUdps": {},
-    "Misc": {
-        "archive_dir": "archive.0",
-        "cwd": "/home/users/jh99/Desktop/ee271/project-part-1",
-        "csrc_abs": "/home/users/jh99/Desktop/ee271/project-part-1/csrc",
-        "csrc": "csrc",
-        "daidir": "simv.daidir",
-        "daidir_abs": "/home/users/jh99/Desktop/ee271/project-part-1/simv.daidir",
-        "default_output_dir": "csrc"
-    },
-    "LVLData": [
-        "SIM"
-    ],
-    "CompileStatus": "Successful",
     "CompileProcesses": [
-        "cgproc.1640977.json"
-    ]
+        "cgproc.1300021.json"
+    ],
+    "CompileStatus": "Successful"
 }
