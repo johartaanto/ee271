@@ -143,15 +143,15 @@ module sampletest
     logic [EDGES-1:0] edge_chk1_R16;
 
     // (1) Shift X, Y coordinates such that the fragment resides on the (0,0) position.
-generate
-    for(genvar i = 0; i < VERTS; i = i + 1) begin
-        for(genvar j = 0; j < 2; j = j + 1) begin
-            always_comb begin
-                tri_shift_R16S[i][j] = tri_R16S[i][j] - sample_R16S[j];
+    generate
+        for(genvar i = 0; i < VERTS; i = i + 1) begin
+            for(genvar j = 0; j < 2; j = j + 1) begin
+                always_comb begin
+                    tri_shift_R16S[i][j] = tri_R16S[i][j] - sample_R16S[j];
+                end
             end
         end
-    end
-endgenerate
+    endgenerate
 
     // (2) Organize edges (form three edges for triangles)
     always_comb begin

@@ -4,7 +4,7 @@ Warning: Design 'rast' has '3' unresolved references. For more detailed informat
 Report : area
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:32:56 2024
+Date   : Tue Nov 19 22:15:43 2024
 ****************************************
 
 Library(s) Used:
@@ -12,21 +12,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
 
 Number of ports:                          973
-Number of nets:                         15920
-Number of cells:                        13203
-Number of combinational cells:          12184
-Number of sequential cells:              1018
+Number of nets:                         18552
+Number of cells:                        15668
+Number of combinational cells:          11979
+Number of sequential cells:              3688
 Number of macros/black boxes:               0
-Number of buf/inv:                       2358
+Number of buf/inv:                       4542
 Number of references:                       4
 
-Combinational area:              15301.916006
-Buf/Inv area:                     1291.696009
-Noncombinational area:            5144.440166
+Combinational area:              14965.160087
+Buf/Inv area:                     2428.314023
+Noncombinational area:           19360.810621
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 20446.356172
+Total cell area:                 34325.970709
 Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)

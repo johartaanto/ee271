@@ -139,52 +139,52 @@ Elaborated 1 design.
 Current design is now 'rast'.
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Information: Building the design 'sampletest' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'dff2' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2' with
-	the parameters "WIDTH=24,ARRAY_SIZE=3,PIPE_DEPTH=1,RETIME_STATUS=1". (HDL-193)
+Information: Building the design 'dff2' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7' with
+	the parameters "WIDTH=24,ARRAY_SIZE=3,PIPE_DEPTH=6,RETIME_STATUS=1". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'dff_retime' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2' with
-	the parameters "WIDTH=1,PIPE_DEPTH=1,RETIME_STATUS=1". (HDL-193)
+Information: Building the design 'dff_retime' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7' with
+	the parameters "WIDTH=1,PIPE_DEPTH=6,RETIME_STATUS=1". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'dff2' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2' with
+Information: Building the design 'dff2' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7' with
 	the parameters "WIDTH=24,ARRAY_SIZE=3,PIPE_DEPTH=1,RETIME_STATUS=0". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'dff' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2' with
+Information: Building the design 'dff' instantiated from design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7' with
 	the parameters "WIDTH=1,PIPE_DEPTH=1,RETIME_STATUS=0". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'dff_retime' instantiated from design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH1_RETIME_STATUS1' with
-	the parameters "WIDTH=24,PIPE_DEPTH=1,RETIME_STATUS=1". (HDL-193)
+Information: Building the design 'dff_retime' instantiated from design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH6_RETIME_STATUS1' with
+	the parameters "WIDTH=24,PIPE_DEPTH=6,RETIME_STATUS=1". (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'dff' instantiated from design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH1_RETIME_STATUS0' with
 	the parameters "WIDTH=24,PIPE_DEPTH=1,RETIME_STATUS=0". (HDL-193)
 Presto compilation completed successfully.
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -200,17 +200,17 @@ link
 
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -231,17 +231,17 @@ Warning: Unable to resolve reference 'hash_jtree' in 'rast'. (LINK-5)
 create_clock $CLK -period $CLK_PERIOD
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -1003,25 +1003,25 @@ Information: Retiming is enabled. SVF file must be used for formal verification.
 
 Information: There are 397 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
-Information: Uniquified 2 instances of design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH1_RETIME_STATUS1'. (OPT-1056)
+Information: Uniquified 2 instances of design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH6_RETIME_STATUS1'. (OPT-1056)
 Information: Uniquified 2 instances of design 'dff2_WIDTH24_ARRAY_SIZE3_PIPE_DEPTH1_RETIME_STATUS0'. (OPT-1056)
-Information: Uniquified 6 instances of design 'dff_retime_WIDTH24_PIPE_DEPTH1_RETIME_STATUS1'. (OPT-1056)
+Information: Uniquified 6 instances of design 'dff_retime_WIDTH24_PIPE_DEPTH6_RETIME_STATUS1'. (OPT-1056)
 Information: Uniquified 6 instances of design 'dff_WIDTH24_PIPE_DEPTH1_RETIME_STATUS0'. (OPT-1056)
   Simplifying Design 'rast'
 
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -1038,37 +1038,37 @@ Information: State dependent leakage is now switched from on to off.
   Beginning Pass 1 Mapping
   ------------------------
   Processing 'rast'
-  Processing 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2'
- Implement Synthetic for 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2'.
+  Processing 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7'
+ Implement Synthetic for 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7'.
+  Processing 'dff_retime_WIDTH24_PIPE_DEPTH6_RETIME_STATUS1_0'
+ Implement Synthetic for 'dff_retime_WIDTH24_PIPE_DEPTH6_RETIME_STATUS1_0'.
+  Processing 'DW_pl_reg_width24_in_reg0_stages7_out_reg0_rst_mode0'
+Information: Added key list 'DesignWare' to design 'dff_retime_WIDTH24_PIPE_DEPTH6_RETIME_STATUS1_0'. (DDB-72)
   Processing 'dff_WIDTH24_PIPE_DEPTH1_RETIME_STATUS0_0'
  Implement Synthetic for 'dff_WIDTH24_PIPE_DEPTH1_RETIME_STATUS0_0'.
   Processing 'DW_pl_reg_width24_in_reg0_stages2_out_reg0_rst_mode0'
 Information: Added key list 'DesignWare' to design 'dff_WIDTH24_PIPE_DEPTH1_RETIME_STATUS0_0'. (DDB-72)
-  Processing 'dff_retime_WIDTH24_PIPE_DEPTH1_RETIME_STATUS1_0'
- Implement Synthetic for 'dff_retime_WIDTH24_PIPE_DEPTH1_RETIME_STATUS1_0'.
-  Processing 'DW_pl_reg_width24_in_reg0_stages2_out_reg0_rst_mode0'
-Information: Added key list 'DesignWare' to design 'dff_retime_WIDTH24_PIPE_DEPTH1_RETIME_STATUS1_0'. (DDB-72)
+  Processing 'dff_retime_WIDTH1_PIPE_DEPTH6_RETIME_STATUS1'
+ Implement Synthetic for 'dff_retime_WIDTH1_PIPE_DEPTH6_RETIME_STATUS1'.
+  Processing 'DW_pl_reg_width1_in_reg0_stages7_out_reg0_rst_mode0'
+Information: Added key list 'DesignWare' to design 'dff_retime_WIDTH1_PIPE_DEPTH6_RETIME_STATUS1'. (DDB-72)
   Processing 'dff_WIDTH1_PIPE_DEPTH1_RETIME_STATUS0'
  Implement Synthetic for 'dff_WIDTH1_PIPE_DEPTH1_RETIME_STATUS0'.
   Processing 'DW_pl_reg_width1_in_reg0_stages2_out_reg0_rst_mode0'
 Information: Added key list 'DesignWare' to design 'dff_WIDTH1_PIPE_DEPTH1_RETIME_STATUS0'. (DDB-72)
-  Processing 'dff_retime_WIDTH1_PIPE_DEPTH1_RETIME_STATUS1'
- Implement Synthetic for 'dff_retime_WIDTH1_PIPE_DEPTH1_RETIME_STATUS1'.
-  Processing 'DW_pl_reg_width1_in_reg0_stages2_out_reg0_rst_mode0'
-Information: Added key list 'DesignWare' to design 'dff_retime_WIDTH1_PIPE_DEPTH1_RETIME_STATUS1'. (DDB-72)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -1078,21 +1078,21 @@ Warning: Design 'rast' has '3' unresolved references. For more detailed informat
   Updating timing information
 Information: Updating design information... (UID-85)
 Information: Ungrouping hierarchy sampletest/d_samp_r3. (OPT-772)
-Warning: Design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2' inherited license information from design 'dff_retime_WIDTH1_PIPE_DEPTH1_RETIME_STATUS1'. (DDB-74)
-Information: Added key list 'DesignWare' to design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2'. (DDB-72)
+Warning: Design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7' inherited license information from design 'dff_retime_WIDTH1_PIPE_DEPTH6_RETIME_STATUS1'. (DDB-74)
+Information: Added key list 'DesignWare' to design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7'. (DDB-72)
 Information: Ungrouping hierarchy sampletest/d_samp_f3. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r1/genblk1[2].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_f1/genblk1[2].genblk1.dff_pipe. (OPT-772)
-Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[0].genblk1.dff_pipe. (OPT-772)
-Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[1].genblk1.dff_pipe. (OPT-772)
-Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[2].genblk1.dff_pipe. (OPT-772)
-Information: Ungrouping hierarchy sampletest/d_samp_f1/genblk1[0].genblk1.dff_pipe. (OPT-772)
-Information: Ungrouping hierarchy sampletest/d_samp_f1/genblk1[1].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r2/genblk1[0].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r2/genblk1[1].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r2/genblk1[2].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r1/genblk1[0].genblk1.dff_pipe. (OPT-772)
 Information: Ungrouping hierarchy sampletest/d_samp_r1/genblk1[1].genblk1.dff_pipe. (OPT-772)
+Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[0].genblk1.dff_pipe. (OPT-772)
+Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[1].genblk1.dff_pipe. (OPT-772)
+Information: Ungrouping hierarchy sampletest/d_samp_f2/genblk1[2].genblk1.dff_pipe. (OPT-772)
+Information: Ungrouping hierarchy sampletest/d_samp_f1/genblk1[0].genblk1.dff_pipe. (OPT-772)
+Information: Ungrouping hierarchy sampletest/d_samp_f1/genblk1[1].genblk1.dff_pipe. (OPT-772)
 
   Beginning Mapping Optimizations  (Ultra High effort)
   -------------------------------
@@ -1123,15 +1123,13 @@ Warning: Cell 'bbox' has no timing information. Treating it
   5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
   ... minimum area retiming step 2 done.
   Beginning minimum area retiming step 3 ...
-  10% 20% 30% 40% 50% 60% 70% ... 100% 
+  10% 20% 30% 40% 50% 60% 70% 80% ... 100% 
   ... minimum area retiming step 3 done.
   Beginning final register move ...
   ... final register move done.
-  Lower bound estimate = 3.42
-  Critical path length = 3.42
+  Lower bound estimate = 1.07
+  Critical path length = 1.07
   Clock correction = 0.12 (clock-to-Q delay = 0.09, setup = 0.04, uncertainty = 0.00)
-  Mapping Optimization (Phase 2)
-  Mapping Optimization (Phase 3)
 
   Beginning Constant Register Removal
   -----------------------------------
@@ -1170,6 +1168,7 @@ Warning: Cell 'bbox' has no timing information. Treating it
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
 
   Beginning Isolate Ports
   -----------------------
@@ -1181,52 +1180,49 @@ Warning: Cell 'bbox' has no timing information. Treating it
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:07:10   19914.6      0.51       0.5    1032.6                           414009.6875
-    0:07:15   20103.7      0.37       0.4    1032.6                           421288.9688
-    0:07:15   20103.7      0.37       0.4    1032.6                           421288.9688
-    0:07:15   20103.7      0.37       0.4    1032.6                           421288.9688
+    0:07:01   35575.6      0.05       0.5    3876.9                           666805.4375
+    0:07:02   35706.0      0.00       0.0    3876.9                           671640.6875
+    0:07:02   35706.0      0.00       0.0    3876.9                           671640.6875
+    0:07:02   35706.0      0.00       0.0    3876.9                           671640.6875
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:07:45   20005.6      0.37       0.4    1032.6                           417431.9688
-    0:07:46   20004.0      0.37       0.4    1032.3                           416278.6875
-    0:07:46   20004.0      0.37       0.4    1032.3                           416278.6875
-    0:08:18   20740.8      0.18       0.2    1032.3                           440169.3438
-    0:08:18   20740.8      0.18       0.2    1032.3                           440169.3438
-    0:08:18   20741.6      0.18       0.2    1032.3                           440203.7812
-    0:08:18   20741.6      0.18       0.2    1032.3                           440203.7812
-    0:08:20   20761.0      0.18       0.2    1032.3                           440770.2500
-    0:08:20   20761.0      0.18       0.2    1032.3                           440770.2500
-    0:08:24   20743.7      0.16       0.2    1032.3                           440255.9688
-    0:08:24   20743.7      0.16       0.2    1032.3                           440255.9688
-    0:08:28   20778.1      0.16       0.2    1032.3                           441388.6562
-    0:08:28   20778.1      0.16       0.2    1032.3                           441388.6562
-    0:08:29   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:29   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:29   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:29   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:30   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:30   20779.1      0.16       0.2    1032.3                           441430.3750
-    0:08:30   20779.1      0.16       0.2    1032.3                           441430.3750
+    0:07:21   35576.7      0.00       0.0    3876.9                           666140.4375
+    0:07:21   35546.6      0.00       0.0    3875.5                           665121.8125
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
 
 
-  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
   ----------------------------
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:08:30   20779.1      0.16       0.2    1032.3                           441430.3750
-  Global Optimization (Phase 31)
+    0:07:23   35534.4      0.00       0.0    3875.5                           664592.1875
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:08:32   20775.4      0.14       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 440869.0000
-    0:08:34   20782.0      0.14       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 440826.9688
-    0:08:35   20782.0      0.13       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 440609.1562
-    0:08:36   20788.4      0.13       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 440641.0000
-    0:08:37   20794.3      0.12       0.1     963.0                           440650.3125
-    0:08:39   20807.3      0.12       0.1     963.0                           441086.4688
+  Global Optimization (Phase 34)
+    0:07:24   35537.6      0.00       0.0    3853.0                           664664.5000
+    0:07:24   35537.6      0.00       0.0    3853.0                           664664.5000
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -1236,8 +1232,7 @@ Warning: Cell 'bbox' has no timing information. Treating it
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:08:39   20807.3      0.12       0.1     963.0                           441086.4688
-  Global Optimization (Phase 34)
+    0:07:24   35537.6      0.00       0.0    3853.0                           664664.5000
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -1251,50 +1246,45 @@ Warning: Cell 'bbox' has no timing information. Treating it
   Global Optimization (Phase 45)
   Global Optimization (Phase 46)
   Global Optimization (Phase 47)
-  Global Optimization (Phase 48)
-    0:08:44   20432.8      0.12       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 425998.8438
-    0:08:45   20453.3      0.12       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 426571.9375
-    0:08:46   20457.3      0.11       0.1     963.0                           426677.6562
-    0:08:49   20492.6      0.11       0.1     963.0                           427897.9062
-    0:08:49   20492.6      0.11       0.1     963.0                           427897.9062
-    0:08:51   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:51   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:51   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:52   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:52   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:52   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:52   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:52   20478.0      0.11       0.1     963.0                           427237.3438
-    0:08:53   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:53   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:54   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:54   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:54   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:54   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:55   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:55   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:55   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:55   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:56   20482.3      0.11       0.1     963.0                           427438.1875
+    0:07:46   34343.8      0.00       0.0    4035.1 sampletest/clk_r_REG2578_S1/D 645194.6250
+    0:07:47   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:47   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:47   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:08:56   20482.3      0.11       0.1     963.0                           427438.1875
-    0:08:58   20396.1      0.12       0.1     963.0                           425188.3750
-    0:08:59   20395.0      0.12       0.1     963.0                           425179.8125
-    0:08:59   20395.0      0.12       0.1     963.0                           425179.8125
-    0:09:00   20393.2      0.12       0.1     963.0                           425059.1875
-    0:09:03   20390.8      0.11       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 424998.1875
-    0:09:04   20407.8      0.11       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 425562.6250
-    0:09:05   20420.3      0.11       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 425927.7500
-    0:09:06   20433.6      0.10       0.1     963.0 sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D 426274.1562
-    0:09:06   20443.2      0.10       0.1     963.0                           426557.6562
-    0:09:09   20457.8      0.10       0.1     963.0                           427276.7188
-    0:09:09   20457.8      0.10       0.1     963.0                           427276.7188
-    0:09:09   20457.8      0.10       0.1     963.0                           427276.7188
-    0:09:10   20446.4      0.10       0.1     963.0                           426777.7188
+    0:07:49   34345.4      0.00       0.0    4035.1                           645238.8125
+    0:07:51   34326.5      0.01       0.0    4035.1                           644319.1875
+    0:07:52   34327.3      0.00       0.0    4035.1                           644384.8750
+    0:07:52   34327.3      0.00       0.0    4035.1                           644384.8750
+    0:07:54   34327.3      0.00       0.0    4035.1                           644384.8750
+    0:08:07   34328.9      0.00       0.0    3853.8 sampletest/net136626      644682.4375
+    0:08:08   34329.7      0.00       0.0    3853.0                           644733.5000
+    0:08:08   34329.7      0.00       0.0    3853.0                           644733.5000
+    0:08:08   34329.7      0.00       0.0    3853.0                           644733.5000
+    0:08:08   34329.7      0.00       0.0    3853.0                           644733.5000
+    0:08:08   34326.0      0.00       0.0    3853.0                           644403.5000
 Loading db file '/home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db'
 
 
@@ -1303,19 +1293,22 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
+Warning: Design 'rast' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 3637 load(s), 1 driver(s), 3 inout(s)
+     Net 'rst': 3857 load(s), 1 driver(s), 3 inout(s)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
 Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
 *** Presto compilation terminated with 1 errors. ***
 Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=3". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=1". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
 Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=2". (HDL-193)
+	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
 Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
 Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
 Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
@@ -1334,7 +1327,7 @@ Warning: Design 'rast' has '3' unresolved references. For more detailed informat
 ****************************************
 check_design summary:
 Version:     M-2016.12-SP2
-Date:        Tue Nov 19 18:32:56 2024
+Date:        Tue Nov 19 22:15:42 2024
 ****************************************
 
                    Name                                            Total
@@ -1343,10 +1336,237 @@ Inputs/Outputs                                                    391
     Multiply driven inputs (LINT-6)                               343
     Unconnected ports (LINT-28)                                    48
 
-Cells                                                              48
+Cells                                                             274
+    Cells do not drive (LINT-1)                                   226
     Connected to power or ground (LINT-32)                         48
 --------------------------------------------------------------------------------
 
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7363' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7366' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7368' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7374' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7427' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7435' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7437' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7444' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7489' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7496' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7525' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7531' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7542' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7559' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7576' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7583' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7590' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7592' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7593' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7932' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7933' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U7934' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8113' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8114' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8206' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8229' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8230' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8356' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8524' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8525' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8722' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U8794' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9054' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9055' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9095' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9097' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9098' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9102' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9105' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9107' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9124' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9133' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9135' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9138' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9139' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9142' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9154' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9160' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9165' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9169' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9172' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9174' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9180' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9182' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9186' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9191' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9195' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9201' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9204' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9206' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9212' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9225' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9227' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9234' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9236' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9237' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9238' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9240' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9244' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9245' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9246' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9249' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9253' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9254' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9256' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9270' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9271' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9329' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9331' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9336' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9338' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9343' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9348' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9349' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9352' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9360' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9361' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9363' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9371' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9374' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9376' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9377' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9378' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9381' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9383' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9384' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9386' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9387' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9389' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9391' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9393' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9394' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9398' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9400' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9401' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9404' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9405' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9406' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9407' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9418' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9421' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9424' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9425' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9426' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9428' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9431' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9432' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9435' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9436' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9439' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9440' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9441' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9443' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9446' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9447' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9448' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9451' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9452' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9455' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9458' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9459' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9464' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9465' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9466' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9467' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9468' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9469' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9472' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9478' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9479' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9481' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9482' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9483' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9486' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9487' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9491' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9492' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9493' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9494' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9496' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9497' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9498' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9502' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9503' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9504' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9505' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9510' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9516' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9518' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9520' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9521' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9523' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9524' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9525' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9526' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9527' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9528' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9529' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9530' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9533' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9534' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9536' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9537' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9539' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9542' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9543' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9545' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9546' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9549' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9550' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9551' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9552' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9553' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9554' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9557' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9564' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9567' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9570' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9576' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9577' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9590' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9592' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9594' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9602' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9604' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9613' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9621' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9624' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9637' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9638' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9642' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9645' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9647' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9651' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9656' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9660' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9665' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9673' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9676' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9682' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9684' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9695' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9698' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9701' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9713' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9715' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9737' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9738' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9741' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9742' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9743' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9769' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9779' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9780' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9803' does not drive any nets. (LINT-1)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', cell 'U9805' does not drive any nets. (LINT-1)
 Warning: In design 'rast', input port 'tri_R10S[2][2][23]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'rast', input port 'tri_R10S[2][2][22]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'rast', input port 'tri_R10S[2][2][21]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
@@ -1690,54 +1910,54 @@ Warning: In design 'rast', input port 'subSample_RnnnnU[1]' drives wired logic; 
 Warning: In design 'rast', input port 'subSample_RnnnnU[0]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'rast', input port 'clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'rast', input port 'rst' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][23]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][22]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][21]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][20]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][19]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][18]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][17]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][16]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][15]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][14]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][13]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][12]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][11]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][10]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][9]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][8]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][7]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][6]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][5]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][4]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][3]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][2]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][1]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[2][2][0]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][23]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][22]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][21]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][20]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][19]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][18]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][17]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][16]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][15]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][14]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][13]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][12]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][11]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][10]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][9]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][8]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][7]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][6]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][5]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][4]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][3]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][2]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][1]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH2', port 'tri_R16S[1][2][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][23]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][22]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][21]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][20]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][19]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][18]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][17]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][16]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][15]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][14]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][13]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][12]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][11]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][10]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][9]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][8]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[2][2][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][23]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][22]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][21]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][20]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][19]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][18]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][17]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][16]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][15]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][14]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][13]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][12]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][11]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][10]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][9]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][8]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'sampletest_SIGFIG24_RADIX10_VERTS3_AXIS3_COLORS3_PIPE_DEPTH7', port 'tri_R16S[1][2][0]' is not connected to any nets. (LINT-28)
 Warning: In design 'rast', a pin on submodule 'sampletest' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'tri_R16S[2][2][23]' is connected to logic 0. 
 Warning: In design 'rast', a pin on submodule 'sampletest' is connected to logic 1 or logic 0. (LINT-32)
@@ -1845,7 +2065,7 @@ Warning: Design 'rast' has '3' unresolved references. For more detailed informat
 Report : area
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:32:56 2024
+Date   : Tue Nov 19 22:15:42 2024
 ****************************************
 
 Library(s) Used:
@@ -1853,21 +2073,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
 
 Number of ports:                          973
-Number of nets:                         15920
-Number of cells:                        13203
-Number of combinational cells:          12184
-Number of sequential cells:              1018
+Number of nets:                         18552
+Number of cells:                        15668
+Number of combinational cells:          11979
+Number of sequential cells:              3688
 Number of macros/black boxes:               0
-Number of buf/inv:                       2358
+Number of buf/inv:                       4542
 Number of references:                       4
 
-Combinational area:              15301.916006
-Buf/Inv area:                     1291.696009
-Noncombinational area:            5144.440166
+Combinational area:              14965.160087
+Buf/Inv area:                     2428.314023
+Noncombinational area:           19360.810621
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 20446.356172
+Total cell area:                 34325.970709
 Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)
@@ -1881,7 +2101,7 @@ Report : power
         -analysis_effort low
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:32:56 2024
+Date   : Tue Nov 19 22:15:43 2024
 ****************************************
 
 
@@ -1907,12 +2127,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  16.9085 mW   (54%)
-  Net Switching Power  =  14.6371 mW   (46%)
+  Cell Internal Power  =  29.1157 mW   (78%)
+  Net Switching Power  =   8.2861 mW   (22%)
                          ---------
-Total Dynamic Power    =  31.5456 mW  (100%)
+Total Dynamic Power    =  37.4018 mW  (100%)
 
-Cell Leakage Power     = 433.6611 uW
+Cell Leakage Power     = 646.4556 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -1921,12 +2141,12 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  8.2834e+03        1.2244e+04        2.4888e+05        2.0776e+04  (  64.97%)
-register       7.0129e+03          599.8993        8.0768e+04        7.6936e+03  (  24.06%)
+clock_network    419.9063        2.0118e+03        6.1523e+04        2.4931e+03  (   6.55%)
+register       2.4571e+04        2.5363e+03        3.0440e+05        2.7411e+04  (  72.04%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.6123e+03        1.7930e+03        1.0402e+05        3.5093e+03  (  10.97%)
+combinational  4.1252e+03        3.7380e+03        2.8053e+05        8.1438e+03  (  21.40%)
 --------------------------------------------------------------------------------------------------
-Total          1.6909e+04 uW     1.4637e+04 uW     4.3366e+05 nW     3.1979e+04 uW
+Total          2.9116e+04 uW     8.2862e+03 uW     6.4646e+05 nW     3.8048e+04 uW
 1
 redirect "reports/power_report" { report_power -analysis_effort hi }
 #redirect "reports/power_hier_report" { report_power -hier }
@@ -1943,15 +2163,17 @@ Report : timing
         -max_paths 1
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:33:00 2024
+Date   : Tue Nov 19 22:15:47 2024
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: sampletest/clk_r_REG462_S1
+  Startpoint: sampletest/R_151_clk_r_REG1404_S1
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]
+  Endpoint: sampletest/clk_r_REG1055_S1
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -1964,49 +2186,34 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  sampletest/clk_r_REG462_S1/CK (DFFR_X1)                 0.00       0.00 r
-  sampletest/clk_r_REG462_S1/Q (DFFR_X1)                  0.09       0.09 f
-  sampletest/U3147/ZN (OAI21_X1)                          0.04       0.13 r
-  sampletest/U3149/ZN (NAND2_X1)                          0.04       0.17 f
-  sampletest/U3168/ZN (AOI21_X1)                          0.05       0.21 r
-  sampletest/U1095/ZN (XNOR2_X1)                          0.07       0.28 r
-  sampletest/U1094/ZN (NAND2_X1)                          0.03       0.31 f
-  sampletest/U1093/ZN (NAND2_X1)                          0.03       0.34 r
-  sampletest/U1092/ZN (XNOR2_X1)                          0.06       0.40 r
-  sampletest/U3188/ZN (XNOR2_X1)                          0.07       0.47 r
-  sampletest/U3189/ZN (XNOR2_X1)                          0.07       0.55 r
-  sampletest/U3190/ZN (XNOR2_X1)                          0.07       0.62 r
-  sampletest/U125/ZN (OR2_X2)                             0.05       0.67 r
-  sampletest/U1455/ZN (AND2_X1)                           0.04       0.71 r
-  sampletest/U1521/ZN (NAND4_X1)                          0.06       0.77 f
-  sampletest/U1074/ZN (OAI21_X2)                          0.09       0.86 r
-  sampletest/U1306/ZN (NAND2_X1)                          0.05       0.91 f
-  sampletest/U1549/ZN (NAND2_X1)                          0.03       0.94 r
-  sampletest/U1548/ZN (OAI211_X1)                         0.04       0.98 f
-  sampletest/U1571/ZN (INV_X1)                            0.03       1.01 r
-  sampletest/U1509/ZN (NAND2_X1)                          0.02       1.04 f
-  sampletest/U26/ZN (NAND3_X1)                            0.03       1.06 r
-  sampletest/U1213/ZN (NAND2_X1)                          0.02       1.09 f
-  sampletest/U1135/ZN (NAND4_X1)                          0.03       1.12 r
-  sampletest/U1134/ZN (NAND4_X1)                          0.04       1.15 f
-  sampletest/U1147/ZN (NAND3_X1)                          0.03       1.19 r
-  sampletest/U1146/ZN (NAND3_X1)                          0.03       1.21 f
-  sampletest/U1140/ZN (AND3_X1)                           0.04       1.25 f
-  sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/D (DFFR_X1)
-                                                          0.01       1.26 f
-  data arrival time                                                  1.26
+  sampletest/R_151_clk_r_REG1404_S1/CK (DFFS_X2)          0.00 #     0.00 r
+  sampletest/R_151_clk_r_REG1404_S1/Q (DFFS_X2)           0.18       0.18 r
+  sampletest/U485/ZN (NAND2_X1)                           0.07       0.24 f
+  sampletest/U486/ZN (AOI22_X1)                           0.08       0.32 r
+  sampletest/U492/ZN (NAND2_X1)                           0.06       0.38 f
+  sampletest/U4115/CO (FA_X1)                             0.12       0.51 f
+  sampletest/U4117/S (FA_X1)                              0.14       0.65 f
+  sampletest/U162/ZN (OR2_X1)                             0.06       0.70 f
+  sampletest/U95/ZN (AOI22_X1)                            0.05       0.75 r
+  sampletest/U505/ZN (INV_X1)                             0.02       0.77 f
+  sampletest/intadd_36/U6/S (FA_X1)                       0.13       0.90 r
+  sampletest/U4136/ZN (INV_X1)                            0.02       0.92 f
+  sampletest/intadd_101/U4/CO (FA_X1)                     0.08       1.01 f
+  sampletest/intadd_101/U3/S (FA_X1)                      0.13       1.14 r
+  sampletest/U4281/ZN (INV_X1)                            0.02       1.15 f
+  sampletest/clk_r_REG1055_S1/D (DFFS_X1)                 0.01       1.16 f
+  data arrival time                                                  1.16
 
   clock clk (rise edge)                                   1.20       1.20
   clock network delay (ideal)                             0.00       1.20
-  sampletest/d_samp_f3/genblk1.dff_pipe/data_pipe_a_reg[1][0]/CK (DFFR_X1)
-                                                          0.00       1.20 r
+  sampletest/clk_r_REG1055_S1/CK (DFFS_X1)                0.00       1.20 r
   library setup time                                     -0.04       1.16
   data required time                                                 1.16
   --------------------------------------------------------------------------
   data required time                                                 1.16
-  data arrival time                                                 -1.26
+  data arrival time                                                 -1.16
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.10
+  slack (MET)                                                        0.00
 
 
 1
@@ -2021,18 +2228,18 @@ Warning: Design 'rast' has '3' unresolved references. For more detailed informat
 Report : qor
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:33:00 2024
+Date   : Tue Nov 19 22:15:47 2024
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              26.00
-  Critical Path Length:          1.26
-  Critical Path Slack:          -0.10
+  Levels of Logic:              13.00
+  Critical Path Length:          1.16
+  Critical Path Slack:           0.00
   Critical Path Clk Period:      1.20
-  Total Negative Slack:         -0.10
-  No. of Violating Paths:        1.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
   Total Hold Violation:          0.00
   No. of Hold Violations:        0.00
@@ -2043,34 +2250,34 @@ Date   : Tue Nov 19 18:33:00 2024
   -----------------------------------
   Hierarchical Cell Count:          1
   Hierarchical Port Count:        484
-  Leaf Cell Count:              13154
-  Buf/Inv Cell Count:            2358
-  Buf Cell Count:                 117
-  Inv Cell Count:                2241
+  Leaf Cell Count:              15619
+  Buf/Inv Cell Count:            4542
+  Buf Cell Count:                  33
+  Inv Cell Count:                4509
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:     12187
-  Sequential Cell Count:          967
+  Combinational Cell Count:     11982
+  Sequential Cell Count:         3637
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    15301.916006
-  Noncombinational Area:  5144.440166
-  Buf/Inv Area:           1291.696009
-  Total Buffer Area:            94.16
-  Total Inverter Area:        1197.53
+  Combinational Area:    14965.160087
+  Noncombinational Area: 19360.810621
+  Buf/Inv Area:           2428.314023
+  Total Buffer Area:            27.93
+  Total Inverter Area:        2400.38
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
   -----------------------------------
-  Cell Area:             20446.356172
-  Design Area:           20446.356172
+  Cell Area:             34325.970709
+  Design Area:           34325.970709
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         15484
+  Total Number of Nets:         18342
   Nets With Violations:             1
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -2078,20 +2285,20 @@ Date   : Tue Nov 19 18:33:00 2024
   -----------------------------------
 
 
-  Hostname: caddy09.stanford.edu
+  Hostname: caddy10.stanford.edu
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                   53.17
-  Logic Optimization:                  5.00
-  Mapping Optimization:               90.34
+  Resource Sharing:                  116.90
+  Logic Optimization:                  6.48
+  Mapping Optimization:               61.96
   -----------------------------------------
-  Overall Compile Time:              534.85
-  Overall Compile Wall Clock Time:   560.35
+  Overall Compile Time:              470.55
+  Overall Compile Wall Clock Time:   508.70
 
   --------------------------------------------------------------------
 
-  Design  WNS: 0.10  TNS: 0.10  Number of Violating Paths: 1
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
   Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0

@@ -8,7 +8,7 @@ Report : power
         -analysis_effort high
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 18:32:59 2024
+Date   : Tue Nov 19 22:15:47 2024
 ****************************************
 
 
@@ -34,12 +34,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  16.9147 mW   (54%)
-  Net Switching Power  =  14.6573 mW   (46%)
+  Cell Internal Power  =  29.0781 mW   (78%)
+  Net Switching Power  =   8.2967 mW   (22%)
                          ---------
-Total Dynamic Power    =  31.5720 mW  (100%)
+Total Dynamic Power    =  37.3748 mW  (100%)
 
-Cell Leakage Power     = 433.6642 uW
+Cell Leakage Power     = 646.4893 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,10 +48,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  8.2866e+03        1.2247e+04        2.4887e+05        2.0782e+04  (  64.93%)
-register       7.0041e+03          604.1382        8.0779e+04        7.6890e+03  (  24.02%)
+clock_network    419.6509        2.0117e+03        6.1522e+04        2.4928e+03  (   6.56%)
+register       2.4523e+04        2.5384e+03        3.0446e+05        2.7366e+04  (  71.98%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.6242e+03        1.8063e+03        1.0401e+05        3.5345e+03  (  11.04%)
+combinational  4.1353e+03        3.7467e+03        2.8051e+05        8.1624e+03  (  21.47%)
 --------------------------------------------------------------------------------------------------
-Total          1.6915e+04 uW     1.4657e+04 uW     4.3366e+05 nW     3.2005e+04 uW
+Total          2.9078e+04 uW     8.2968e+03 uW     6.4649e+05 nW     3.8021e+04 uW
 1
