@@ -21,7 +21,7 @@ Warning-[DBGACC_DBG] Multiple debug options being used
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error
                          Chronologic VCS (TM)
-         Version M-2017.03_Full64 -- Tue Nov 19 18:05:36 2024
+         Version M-2017.03_Full64 -- Thu Nov 21 02:43:13 2024
                Copyright (c) 1991-2017 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -31,31 +31,6 @@ controlling such use and disclosure.
 
 Parsing design file 'params/rast_params.sv'
 Parsing design file 'rtl/bbox.sv'
-
-Warning-[IPDW] Identifier previously declared
-rtl/bbox.sv, 186
-  Second declaration for identifier 'box_R10S' ignored
-  Identifier 'box_R10S' previously declared as logic. [rtl/bbox.sv, 152]
-
-
-Warning-[IPDW] Identifier previously declared
-rtl/bbox.sv, 187
-  Second declaration for identifier 'rounded_box_R10S' ignored
-  Identifier 'rounded_box_R10S' previously declared as logic. [rtl/bbox.sv, 
-  154]
-
-
-Warning-[IPDW] Identifier previously declared
-rtl/bbox.sv, 188
-  Second declaration for identifier 'out_box_R10S' ignored
-  Identifier 'out_box_R10S' previously declared as logic. [rtl/bbox.sv, 156]
-
-
-Warning-[IPDW] Identifier previously declared
-rtl/bbox.sv, 189
-  Second declaration for identifier 'outvalid_R10H' ignored
-  Identifier 'outvalid_R10H' previously declared as logic. [rtl/bbox.sv, 158]
-
 Parsing design file 'rtl/dff2.sv'
 Parsing design file 'rtl/dff3.sv'
 Parsing design file 'rtl/dff.sv'
@@ -107,12 +82,11 @@ recompiling module dff2
 Generating code for _VCSgd_YYTYE
 Generating code for _VCSgd_yW5CM
 Generating code for _VCSgd_FMRfU
-Generating code for _VCSgd_m1pCR
 Generating code for _VCSgd_tpBAT
 Generating code for _VCSgd_UfTMx
+Generating code for _VCSgd_mIU96
 Generating code for _VCSgd_KUIDG
 Generating code for _VCSgd_mv96h
-Generating code for _VCSgd_zxvEq
 Generating code for _VCSgd_Fgck4
 recompiling module dff3
 Generating code for _VCSgd_wrGcc
@@ -124,10 +98,11 @@ Generating code for _VCSgd_aWGfp
 Generating code for _VCSgd_xKfGv
 recompiling module dff
 Generating code for _VCSgd_ACtd6
-Generating code for _VCSgd_qncW9
 Generating code for _VCSgd_KE3qb
+Generating code for _VCSgd_TI5Z0
 Generating code for _VCSgd_Qaq0g
 recompiling module dff_retime
+Generating code for _VCSgd_QKkGx
 Generating code for _VCSgd_sE4tC
 recompiling module hash_jtree
 Generating code for _VCSgd_NNwFS
@@ -170,10 +145,10 @@ make[1]: Leaving directory `/home/users/jh99/Desktop/ee271/project-part-1/csrc'
 make[1]: Entering directory `/home/users/jh99/Desktop/ee271/project-part-1/csrc'
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
-gcc  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir   /home/users/jh99/Desktop/ee271/project-part-1/gold/sv_gold.o   objs/amcQw_d.o   _1300021_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libzerosoft_rt_stubs.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvirsim.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/liberrorinf.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsnpsmalloc.so    /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvcsnew.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsimprofile.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libuclinative.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvcsucli.so -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o  _vcs_pli_stub_.o   /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcs_save_restore_new.o /cad/synopsys/verdi/L-2016.06-SP1-1//share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+gcc  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir   /home/users/jh99/Desktop/ee271/project-part-1/gold/sv_gold.o   objs/amcQw_d.o   _173785_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libzerosoft_rt_stubs.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvirsim.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/liberrorinf.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsnpsmalloc.so    /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvcsnew.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsimprofile.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libuclinative.so /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvcsucli.so -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o  _vcs_pli_stub_.o   /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcs_save_restore_new.o /cad/synopsys/verdi/L-2016.06-SP1-1//share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 make[1]: Leaving directory `/home/users/jh99/Desktop/ee271/project-part-1/csrc'
-/afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/bin/vcs: line 28756: 1300250 Segmentation fault      (core dumped) ${TOOL_HOME}/bin/cfs_ident_exec -f ${XML_INPUT_EXE} -o "${fsearchDir}/idents_tapi.xml" -o_SrcFile "${dirSrcFiles}/src_files_c" > tapi_xml_writer.log
+/afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/bin/vcs: line 28756: 176420 Segmentation fault      (core dumped) ${TOOL_HOME}/bin/cfs_ident_exec -f ${XML_INPUT_EXE} -o "${fsearchDir}/idents_tapi.xml" -o_SrcFile "${dirSrcFiles}/src_files_c" > tapi_xml_writer.log
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error
 (standard_in) 1: syntax error

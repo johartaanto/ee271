@@ -183,10 +183,6 @@ module bbox
     // x-coordinate of triangle "vertex a". 
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
-    logic signed [SIGFIG-1:0] box_R10S[1:0][1:0];         // Bounding box coordinates (before rounding).
-    logic signed [SIGFIG-1:0] rounded_box_R10S[1:0][1:0]; // Rounded bounding box coordinates.
-    logic signed [SIGFIG-1:0] out_box_R10S[1:0][1:0];     // Clamped and clipped bounding box.
-    logic outvalid_R10H;                                  // Validity of the output.
 
     always_comb begin
             // Find the minimum and maximum coordinates for x and y.
@@ -219,14 +215,55 @@ module bbox
     // START CODE HERE
     //Assertions to check if all cases are covered and assignments are unique 
     // (already done for you if you use the bbox_sel_R10H select signal as declared)
-    assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
-    assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
-    assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
-    assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
+    // // One-hot selection assertions for bbox_sel_R10H signals
+    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
+    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
+    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
+    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
+
+    // Check that the lower-left x-coordinate matches one of the triangle vertices
+    assert property (@(posedge clk) (box_R10S[0][0] == tri_R10S[0][0] || 
+    box_R10S[0][0] == tri_R10S[1][0] || box_R10S[0][0] == tri_R10S[2][0]));
+
+    // Check that the lower-left y-coordinate matches one of the triangle vertices
+    assert property (@(posedge clk) (box_R10S[0][1] == tri_R10S[0][1] || 
+    box_R10S[0][1] == tri_R10S[1][1] || box_R10S[0][1] == tri_R10S[2][1]));
+
+    // Check that the upper-right x-coordinate matches one of the triangle vertices
+    assert property (@(posedge clk) (box_R10S[1][0] == tri_R10S[0][0] || 
+    box_R10S[1][0] == tri_R10S[1][0] || box_R10S[1][0] == tri_R10S[2][0]));
+
+    // Check that the upper-right y-coordinate matches one of the triangle vertices
+    assert property (@(posedge clk) (box_R10S[1][1] == tri_R10S[0][1] || 
+    box_R10S[1][1] == tri_R10S[1][1] || box_R10S[1][1] == tri_R10S[2][1]));
+
+    // Ensure that lower-left x-coordinate is the minimum x among the triangle vertices
+    assert property (@(posedge clk) (box_R10S[0][0] <= tri_R10S[0][0] && 
+    box_R10S[0][0] <= tri_R10S[1][0] && box_R10S[0][0] <= tri_R10S[2][0]));
+
+    // Ensure that lower-left y-coordinate is the minimum y among the triangle vertices
+    assert property (@(posedge clk) (box_R10S[0][1] <= tri_R10S[0][1] && 
+    box_R10S[0][1] <= tri_R10S[1][1] && box_R10S[0][1] <= tri_R10S[2][1]));
+
+    // Ensure that upper-right x-coordinate is the maximum x among the triangle vertices
+    assert property (@(posedge clk) (box_R10S[1][0] >= tri_R10S[0][0] && 
+    box_R10S[1][0] >= tri_R10S[1][0] && box_R10S[1][0] >= tri_R10S[2][0]));
+
+    // Ensure that upper-right y-coordinate is the maximum y among the triangle vertices
+    assert property (@(posedge clk) (box_R10S[1][1] >= tri_R10S[0][1] && 
+    box_R10S[1][1] >= tri_R10S[1][1] && box_R10S[1][1] >= tri_R10S[2][1]));
 
     //Assertions to check UR is never less than LL
+    assert property (@(posedge clk) (box_R10S[1][0] >= box_R10S[0][0])); // UR X >= LL X
+    assert property (@(posedge clk) (box_R10S[1][1] >= box_R10S[0][1])); // UR Y >= LL Y
+
     // END CODE HERE
 
+    // Valid output assertions
+    assert property (@(posedge clk) (outvalid_R10H |-> 
+        (out_box_R10S[0][0] >= 0 && out_box_R10S[0][1] >= 0 &&
+        out_box_R10S[1][0] <= screen_RnnnnS[0] && out_box_R10S[1][1] <= screen_RnnnnS[1] &&
+        validTri_R10H)));
 
     // ***************** End of Step 1 *********************
 
@@ -272,6 +309,11 @@ endgenerate
     assert property( @(posedge clk) (box_R10S[1][0] - rounded_box_R10S[1][0]) <= {subSample_RnnnnU,7'b0});
     assert property( @(posedge clk) (box_R10S[1][1] - rounded_box_R10S[1][1]) <= {subSample_RnnnnU,7'b0});
 
+    // Subsample alignment assertions
+    assert property (@(posedge clk) (box_R10S[0][0] - rounded_box_R10S[0][0]) <= (1 << (RADIX - 1)));
+    assert property (@(posedge clk) (box_R10S[0][1] - rounded_box_R10S[0][1]) <= (1 << (RADIX - 1)));
+    assert property (@(posedge clk) (box_R10S[1][0] - rounded_box_R10S[1][0]) <= (1 << (RADIX - 1)));
+    assert property (@(posedge clk) (box_R10S[1][1] - rounded_box_R10S[1][1]) <= (1 << (RADIX - 1)));
     // ***************** End of Step 2 *********************
 
 
@@ -299,12 +341,19 @@ endgenerate
         // END CODE HERE
     end
 
-
     //Assertion for checking if outvalid_R10H has been assigned properly
     assert property( @(posedge clk) (outvalid_R10H |-> out_box_R10S[1][0] <= screen_RnnnnS[0] ));
     assert property( @(posedge clk) (outvalid_R10H |-> out_box_R10S[1][1] <= screen_RnnnnS[1] ));
 
+    // Screen space clipping assertions
+    assert property (@(posedge clk) (out_box_R10S[0][0] >= 0));
+    assert property (@(posedge clk) (out_box_R10S[0][1] >= 0));
+    assert property (@(posedge clk) (out_box_R10S[1][0] <= screen_RnnnnS[0]));
+    assert property (@(posedge clk) (out_box_R10S[1][1] <= screen_RnnnnS[1]));
+
     // ***************** End of Step 3 *********************
+
+
 
     dff3 #(
         .WIDTH(SIGFIG),
@@ -443,17 +492,9 @@ endgenerate
     //Check that Lower Left of Bounding Box is less than equal Upper Right
     assert property( rb_lt( rst, box_R13S[0][0], box_R13S[1][0], validTri_R13H ));
     assert property( rb_lt( rst, box_R13S[0][1], box_R13S[1][1], validTri_R13H ));
-    
+
     //Check that Lower Left of Bounding Box is less than equal Upper Right
 
     //Error Checking Assertions
 
 endmodule
-
-
-
-
-
-
-
-

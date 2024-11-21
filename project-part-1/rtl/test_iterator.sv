@@ -280,7 +280,6 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     ////// COMPLETE THE FOLLOW ALWAYS_COMB BLOCK
 
     // Combinational logic for state transitions
-
     always_comb begin
             // START CODE HERE
             // Try using a case statement on state_R14H   
@@ -382,8 +381,8 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     //Check that Proposed Sample is in BBox
 
     //Error Checking Assertions
-end 
-else begin // Use modified FSM
+    end 
+    else begin // Use modified FSM
 
     //////
     //////  RTL code for modified FSM Goes Here
@@ -395,7 +394,7 @@ else begin // Use modified FSM
     //////  RTL code for modified FSM Finishes
     //////
 
-end
+    end
 endgenerate
 
 endmodule

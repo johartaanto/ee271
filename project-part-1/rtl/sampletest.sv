@@ -104,41 +104,6 @@ module sampletest
     // Consider the following steps:
 
     // START CODE HERE
-    // (1) Shift X, Y coordinates such that the fragment resides on the (0,0) position.
-    // (2) Organize edges (form three edges for triangles)
-    // (3) Calculate distance x_1 * y_2 - x_2 * y_1
-    // (4) Check distance and assign hit_valid_R16H.
-
-    // always_comb begin
-    //     // Shift X and Y coordinates relative to the sample point
-    //     for (int i = 0; i < VERTS; i++) begin
-    //         tri_shift_R16S[i][0] = tri_R16S[i][0] - sample_R16S[0]; // Shift X
-    //         tri_shift_R16S[i][1] = tri_R16S[i][1] - sample_R16S[1]; // Shift Y
-    //     end
-
-    //     // Organize edges: Calculate differences for each vertex
-    //     for (int i = 0; i < VERTS; i++) begin
-    //         edge_R16S[i][0][0] = tri_shift_R16S[i][0];                      // X1
-    //         edge_R16S[i][0][1] = tri_shift_R16S[i][1];                      // Y1
-    //         edge_R16S[i][1][0] = tri_shift_R16S[(i+1) % VERTS][0];          // X2
-    //         edge_R16S[i][1][1] = tri_shift_R16S[(i+1) % VERTS][1];          // Y2
-    //     end
-
-    //     // Calculate the determinant for edge equations
-    //     for (int i = 0; i < VERTS; i++) begin
-    //         dist_lg_R16S[i] = edge_R16S[i][0][0] * edge_R16S[i][1][1] -
-    //                           edge_R16S[i][1][0] * edge_R16S[i][0][1];
-    //     end
-
-    //     // Check if all distances satisfy the triangle condition (inside check)
-    //     hit_valid_R16H = validSamp_R16H &&
-    //                      (dist_lg_R16S[0] >= 0) &&
-    //                      (dist_lg_R16S[1] >= 0) &&
-    //                      (dist_lg_R16S[2] >= 0);
-    // end
-    // // END CODE HERE
-
-    // START CODE HERE
     //////// DECLARE OTHER INTERMEDIATE SIGNALS YOU NEED
     logic [EDGES-1:0] edge_chk1_R16;
 
@@ -189,6 +154,28 @@ module sampletest
     //Assertions to help debug
     //Check if correct inequalities have been used
     assert property( @(posedge clk) (dist_lg_R16S[1] == 0) |-> !hit_valid_R16H);
+
+    // Assert that dist_lg_R16S is calculated correctly
+    assert property (@(posedge clk) 
+        (dist_lg_R16S[0] == (edge_R16S[0][0][0] * edge_R16S[0][1][1] - edge_R16S[0][0][1] * edge_R16S[0][1][0])));
+    assert property (@(posedge clk) 
+        (dist_lg_R16S[1] == (edge_R16S[1][0][0] * edge_R16S[1][1][1] - edge_R16S[1][0][1] * edge_R16S[1][0][0])));
+    assert property (@(posedge clk) 
+        (dist_lg_R16S[2] == (edge_R16S[2][0][0] * edge_R16S[2][1][1] - edge_R16S[2][0][1] * edge_R16S[2][1][0])));
+
+    // Assert that hit_valid_R16H is high only if all edges are valid and sample is valid
+    assert property (@(posedge clk) (hit_valid_R16H |-> 
+        (dist_lg_R16S[0] <= 0 && dist_lg_R16S[1] < 0 && dist_lg_R16S[2] <= 0 && validSamp_R16H)));
+
+    // Assert backface culling conditions
+    assert property (@(posedge clk) 
+        (validSamp_R16H && (dist_lg_R16S[1] == 0)) |-> (!hit_valid_R16H));
+
+    // Assert that hit_R16S matches the unjittered sample location
+    assert property (@(posedge clk) (hit_R16S[1:0] == sample_R16S[1:0]));
+
+
+
 
 
 
