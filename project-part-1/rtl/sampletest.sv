@@ -166,14 +166,14 @@ module sampletest
     end //always_comb
 
     // (3) Calculate distance x_1 * y_2 - x_2 * y_1
-generate
-    for(genvar i = 0; i < EDGES; i++) begin
-        always_comb begin
-            dist_lg_R16S[i] = edge_R16S[i][0][0] * edge_R16S[i][1][1]
-                              -  edge_R16S[i][0][1] * edge_R16S[i][1][0];
+    generate
+        for(genvar i = 0; i < EDGES; i++) begin
+            always_comb begin
+                dist_lg_R16S[i] = edge_R16S[i][0][0] * edge_R16S[i][1][1]
+                                -  edge_R16S[i][0][1] * edge_R16S[i][1][0];
+            end
         end
-    end
-endgenerate
+    endgenerate
 
     // (4) Check distance and assign hit_valid_R16H.
     always_comb begin
@@ -183,14 +183,14 @@ endgenerate
     end
 
     assign hit_valid_R16H = &({edge_chk1_R16[2:0], validSamp_R16H}); //Back Face Cull Case
-
-    // END CODE HERE
     
     // END CODE HERE
 
     //Assertions to help debug
     //Check if correct inequalities have been used
     assert property( @(posedge clk) (dist_lg_R16S[1] == 0) |-> !hit_valid_R16H);
+
+
 
     //Calculate Depth as depth of first vertex
     // Note that a barrycentric interpolation would

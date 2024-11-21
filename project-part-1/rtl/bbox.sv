@@ -219,10 +219,10 @@ module bbox
     // START CODE HERE
     //Assertions to check if all cases are covered and assignments are unique 
     // (already done for you if you use the bbox_sel_R10H select signal as declared)
-    //assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
-    //assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
-    //assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
-    //assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
+    assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
+    assert property(@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
+    assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
+    assert property(@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
 
     //Assertions to check UR is never less than LL
     // END CODE HERE
@@ -443,6 +443,7 @@ endgenerate
     //Check that Lower Left of Bounding Box is less than equal Upper Right
     assert property( rb_lt( rst, box_R13S[0][0], box_R13S[1][0], validTri_R13H ));
     assert property( rb_lt( rst, box_R13S[0][1], box_R13S[1][1], validTri_R13H ));
+    
     //Check that Lower Left of Bounding Box is less than equal Upper Right
 
     //Error Checking Assertions
