@@ -349,11 +349,39 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     // 1) A validTri_R13H signal causes a transition from WAIT state to TEST state
     // 2) An end_box_R14H signal causes a transition from TEST state to WAIT state
     // 3) What are you missing?
+    // Assertions for testing FSM logic
 
-    //Your assertions goes here
     // START CODE HERE
     
+    // 1) A validTri_R13H signal causes a transition from WAIT state to TEST state
+    assert property (@(posedge clk) (state_R14H == WAIT_STATE && validTri_R13H) |-> (next_state_R14H == TEST_STATE));
 
+    // 2) An end_box_R14H signal causes a transition from TEST state to WAIT state
+    assert property (@(posedge clk) (state_R14H == TEST_STATE && at_end_box_R14H) |-> (next_state_R14H == WAIT_STATE));
+
+    // 3) Ensure that the FSM stays in the WAIT state if validTri_R13H is not asserted
+    assert property (@(posedge clk) (state_R14H == WAIT_STATE && !validTri_R13H) |-> (next_state_R14H == WAIT_STATE));
+
+    // 4) Ensure that the FSM stays in the TEST state if it is not at the end of the bounding box
+    assert property (@(posedge clk) (state_R14H == TEST_STATE && !at_end_box_R14H) |-> (next_state_R14H == TEST_STATE));
+    //Your assertions goes here
+
+    // Ensure that the FSM only transitions to valid states
+    assert property (@(posedge clk) disable iff (rst) (state_R14H inside {WAIT_STATE, TEST_STATE}));
+
+    // Ensure that the sample coordinates are always within the bounding box
+    assert property (@(posedge clk) disable iff (rst) (next_sample_R14S[0] >= next_box_R14S[0][0] && next_sample_R14S[0] <= next_box_R14S[1][0]));
+    assert property (@(posedge clk) disable iff (rst) (next_sample_R14S[1] >= next_box_R14S[0][1] && next_sample_R14S[1] <= next_box_R14S[1][1]));
+
+    // Ensure that the outputs are valid based on the current state and inputs
+    assert property (@(posedge clk) disable iff (rst) (state_R14H == WAIT_STATE) |-> (next_validSamp_R14H == 1'b0));
+    assert property (@(posedge clk) disable iff (rst) (state_R14H == TEST_STATE) |-> (next_validSamp_R14H == 1'b1));
+
+    // Ensure that the FSM transitions from WAIT_STATE to TEST_STATE when validTri_R13H is asserted
+    assert property (@(posedge clk) disable iff (rst) (state_R14H == WAIT_STATE && validTri_R13H) |-> (next_state_R14H == TEST_STATE));
+
+    // Ensure that the FSM transitions from TEST_STATE to WAIT_STATE when at_end_box_R14H is asserted
+    assert property (@(posedge clk) disable iff (rst) (state_R14H == TEST_STATE && at_end_box_R14H) |-> (next_state_R14H == WAIT_STATE));
     // END CODE HERE
     // Assertion ends
 
@@ -378,9 +406,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     assert property (rb_lt(rst, next_box_R14S[0][0], next_sample_R14S[0], validTri_R13H));
     assert property (rb_lt(rst, next_box_R14S[0][1], next_sample_R14S[1], validTri_R13H));
     // END CODE HERE
-    //Check that Proposed Sample is in BBox
 
-    //Error Checking Assertions
     end 
     else begin // Use modified FSM
 

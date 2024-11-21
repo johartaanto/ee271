@@ -1,7 +1,7 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/home/users/jh99/Desktop/ee271/project-part-1
+COMPILE_PATH=/home/users/eugenecm/ee271/project-part-1
 SystemC=FALSE
 UUM=FALSE
 KDB=FALSE

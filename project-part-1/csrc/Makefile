@@ -38,8 +38,9 @@ LD=gcc
 # Strip Flags for target product
 STRIPFLAGS= 
 
-PRE_LDFLAGS= # Loader Flags
-LDFLAGS= 
+PRE_LDFLAGS= -Wl,--no-as-needed 
+# Loader Flags
+LDFLAGS=-L/usr/lib/x86_64-linux-gnu -L/lib/x86_64-linux-gnu -Wl,--no-as-needed 
 # Picarchive Flags
 PICLDFLAGS=-Wl,-rpath-link=./ -Wl,-rpath='$$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$$ORIGIN'/simv.daidir//scsim.db.dir 
 
