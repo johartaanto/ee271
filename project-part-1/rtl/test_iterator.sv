@@ -251,26 +251,30 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     logic signed [SIGFIG-1:0] sample_step;
     // understanding the signals here
+
+    // Calculate the separation between samples
     assign sample_step = {{(SIGFIG-RADIX-1){1'b0}},{subSample_RnnnnU},{(RADIX-3){1'b0}}};
 
     always_comb begin 
         // START CODE HERE
-        next_up_samp_R14S[0] = box_R14S[0][0];
-        
-        next_up_samp_R14S[1] = sample_R14S[1] + sample_step;
+        // Calculate the next sample if we need to move up
+        next_up_samp_R14S[0] = box_R14S[0][0]; // Reset X to the left edge
+        next_up_samp_R14S[1] = sample_R14S[1] + sample_step; // Move Y up by one sample step
 
-        next_rt_samp_R14S[0] = sample_R14S[0] + sample_step;
+        // Calculate the next sample if we need to move right
+        next_rt_samp_R14S[0] = sample_R14S[0] + sample_step; // Move X right by one sample step
+        next_rt_samp_R14S[1] = sample_R14S[1]; // Y stays the same
 
-        next_rt_samp_R14S[1] = sample_R14S[1];
-
+        // Check if the current sample is at the top edge 
         at_top_edg_R14H = (sample_R14S[1] == box_R14S[1][1]);
 
+        // Check if the current sample is at the right edge
         at_right_edg_R14H = (sample_R14S[0] == box_R14S[1][0]);
 
+        // Check if the current sample is at the top-right
         at_end_box_R14H = at_right_edg_R14H && at_top_edg_R14H;
         // END CODE HERE
     end
-
 
     //////
     ////// Then complete the following combinational logic defining the
@@ -286,8 +290,9 @@ if(MOD_FSM == 0) begin // Using baseline FSM
             case(state_R14H)
                 WAIT_STATE: begin
                     (* parallel_case *)
-                    case(validTri_R13H)
+                    case(validTri_R13H) // Check if a valid triangle is present
                         1'b1: begin
+                            // If valid triangle is present, initialize next states
                             next_tri_R14S = tri_R13S;
                             next_color_R14U = color_R13U;
                             next_sample_R14S = box_R13S[0];
@@ -297,6 +302,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                             next_state_R14H  = TEST_STATE;
                         end
                         default: begin
+                            // If no valid triangle, remain in WAIT_STATE
                             next_tri_R14S = tri_R13S;
                             next_color_R14U = color_R13U;
                             next_sample_R14S = box_R13S[0];
@@ -307,9 +313,10 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                         end
                     endcase 
                 end
-                TEST_STATE:begin // check: why not checking the valid_triangle
-                    case({at_end_box_R14H,at_right_edg_R14H,at_top_edg_R14H})
+                TEST_STATE: begin 
+                    case({at_end_box_R14H, at_right_edg_R14H, at_top_edg_R14H})
                         3'b111: begin
+                            // If at the end of the bounding box, transition to WAIT_STATE
                             next_tri_R14S = tri_R13S;
                             next_color_R14U = color_R13U;
                             next_sample_R14S = box_R13S[0];
@@ -319,6 +326,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                             next_state_R14H  = WAIT_STATE;
                         end
                         3'b010: begin
+                            // If at the right edge, move up to the next row
                             next_tri_R14S = tri_R14S;
                             next_color_R14U = color_R14U;
                             next_sample_R14S = next_up_samp_R14S;
@@ -328,6 +336,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
                             next_state_R14H  = TEST_STATE; 
                         end
                         default: begin
+                            // Otherwise, move right to the next sample
                             next_tri_R14S = tri_R14S;
                             next_color_R14U = color_R14U;
                             next_sample_R14S = next_rt_samp_R14S; 
@@ -352,7 +361,20 @@ if(MOD_FSM == 0) begin // Using baseline FSM
 
     //Your assertions goes here
     // START CODE HERE
-    
+    // 1) A validTri_R13H signal causes a transition from WAIT state to TEST state
+    assert property (@(posedge clk) (state_R14H == WAIT_STATE && validTri_R13H) |-> (next_state_R14H == TEST_STATE));
+
+    // 2) An end_box_R14H signal causes a transition from TEST state to WAIT state
+    assert property (@(posedge clk) (state_R14H == TEST_STATE && at_end_box_R14H) |-> (next_state_R14H == WAIT_STATE));
+
+    // 3) Ensure that the FSM stays in the WAIT state if validTri_R13H is not asserted
+    assert property (@(posedge clk) (state_R14H == WAIT_STATE && !validTri_R13H) |-> (next_state_R14H == WAIT_STATE));
+
+    // 4) Ensure that the FSM stays in the TEST state if it is not at the end of the bounding box
+    assert property (@(posedge clk) (state_R14H == TEST_STATE && !at_end_box_R14H) |-> (next_state_R14H == TEST_STATE));
+
+    // Ensure that the FSM only transitions to valid states
+    assert property (@(posedge clk) disable iff (rst) (state_R14H inside {WAIT_STATE, TEST_STATE}));
 
     // END CODE HERE
     // Assertion ends
@@ -364,6 +386,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     //Some Error Checking Assertions
     assert property (@(posedge clk) (state_R14H == WAIT_STATE && validTri_R13H) |-> (next_state_R14H == TEST_STATE));
     assert property (@(posedge clk) (state_R14H == TEST_STATE && at_end_box_R14H) |-> (next_state_R14H == WAIT_STATE));
+    
     //Define a Less Than Property
     //
     //  a should be less than b
@@ -378,9 +401,7 @@ if(MOD_FSM == 0) begin // Using baseline FSM
     assert property (rb_lt(rst, next_box_R14S[0][0], next_sample_R14S[0], validTri_R13H));
     assert property (rb_lt(rst, next_box_R14S[0][1], next_sample_R14S[1], validTri_R13H));
     // END CODE HERE
-    //Check that Proposed Sample is in BBox
 
-    //Error Checking Assertions
     end 
     else begin // Use modified FSM
 

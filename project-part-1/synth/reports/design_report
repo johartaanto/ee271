@@ -1,28 +1,11 @@
-Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
-Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
-Warning:  File /home/users/jh99/Desktop/ee271/project-part-1/synth/RAST/bbox-verilog.pvl not found, or does not contain a usable description of bbox. (ELAB-320)
-Error:  Module 'bbox' cannot be found for elaboration. (ELAB-357)
-*** Presto compilation terminated with 1 errors. ***
-Information: Building the design 'bbox' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
-Information: Building the design 'test_iterator' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
-Warning: Cannot find the design 'test_iterator' in the library 'WORK'. (LBR-1)
-Information: Building the design 'hash_jtree' instantiated from design 'rast' with
-	the parameters "SIGFIG=24,RADIX=10,VERTS=3,AXIS=3,COLORS=3,PIPE_DEPTH=7". (HDL-193)
-Warning: Cannot find the design 'hash_jtree' in the library 'WORK'. (LBR-1)
-Warning: Unable to resolve reference 'bbox' in 'rast'. (LINK-5)
-Warning: Unable to resolve reference 'test_iterator' in 'rast'. (LINK-5)
-Warning: Unable to resolve reference 'hash_jtree' in 'rast'. (LINK-5)
 Information: Updating design information... (UID-85)
-Warning: Design 'rast' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Design 'rast' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : design
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 22:15:42 2024
+Date   : Thu Nov 21 20:54:45 2024
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -95,11 +78,9 @@ Disabled Timing Arcs:
 
 Required Licenses:
 
-    None Required
+    DesignWare
 
 Design Parameters:
 
     None specified.
-
-Information: This design contains black box (unknown) components. (RPT-8)
 1

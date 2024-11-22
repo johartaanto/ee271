@@ -1,3 +1,4 @@
+
 #include "rasterizer.h"
 #include <stdlib.h>
 
@@ -14,7 +15,7 @@
 int min(int a, int b)
 {
   // START CODE HERE
-  return (a<b) ? a:b;
+  return (a < b) ? a : b;
   // END CODE HERE
 }
 
@@ -25,7 +26,7 @@ int min(int a, int b)
 int max(int a, int b)
 {
   // START CODE HERE
-  return (a>b) ? a:b;
+  return (a > b) ? a : b;
   // END CODE HERE
 }
 
@@ -36,8 +37,7 @@ int max(int a, int b)
 int floor_ss(int val, int r_shift, int ss_w_lg2)
 {
   // START CODE HERE
-  int mask = ~((1 << (r_shift - ss_w_lg2)) - 1);
-  return val & mask;
+  return (val >> (r_shift - ss_w_lg2)) << (r_shift - ss_w_lg2);
   // END CODE HERE
 }
 
@@ -51,21 +51,35 @@ BoundingBox get_bounding_box(Triangle triangle, Screen screen, Config config)
   BoundingBox bbox;
 
   // START CODE HERE
-    // Calculate clamped bounding box for the triangle vertices, rounding down to subsample grid
-    bbox.lower_left.x = floor_ss(min(triangle.v[0].x, min(triangle.v[1].x, triangle.v[2].x)), config.r_shift, config.ss_w_lg2);
-    bbox.upper_right.x = floor_ss(max(triangle.v[0].x, max(triangle.v[1].x, triangle.v[2].x)), config.r_shift, config.ss_w_lg2);
-    bbox.lower_left.y = floor_ss(min(triangle.v[0].y, min(triangle.v[1].y, triangle.v[2].y)), config.r_shift, config.ss_w_lg2);
-    bbox.upper_right.y = floor_ss(max(triangle.v[0].y, max(triangle.v[1].y, triangle.v[2].y)), config.r_shift, config.ss_w_lg2);
+  // initialize bounding box to first vertex
+  bbox.lower_left.x = triangle.v[0].x;
+  bbox.lower_left.y = triangle.v[0].y;
+  bbox.upper_right.x = triangle.v[0].x;
+  bbox.upper_right.y = triangle.v[0].y;
 
-    // Clip bounding box to visible screen space
-    bbox.lower_left.x = max(bbox.lower_left.x, 0);
-    bbox.lower_left.y = max(bbox.lower_left.y, 0);
-    bbox.upper_right.x = min(bbox.upper_right.x, screen.width);
-    bbox.upper_right.y = min(bbox.upper_right.y, screen.height);
+  // iterate over remaining vertices
+  for (int vertex = 1; vertex < 3; vertex++)
+  {
+    bbox.upper_right.x = max(bbox.upper_right.x, triangle.v[vertex].x);
+    bbox.upper_right.y = max(bbox.upper_right.y, triangle.v[vertex].y);
+    bbox.lower_left.x = min(bbox.lower_left.x, triangle.v[vertex].x);
+    bbox.lower_left.y = min(bbox.lower_left.y, triangle.v[vertex].y);
+  }
 
-    // Check if bounding box is valid (i.e., lower-left is not greater than upper-right)
-    bbox.valid = (bbox.lower_left.x <= bbox.upper_right.x) && (bbox.lower_left.y <= bbox.upper_right.y);
+  // round down to subsample grid
+  bbox.upper_right.x = floor_ss(bbox.upper_right.x, config.r_shift, config.ss_w_lg2);
+  bbox.upper_right.y = floor_ss(bbox.upper_right.y, config.r_shift, config.ss_w_lg2);
+  bbox.lower_left.x = floor_ss(bbox.lower_left.x, config.r_shift, config.ss_w_lg2);
+  bbox.lower_left.y = floor_ss(bbox.lower_left.y, config.r_shift, config.ss_w_lg2);
 
+  // clip to screen
+  bbox.upper_right.x = min(bbox.upper_right.x, screen.width);
+  bbox.upper_right.y = min(bbox.upper_right.y, screen.height);
+  bbox.lower_left.x = max(bbox.lower_left.x, 0);
+  bbox.lower_left.y = max(bbox.lower_left.y, 0);
+
+  // check if bbox is valid
+  bbox.valid = (bbox.upper_right.x >= 0) && (bbox.upper_right.y >= 0) && (bbox.lower_left.x < screen.width ) && (bbox.lower_left.y < screen.height);  
   // END CODE HERE
   return bbox;
 }
@@ -81,22 +95,27 @@ bool sample_test(Triangle triangle, Sample sample)
   bool isHit;
 
   // START CODE HERE
-  int v0_x = triangle.v[0].x - sample.x;
-  int v0_y = triangle.v[0].y - sample.y;
-  int v1_x = triangle.v[1].x - sample.x;
-  int v1_y = triangle.v[1].y - sample.y;
-  int v2_x = triangle.v[2].x - sample.x;
-  int v2_y = triangle.v[2].y - sample.y;
-  
-  int dist0 = v0_x * v1_y - v1_x * v0_y;
-  int dist1 = v1_x * v2_y - v2_x * v1_y;
-  int dist2 = v2_x * v0_y - v0_x * v2_y;
-  
-  bool b0 = dist0 <= 0.0;
-  bool b1 = dist1 < 0.0;
-  bool b2 = dist2 <= 0.0;
-  
-  isHit = b0 && b1 && b2;
+  Triangle shifted_triangle;
+  for (int vertex = 0; vertex < 3; vertex++)
+  { // iterate over vertices
+    shifted_triangle.v[vertex].x = triangle.v[vertex].x - sample.x;
+    shifted_triangle.v[vertex].y = triangle.v[vertex].y - sample.y;
+  }
+
+  int distances[3];
+  distances[0] = (shifted_triangle.v[0].x * shifted_triangle.v[1].y) -
+                 (shifted_triangle.v[1].x * shifted_triangle.v[0].y);
+  distances[1] = (shifted_triangle.v[1].x * shifted_triangle.v[2].y) -
+                 (shifted_triangle.v[2].x * shifted_triangle.v[1].y);
+  distances[2] = (shifted_triangle.v[2].x * shifted_triangle.v[0].y) -
+                 (shifted_triangle.v[0].x * shifted_triangle.v[2].y);
+
+  bool tests[3];
+  tests[0] = distances[0] <= 0.0;
+  tests[1] = distances[1] < 0.0;
+  tests[2] = distances[2] <= 0.0;
+
+  isHit = tests[0] && tests[1] && tests[2];
   // END CODE HERE
 
   return isHit;

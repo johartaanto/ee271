@@ -1,14 +1,13 @@
 Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
 Warning: Design has unannotated primary inputs. (PWR-414)
 Warning: Design has unannotated sequential cell outputs. (PWR-415)
-Warning: Design has unannotated black box outputs. (PWR-428)
  
 ****************************************
 Report : power
         -analysis_effort high
 Design : rast
 Version: M-2016.12-SP2
-Date   : Tue Nov 19 22:15:47 2024
+Date   : Thu Nov 21 20:54:50 2024
 ****************************************
 
 
@@ -34,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  29.0781 mW   (78%)
-  Net Switching Power  =   8.2967 mW   (22%)
+  Cell Internal Power  =  18.4935 mW   (79%)
+  Net Switching Power  =   4.9805 mW   (21%)
                          ---------
-Total Dynamic Power    =  37.3748 mW  (100%)
+Total Dynamic Power    =  23.4740 mW  (100%)
 
-Cell Leakage Power     = 646.4893 uW
+Cell Leakage Power     = 752.0119 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,10 +47,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network    419.6509        2.0117e+03        6.1522e+04        2.4928e+03  (   6.56%)
-register       2.4523e+04        2.5384e+03        3.0446e+05        2.7366e+04  (  71.98%)
-sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  4.1353e+03        3.7467e+03        2.8051e+05        8.1624e+03  (  21.47%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.4352e+04          286.9081        2.1192e+05        1.4851e+04  (  61.30%)
+sequential         6.4043            0.7506          461.6531            7.6166  (   0.03%)
+combinational  4.1354e+03        4.6928e+03        5.3963e+05        9.3678e+03  (  38.67%)
 --------------------------------------------------------------------------------------------------
-Total          2.9078e+04 uW     8.2968e+03 uW     6.4649e+05 nW     3.8021e+04 uW
+Total          1.8493e+04 uW     4.9805e+03 uW     7.5201e+05 nW     2.4226e+04 uW
 1

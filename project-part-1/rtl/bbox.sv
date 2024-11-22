@@ -183,29 +183,62 @@ module bbox
     // x-coordinate of triangle "vertex a". 
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
+    logic [1:0][2:0]        ineq_R10H ;             // Inequalities Results
+    logic [1:0][1:0]        clamp_R10H;                  // signal require clamping
+    logic [1:0][1:0]        invalidate_R10H;             // tri out of bounds
 
+    //Try declaring an always_comb block to assign values to box_R10S
     always_comb begin
-            // Find the minimum and maximum coordinates for x and y.
-            box_R10S[0][0] = (tri_R10S[0][0] < tri_R10S[1][0]) ?
-                            (tri_R10S[0][0] < tri_R10S[2][0] ? tri_R10S[0][0] : tri_R10S[2][0]) :
-                            (tri_R10S[1][0] < tri_R10S[2][0] ? tri_R10S[1][0] : tri_R10S[2][0]);
+        //////// ASSIGN VALUES TO "box_R10S"
 
-            box_R10S[1][0] = (tri_R10S[0][0] > tri_R10S[1][0]) ?
-                            (tri_R10S[0][0] > tri_R10S[2][0] ? tri_R10S[0][0] : tri_R10S[2][0]) :
-                            (tri_R10S[1][0] > tri_R10S[2][0] ? tri_R10S[1][0] : tri_R10S[2][0]);
+        //Compare X vertices of triangles
+        ineq_R10H[0][0] =  tri_R10S[0][0] <  tri_R10S[1][0];
+        ineq_R10H[0][1] =  tri_R10S[0][0] <  tri_R10S[2][0];
+        ineq_R10H[0][2] =  tri_R10S[1][0] <  tri_R10S[2][0];
+        //ineq_R10H[0][3:3] = 3'b0;
 
-            box_R10S[0][1] = (tri_R10S[0][1] < tri_R10S[1][1]) ?
-                            (tri_R10S[0][1] < tri_R10S[2][1] ? tri_R10S[0][1] : tri_R10S[2][1]) :
-                            (tri_R10S[1][1] < tri_R10S[2][1] ? tri_R10S[1][1] : tri_R10S[2][1]);
+        //Compare Y vertices of triangles
+        ineq_R10H[1][0] =  tri_R10S[0][1] <  tri_R10S[1][1];
+        ineq_R10H[1][1] =  tri_R10S[0][1] <  tri_R10S[2][1];
+        ineq_R10H[1][2] =  tri_R10S[1][1] <  tri_R10S[2][1];
+        //ineq_R10H[1][3:3] = 3'b0;
 
-            box_R10S[1][1] = (tri_R10S[0][1] > tri_R10S[1][1]) ?
-                            (tri_R10S[0][1] > tri_R10S[2][1] ? tri_R10S[0][1] : tri_R10S[2][1]) :
-                            (tri_R10S[1][1] > tri_R10S[2][1] ? tri_R10S[1][1] : tri_R10S[2][1]);
-        end
-// END CODE HERE
+        //Setting the X Select Variable
+        bbox_sel_R10H[0][0][0] =  ineq_R10H[0][0] &&  ineq_R10H[0][1];
+        bbox_sel_R10H[0][0][1] = !ineq_R10H[0][0] &&  ineq_R10H[0][2];
+        bbox_sel_R10H[0][0][2] = !ineq_R10H[0][1] && !ineq_R10H[0][2];
+        bbox_sel_R10H[1][0][0] = !ineq_R10H[0][0] && !ineq_R10H[0][1];
+        bbox_sel_R10H[1][0][1] =  ineq_R10H[0][0] && !ineq_R10H[0][2];
+        bbox_sel_R10H[1][0][2] =  ineq_R10H[0][1] &&  ineq_R10H[0][2];
 
-    // Try declaring an always_comb block to assign values to box_R10S
-    // END CODE HERE
+        //Setting the Y Select Variable
+        bbox_sel_R10H[0][1][0] =  ineq_R10H[1][0] &&  ineq_R10H[1][1];
+        bbox_sel_R10H[0][1][1] = !ineq_R10H[1][0] &&  ineq_R10H[1][2];
+        bbox_sel_R10H[0][1][2] = !ineq_R10H[1][1] && !ineq_R10H[1][2];
+        bbox_sel_R10H[1][1][0] = !ineq_R10H[1][0] && !ineq_R10H[1][1];
+        bbox_sel_R10H[1][1][1] =  ineq_R10H[1][0] && !ineq_R10H[1][2];
+        bbox_sel_R10H[1][1][2] =  ineq_R10H[1][1] &&  ineq_R10H[1][2];
+
+        // Assign LL X
+        if (bbox_sel_R10H[0][0][0]) box_R10S[0][0] = tri_R10S[0][0];
+        if (bbox_sel_R10H[0][0][1]) box_R10S[0][0] = tri_R10S[1][0];
+        if (bbox_sel_R10H[0][0][2]) box_R10S[0][0] = tri_R10S[2][0];
+
+        // Assign LL Y
+        if (bbox_sel_R10H[0][1][0]) box_R10S[0][1] = tri_R10S[0][1];
+        if (bbox_sel_R10H[0][1][1]) box_R10S[0][1] = tri_R10S[1][1];
+        if (bbox_sel_R10H[0][1][2]) box_R10S[0][1] = tri_R10S[2][1];
+
+        // Assign UR X
+        if (bbox_sel_R10H[1][0][0]) box_R10S[1][0] = tri_R10S[0][0];
+        if (bbox_sel_R10H[1][0][1]) box_R10S[1][0] = tri_R10S[1][0];
+        if (bbox_sel_R10H[1][0][2]) box_R10S[1][0] = tri_R10S[2][0];
+
+        // Assign UR Y
+        if (bbox_sel_R10H[1][1][0]) box_R10S[1][1] = tri_R10S[0][1];
+        if (bbox_sel_R10H[1][1][1]) box_R10S[1][1] = tri_R10S[1][1];
+        if (bbox_sel_R10H[1][1][2]) box_R10S[1][1] = tri_R10S[2][1];
+    end
 
     // Assertions to check if box_R10S is assigned properly
     // We want to check the following properties:
@@ -215,41 +248,41 @@ module bbox
     // START CODE HERE
     //Assertions to check if all cases are covered and assignments are unique 
     // (already done for you if you use the bbox_sel_R10H select signal as declared)
-    // // One-hot selection assertions for bbox_sel_R10H signals
-    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
-    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
-    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
-    // assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
+    // One-hot selection assertions for bbox_sel_R10H signals
+    assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][0]));
+    assert property (@(posedge clk) $onehot(bbox_sel_R10H[0][1]));
+    assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][0]));
+    assert property (@(posedge clk) $onehot(bbox_sel_R10H[1][1]));
 
-    // Check that the lower-left x-coordinate matches one of the triangle vertices
+    // Check that LL X is a vertice of the triangle
     assert property (@(posedge clk) (box_R10S[0][0] == tri_R10S[0][0] || 
     box_R10S[0][0] == tri_R10S[1][0] || box_R10S[0][0] == tri_R10S[2][0]));
 
-    // Check that the lower-left y-coordinate matches one of the triangle vertices
+    // Check that LL Y is a vertice of the triangle
     assert property (@(posedge clk) (box_R10S[0][1] == tri_R10S[0][1] || 
     box_R10S[0][1] == tri_R10S[1][1] || box_R10S[0][1] == tri_R10S[2][1]));
 
-    // Check that the upper-right x-coordinate matches one of the triangle vertices
+    // Check that UR x is a vertice of the triangle
     assert property (@(posedge clk) (box_R10S[1][0] == tri_R10S[0][0] || 
     box_R10S[1][0] == tri_R10S[1][0] || box_R10S[1][0] == tri_R10S[2][0]));
 
-    // Check that the upper-right y-coordinate matches one of the triangle vertices
+    // Check that UR Y is a vertice of the triangle
     assert property (@(posedge clk) (box_R10S[1][1] == tri_R10S[0][1] || 
     box_R10S[1][1] == tri_R10S[1][1] || box_R10S[1][1] == tri_R10S[2][1]));
 
-    // Ensure that lower-left x-coordinate is the minimum x among the triangle vertices
+    // Ensure that LL X is the min
     assert property (@(posedge clk) (box_R10S[0][0] <= tri_R10S[0][0] && 
     box_R10S[0][0] <= tri_R10S[1][0] && box_R10S[0][0] <= tri_R10S[2][0]));
 
-    // Ensure that lower-left y-coordinate is the minimum y among the triangle vertices
+    // Ensure that LL Y is the min
     assert property (@(posedge clk) (box_R10S[0][1] <= tri_R10S[0][1] && 
     box_R10S[0][1] <= tri_R10S[1][1] && box_R10S[0][1] <= tri_R10S[2][1]));
 
-    // Ensure that upper-right x-coordinate is the maximum x among the triangle vertices
+    // Ensure that UR X is the max
     assert property (@(posedge clk) (box_R10S[1][0] >= tri_R10S[0][0] && 
     box_R10S[1][0] >= tri_R10S[1][0] && box_R10S[1][0] >= tri_R10S[2][0]));
 
-    // Ensure that upper-right y-coordinate is the maximum y among the triangle vertices
+    // Ensure that UR Y is the max
     assert property (@(posedge clk) (box_R10S[1][1] >= tri_R10S[0][1] && 
     box_R10S[1][1] >= tri_R10S[1][1] && box_R10S[1][1] >= tri_R10S[2][1]));
 
@@ -257,9 +290,9 @@ module bbox
     assert property (@(posedge clk) (box_R10S[1][0] >= box_R10S[0][0])); // UR X >= LL X
     assert property (@(posedge clk) (box_R10S[1][1] >= box_R10S[0][1])); // UR Y >= LL Y
 
-    // END CODE HERE
+    // // END CODE HERE
 
-    // Valid output assertions
+    // // Valid output assertions
     assert property (@(posedge clk) (outvalid_R10H |-> 
         (out_box_R10S[0][0] >= 0 && out_box_R10S[0][1] >= 0 &&
         out_box_R10S[1][0] <= screen_RnnnnS[0] && out_box_R10S[1][1] <= screen_RnnnnS[1] &&
@@ -352,8 +385,6 @@ endgenerate
     assert property (@(posedge clk) (out_box_R10S[1][1] <= screen_RnnnnS[1]));
 
     // ***************** End of Step 3 *********************
-
-
 
     dff3 #(
         .WIDTH(SIGFIG),
@@ -492,9 +523,5 @@ endgenerate
     //Check that Lower Left of Bounding Box is less than equal Upper Right
     assert property( rb_lt( rst, box_R13S[0][0], box_R13S[1][0], validTri_R13H ));
     assert property( rb_lt( rst, box_R13S[0][1], box_R13S[1][1], validTri_R13H ));
-
-    //Check that Lower Left of Bounding Box is less than equal Upper Right
-
-    //Error Checking Assertions
 
 endmodule

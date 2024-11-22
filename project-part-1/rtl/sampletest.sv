@@ -152,32 +152,28 @@ module sampletest
     // END CODE HERE
 
     //Assertions to help debug
-    //Check if correct inequalities have been used
-    assert property( @(posedge clk) (dist_lg_R16S[1] == 0) |-> !hit_valid_R16H);
 
-    // Assert that dist_lg_R16S is calculated correctly
+    // Check if correct inequalities have been used in backface culling
+    assert property (@(posedge clk) (dist_lg_R16S[1] == 0) |-> !hit_valid_R16H);
+
+    //Check that dist_lg_R16S is calculated correctly for each edge
     assert property (@(posedge clk) 
         (dist_lg_R16S[0] == (edge_R16S[0][0][0] * edge_R16S[0][1][1] - edge_R16S[0][0][1] * edge_R16S[0][1][0])));
     assert property (@(posedge clk) 
-        (dist_lg_R16S[1] == (edge_R16S[1][0][0] * edge_R16S[1][1][1] - edge_R16S[1][0][1] * edge_R16S[1][0][0])));
+        (dist_lg_R16S[1] == (edge_R16S[1][0][0] * edge_R16S[1][1][1] - edge_R16S[1][0][1] * edge_R16S[1][1][0])));
     assert property (@(posedge clk) 
         (dist_lg_R16S[2] == (edge_R16S[2][0][0] * edge_R16S[2][1][1] - edge_R16S[2][0][1] * edge_R16S[2][1][0])));
 
-    // Assert that hit_valid_R16H is high only if all edges are valid and sample is valid
+    //Check that hit_valid_R16H is high only if all edges are valid and sample is valid
     assert property (@(posedge clk) (hit_valid_R16H |-> 
         (dist_lg_R16S[0] <= 0 && dist_lg_R16S[1] < 0 && dist_lg_R16S[2] <= 0 && validSamp_R16H)));
 
-    // Assert backface culling conditions
+    //Check that hit_valid_R16H is false when an edge equals zero
     assert property (@(posedge clk) 
         (validSamp_R16H && (dist_lg_R16S[1] == 0)) |-> (!hit_valid_R16H));
 
-    // Assert that hit_R16S matches the unjittered sample location
+    //Check that hit_R16S matches the sample location
     assert property (@(posedge clk) (hit_R16S[1:0] == sample_R16S[1:0]));
-
-
-
-
-
 
     //Calculate Depth as depth of first vertex
     // Note that a barrycentric interpolation would
