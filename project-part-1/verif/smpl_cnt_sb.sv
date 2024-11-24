@@ -123,43 +123,28 @@ module smpl_cnt_sb
     // Call the DPI function that checks that the hash produces the correct jittered samples
     // Should only be called if reset is not asserted
     // START CODE HERE
-    // always @( posedge clk ) begin
-    //     #10;
-    //     if( !rst ) begin
-    //         if( one != check_hash(
-    //             int'(s_x_RnnS),     // Screen X
-    //             int'(s_y_RnnS),     // Screen Y
-    //             ss_w_lg2,           // Subsample
-    //             int'(jitter_x_RnnS),// Jitter X
-    //             int'(jitter_y_RnnS),// Jitter Y
-    //             int'(s_j_x_RnnS),   // Jittered X
-    //             int'(s_j_y_RnnS)    // Jittered Y
-    //         )) begin
-    //             $display("Error: Hash function failed");
-    //             $finish();
-    //         end
-    //     end
-    // end
+
+    always @(posedge clk) begin
+        #10;
+        if (reset_to_zero && validSamp_RnnH) begin
+            if (one != check_hash(
+                    int'(s_x_RnnS),   
+                    int'(s_y_RnnS),   
+                    ss_w_lg2,   
+                    int'(jitter_x_RnnS),   
+                    int'(jitter_y_RnnS),   
+                    int'(s_j_x_RnnS),   
+                    int'(s_j_y_RnnS)
+                )) begin
+                $error("Hash Error");
+                $finish();
+                end
+        end
+    end
+
     // END CODE HERE
 
-    always_ff @(posedge clk) begin
-        if(!rst && validSamp_RnnH) begin
-            int result;
 
-            result = check_hash(
-                int'(s_x_RnnS),     // Screen X
-                int'(s_y_RnnS),     // Screen Y
-                ss_w_lg2,           // Subsample
-                int'(jitter_x_RnnS),// Jitter X
-                int'(jitter_y_RnnS),// Jitter Y
-                int'(s_j_x_RnnS),   // Jittered X
-                int'(s_j_y_RnnS)    // Jittered Y
-            );
-        if (result == 0) begin
-            $display("Error: Hash function failed");
-            $finish();
-        end
-        end
     //Check that the Number of Hits is Correct
     always @( posedge clk ) begin
         #10;

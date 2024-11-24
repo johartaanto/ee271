@@ -107,7 +107,7 @@ module sampletest
     //////// DECLARE OTHER INTERMEDIATE SIGNALS YOU NEED
     logic [EDGES-1:0] edge_chk1_R16;
 
-    // (1) Shift X, Y coordinates such that the fragment resides on the (0,0) position.
+    // (1) Shift X, Y coordinates such that the fragment resides on the (0,0) position
     generate
         for(genvar i = 0; i < VERTS; i = i + 1) begin
             for(genvar j = 0; j < 2; j = j + 1) begin
@@ -120,15 +120,16 @@ module sampletest
 
     // (2) Organize edges (form three edges for triangles)
     always_comb begin
-        edge_R16S[0][1] = tri_shift_R16S[1];
         edge_R16S[0][0] = tri_shift_R16S[0];
-
-        edge_R16S[1][1] = tri_shift_R16S[2];
+        edge_R16S[0][1] = tri_shift_R16S[1];
+        
         edge_R16S[1][0] = tri_shift_R16S[1];
+        edge_R16S[1][1] = tri_shift_R16S[2];
+        
 
-        edge_R16S[2][1] = tri_shift_R16S[0];
         edge_R16S[2][0] = tri_shift_R16S[2];
-    end //always_comb
+        edge_R16S[2][1] = tri_shift_R16S[0];
+    end 
 
     // (3) Calculate distance x_1 * y_2 - x_2 * y_1
     generate
@@ -147,7 +148,7 @@ module sampletest
         edge_chk1_R16[2] =  dist_lg_R16S[2]  <=  0 ;
     end
 
-    assign hit_valid_R16H = &({edge_chk1_R16[2:0], validSamp_R16H}); //Back Face Cull Case
+    assign hit_valid_R16H = &({edge_chk1_R16[2:0], validSamp_R16H}); 
     
     // END CODE HERE
 

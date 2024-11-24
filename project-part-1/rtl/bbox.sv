@@ -184,60 +184,68 @@ module bbox
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
     logic [1:0][2:0]        ineq_R10H ;             // Inequalities Results
-    logic [1:0][1:0]        clamp_R10H;                  // signal require clamping
-    logic [1:0][1:0]        invalidate_R10H;             // tri out of bounds
 
     //Try declaring an always_comb block to assign values to box_R10S
+        
     always_comb begin
-        //////// ASSIGN VALUES TO "box_R10S"
+        
+        //Comparing X values
+        ineq_R10H[0][0] = tri_R10S[0][0] < tri_R10S[1][0];
+        ineq_R10H[0][1] = tri_R10S[0][0] < tri_R10S[2][0];
+        ineq_R10H[0][2] = tri_R10S[1][0] < tri_R10S[2][0];
 
-        //Compare X vertices of triangles
-        ineq_R10H[0][0] =  tri_R10S[0][0] <  tri_R10S[1][0];
-        ineq_R10H[0][1] =  tri_R10S[0][0] <  tri_R10S[2][0];
-        ineq_R10H[0][2] =  tri_R10S[1][0] <  tri_R10S[2][0];
-        //ineq_R10H[0][3:3] = 3'b0;
-
-        //Compare Y vertices of triangles
-        ineq_R10H[1][0] =  tri_R10S[0][1] <  tri_R10S[1][1];
-        ineq_R10H[1][1] =  tri_R10S[0][1] <  tri_R10S[2][1];
-        ineq_R10H[1][2] =  tri_R10S[1][1] <  tri_R10S[2][1];
-        //ineq_R10H[1][3:3] = 3'b0;
+        //Comparing Y values
+        ineq_R10H[1][0] = tri_R10S[0][1] < tri_R10S[1][1];
+        ineq_R10H[1][1] = tri_R10S[0][1] < tri_R10S[2][1];
+        ineq_R10H[1][2] = tri_R10S[1][1] < tri_R10S[2][1];
 
         //Setting the X Select Variable
-        bbox_sel_R10H[0][0][0] =  ineq_R10H[0][0] &&  ineq_R10H[0][1];
-        bbox_sel_R10H[0][0][1] = !ineq_R10H[0][0] &&  ineq_R10H[0][2];
-        bbox_sel_R10H[0][0][2] = !ineq_R10H[0][1] && !ineq_R10H[0][2];
-        bbox_sel_R10H[1][0][0] = !ineq_R10H[0][0] && !ineq_R10H[0][1];
-        bbox_sel_R10H[1][0][1] =  ineq_R10H[0][0] && !ineq_R10H[0][2];
-        bbox_sel_R10H[1][0][2] =  ineq_R10H[0][1] &&  ineq_R10H[0][2];
+        bbox_sel_R10H[0][0][0] =  ineq_R10H[0][0] &  ineq_R10H[0][1];
+        bbox_sel_R10H[0][0][1] = !ineq_R10H[0][0] &  ineq_R10H[0][2];
+        bbox_sel_R10H[0][0][2] = !ineq_R10H[0][1] & !ineq_R10H[0][2];
+        bbox_sel_R10H[1][0][0] = !ineq_R10H[0][0] & !ineq_R10H[0][1];
+        bbox_sel_R10H[1][0][1] =  ineq_R10H[0][0] & !ineq_R10H[0][2];
+        bbox_sel_R10H[1][0][2] =  ineq_R10H[0][1] &  ineq_R10H[0][2];
 
         //Setting the Y Select Variable
-        bbox_sel_R10H[0][1][0] =  ineq_R10H[1][0] &&  ineq_R10H[1][1];
-        bbox_sel_R10H[0][1][1] = !ineq_R10H[1][0] &&  ineq_R10H[1][2];
-        bbox_sel_R10H[0][1][2] = !ineq_R10H[1][1] && !ineq_R10H[1][2];
-        bbox_sel_R10H[1][1][0] = !ineq_R10H[1][0] && !ineq_R10H[1][1];
-        bbox_sel_R10H[1][1][1] =  ineq_R10H[1][0] && !ineq_R10H[1][2];
-        bbox_sel_R10H[1][1][2] =  ineq_R10H[1][1] &&  ineq_R10H[1][2];
+        bbox_sel_R10H[0][1][0] =  ineq_R10H[1][0] &  ineq_R10H[1][1];
+        bbox_sel_R10H[0][1][1] = !ineq_R10H[1][0] &  ineq_R10H[1][2];
+        bbox_sel_R10H[0][1][2] = !ineq_R10H[1][1] & !ineq_R10H[1][2];
+        bbox_sel_R10H[1][1][0] = !ineq_R10H[1][0] & !ineq_R10H[1][1];
+        bbox_sel_R10H[1][1][1] =  ineq_R10H[1][0] & !ineq_R10H[1][2];
+        bbox_sel_R10H[1][1][2] =  ineq_R10H[1][1] &  ineq_R10H[1][2];
 
-        // Assign LL X
-        if (bbox_sel_R10H[0][0][0]) box_R10S[0][0] = tri_R10S[0][0];
-        if (bbox_sel_R10H[0][0][1]) box_R10S[0][0] = tri_R10S[1][0];
-        if (bbox_sel_R10H[0][0][2]) box_R10S[0][0] = tri_R10S[2][0];
+        //Perform the Selection of the bounding box coordinates
 
-        // Assign LL Y
-        if (bbox_sel_R10H[0][1][0]) box_R10S[0][1] = tri_R10S[0][1];
-        if (bbox_sel_R10H[0][1][1]) box_R10S[0][1] = tri_R10S[1][1];
-        if (bbox_sel_R10H[0][1][2]) box_R10S[0][1] = tri_R10S[2][1];
+        //UR X Select
+        unique case( 1'b1 )
+            ( bbox_sel_R10H[1][0][0] ): box_R10S[1][0] = tri_R10S[0][0] ;
+            ( bbox_sel_R10H[1][0][1] ): box_R10S[1][0] = tri_R10S[1][0] ;
+            ( bbox_sel_R10H[1][0][2] ): box_R10S[1][0] = tri_R10S[2][0] ;
+        endcase //
 
-        // Assign UR X
-        if (bbox_sel_R10H[1][0][0]) box_R10S[1][0] = tri_R10S[0][0];
-        if (bbox_sel_R10H[1][0][1]) box_R10S[1][0] = tri_R10S[1][0];
-        if (bbox_sel_R10H[1][0][2]) box_R10S[1][0] = tri_R10S[2][0];
+        //LL X Select
+        unique case( 1'b1 )
+            ( bbox_sel_R10H[0][0][0] ): box_R10S[0][0] = tri_R10S[0][0] ;
+            ( bbox_sel_R10H[0][0][1] ): box_R10S[0][0] = tri_R10S[1][0] ;
+            ( bbox_sel_R10H[0][0][2] ): box_R10S[0][0] = tri_R10S[2][0] ;
+        endcase //
 
-        // Assign UR Y
-        if (bbox_sel_R10H[1][1][0]) box_R10S[1][1] = tri_R10S[0][1];
-        if (bbox_sel_R10H[1][1][1]) box_R10S[1][1] = tri_R10S[1][1];
-        if (bbox_sel_R10H[1][1][2]) box_R10S[1][1] = tri_R10S[2][1];
+        //UR Y Select
+        unique case( 1'b1 )
+            ( bbox_sel_R10H[1][1][0] ): box_R10S[1][1] = tri_R10S[0][1] ;
+            ( bbox_sel_R10H[1][1][1] ): box_R10S[1][1] = tri_R10S[1][1] ;
+            ( bbox_sel_R10H[1][1][2] ): box_R10S[1][1] = tri_R10S[2][1] ;
+        endcase //
+
+        //LL Y Select
+        unique case( 1'b1 )
+            ( bbox_sel_R10H[0][1][0] ): box_R10S[0][1] = tri_R10S[0][1] ;
+            ( bbox_sel_R10H[0][1][1] ): box_R10S[0][1] = tri_R10S[1][1] ;
+            ( bbox_sel_R10H[0][1][2] ): box_R10S[0][1] = tri_R10S[2][1] ;
+        endcase //
+
+    //End Selection of Bounding Box
     end
 
     // Assertions to check if box_R10S is assigned properly
@@ -325,13 +333,13 @@ for(genvar i = 0; i < 2; i = i + 1) begin
     for(genvar j = 0; j < 2; j = j + 1) begin
         always_comb begin
                     rounded_box_R10S[i][j][SIGFIG-1:RADIX] = box_R10S[i][j][SIGFIG-1:RADIX];
-                    case (subSample_RnnnnU)
+                    unique case (subSample_RnnnnU)
                         4'b1000: rounded_box_R10S[i][j][RADIX-1:0] = {(RADIX){1'b0}};
                         4'b0100: rounded_box_R10S[i][j][RADIX-1:0] = {box_R10S[i][j][RADIX-1], {(RADIX-1){1'b0}}};
                         4'b0010: rounded_box_R10S[i][j][RADIX-1:0] = {box_R10S[i][j][RADIX-1:RADIX-2], {(RADIX-2){1'b0}}} ;
                         4'b0001: rounded_box_R10S[i][j][RADIX-1:0] = {box_R10S[i][j][RADIX-1:RADIX-3], {(RADIX-3){1'b0}}} ;
                     endcase
-                end
+        end
     end
 end
 endgenerate
