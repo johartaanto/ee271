@@ -184,7 +184,8 @@ module bbox
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
     logic [1:0][2:0]        ineq_R10H ;             // Inequalities Results
-
+    //logic signed [SIGFIG-12:0] a1, b2;                     // Difference between UR and LL
+    //logic signed [(2*(SIGFIG-12))-1:0] cross_prod;             // Cross Product of LL and UR
     //Try declaring an always_comb block to assign values to box_R10S
         
     always_comb begin
@@ -365,7 +366,6 @@ endgenerate
     // Invalid if BBox is up/right of Screen
     // Invalid if BBox is down/left of Screen
     // outvalid_R10H high if validTri_R10H && BBox is valid
-
     always_comb begin
         //////// ASSIGN "out_box_R10S" and "outvalid_R10H"
         // START CODE HERE
@@ -373,7 +373,12 @@ endgenerate
         out_box_R10S[0][1] = (rounded_box_R10S[0][1] < 0) ? 0 : rounded_box_R10S[0][1];
         out_box_R10S[1][0] = (rounded_box_R10S[1][0] > screen_RnnnnS[0]) ? screen_RnnnnS[0] : rounded_box_R10S[1][0];
         out_box_R10S[1][1] = (rounded_box_R10S[1][1] > screen_RnnnnS[1]) ? screen_RnnnnS[1] : rounded_box_R10S[1][1];
-
+        //a1 = out_box_R10S[1][0] - out_box_R10S[0][0];
+        //b2 = out_box_R10S[1][1] - out_box_R10S[0][1];
+        //cross_prod = a1*b2;
+        // if (cross_prod < 0) begin
+        //     $display("Cross Product is Negative");
+        // end
         outvalid_R10H = (out_box_R10S[1][0] > 0 && 
                          out_box_R10S[1][1] > 0 &&
                          out_box_R10S[0][0] < screen_RnnnnS[0] && 

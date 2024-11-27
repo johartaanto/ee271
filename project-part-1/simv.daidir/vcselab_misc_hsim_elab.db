@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
 psLogFileName                      	NULL
-pDaiDir                            	/home/users/jh99/Desktop/ee271/project-part-1/simv.daidir
+pDaiDir                            	/home/users/eugenecm/ee271/project-part-1/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 hsMainFileCount                    	0
