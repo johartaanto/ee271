@@ -65,7 +65,7 @@ _LMFILES_=/etc/modulefiles/base/1.0:/etc/modulefiles/matlab/caddy:/afs/ir.stanfo
 _CE_M=
 _CE_CONDA=
 YOSYSHQ_LICENSE=/cad/tabby/license/tabbycad-Stanford.lic
-XDG_SESSION_ID=31299
+XDG_SESSION_ID=30828
 XDG_RUNTIME_DIR=/run/user/448161
 XDG_DATA_DIRS=/home/users/eugenecm/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VRST_HOME=/cad/cadence/INCISIVE15.20.022
@@ -89,9 +89,9 @@ SYNOPSYS_SYN_ROOT=/afs/ir.stanford.edu/class/ee/synopsys/syn/M-2016.12-SP2
 SYNOPSYS_STARRC_DIR=/usr/class/ee/synopsys/starrc/F-2011.12-SP2/amd64_starrc
 SYNOPSYS_STARRC=/usr/class/ee/synopsys/starrc/F-2011.12-SP2
 SYNOPSYS_LICENSE=27000@cadlic0.stanford.edu
-SSH_TTY=/dev/pts/14
-SSH_CONNECTION=171.67.96.125 39528 172.24.94.110 22
-SSH_CLIENT=171.67.96.125 39528 22
+SSH_TTY=/dev/pts/6
+SSH_CONNECTION=171.67.96.122 57046 172.24.94.117 22
+SSH_CLIENT=171.67.96.122 57046 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPRINGSOFT_LICENSE=5219@cadlic0.stanford.edu
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
@@ -101,7 +101,7 @@ SNPSLMD_QUEUE=true
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RUN=0
-REMOTEHOST=171.67.96.125
+REMOTEHOST=171.67.96.122
 PYTHONPATH=/afs/ir/class/ee/genesis2/r11012/PythonLibs:/usr/class/ee272/cell_lib//SAED_PDK90nm
 PERL5LIB_modshare=/afs/ir/class/ee/genesis2/r11012/gui/configs/install/perlfiles:1
 PERL5LIB=/afs/ir/class/ee/genesis2/r11012/gui/configs/install/perlfiles
@@ -193,15 +193,15 @@ AMSHOME=/cad/cadence/INCISIVE15.20.022
 1731712142 rtl/dff.sv
 1731712142 rtl/dff3.sv
 1731712142 rtl/dff2.sv
-1732741625 rtl/bbox.sv
+1732966471 rtl/bbox.sv
 1732488870 params/rast_params.sv
 1731712144 verif/verif_vlog.vf
 1731712143 rtl/vlog.vf
 1474973531 /cad/synopsys/verdi/L-2016.06-SP1-1//share/PLI/VCS/LINUX64/verdi.tab
 1487217861 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcsdp_lite.tab
 4
-1732497753 /home/users/eugenecm/ee271/project-part-1/gold/sv_gold.o
+1732966641 /home/users/eugenecm/ee271/project-part-1/gold/sv_gold.o
 1487220396 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvirsim.so
 1487219634 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/liberrorinf.so
 1487219608 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsnpsmalloc.so
-1732742173 simv.daidir
+1732966660 simv.daidir

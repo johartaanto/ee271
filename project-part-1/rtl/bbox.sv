@@ -184,8 +184,15 @@ module bbox
     
     //  DECLARE ANY OTHER SIGNALS YOU NEED
     logic [1:0][2:0]        ineq_R10H ;             // Inequalities Results
-    //logic signed [SIGFIG-12:0] a1, b2;                     // Difference between UR and LL
-    //logic signed [(2*(SIGFIG-12))-1:0] cross_prod;             // Cross Product of LL and UR
+    logic signed [(2*(SIGFIG-12))-1:0] cross_prod;             // Cross Product of LL and UR
+    logic signed [SIGFIG-1:0]  x_edge_1;
+    logic signed [SIGFIG-1:0]  x_edge_2;
+    logic signed [SIGFIG-12:0] x_edge_1_quant;
+    logic signed [SIGFIG-12:0] x_edge_2_quant;
+    logic signed [SIGFIG-1:0]  y_edge_1;
+    logic signed [SIGFIG-1:0]  y_edge_2;
+    logic signed [SIGFIG-12:0] y_edge_1_quant;
+    logic signed [SIGFIG-12:0] y_edge_2_quant;
     //Try declaring an always_comb block to assign values to box_R10S
         
     always_comb begin
@@ -378,11 +385,30 @@ endgenerate
         //cross_prod = a1*b2;
         // if (cross_prod < 0) begin
         //     $display("Cross Product is Negative");
-        // end
-        outvalid_R10H = (out_box_R10S[1][0] > 0 && 
-                         out_box_R10S[1][1] > 0 &&
-                         out_box_R10S[0][0] < screen_RnnnnS[0] && 
-                         out_box_R10S[0][1] < screen_RnnnnS[1] && 
+        // end Can't determine directionality from bbox trying triangle
+
+        x_edge_1 = tri_R10S[1][0] - tri_R10S[0][0];
+        x_edge_2 = tri_R10S[2][0] - tri_R10S[1][0];
+        y_edge_1 = tri_R10S[1][1] - tri_R10S[0][1];
+        y_edge_2 = tri_R10S[2][1] - tri_R10S[1][1];
+        x_edge_1_quant = x_edge_1[12:0];
+        x_edge_2_quant = x_edge_2[12:0];
+        y_edge_1_quant = y_edge_1[12:0];
+        y_edge_2_quant = y_edge_2[12:0];
+
+        cross_prod = x_edge_1_quant * y_edge_2_quant
+                    -  x_edge_2_quant * y_edge_1_quant;
+        // outvalid_R10H = (cross_prod <= 0 &&
+                        // out_box_R10S[1][0] > 0 && 
+                        //  out_box_R10S[1][1] > 0 &&
+                        //  out_box_R10S[0][0] < screen_RnnnnS[0] && 
+                        //  out_box_R10S[0][1] < screen_RnnnnS[1] && 
+                        //  validTri_R10H);
+        outvalid_R10H = (cross_prod <= 0 &&
+                        out_box_R10S[0][0] >= 0 && 
+                         out_box_R10S[0][1] >= 0 &&
+                         out_box_R10S[1][0] < screen_RnnnnS[0] && 
+                         out_box_R10S[1][1] < screen_RnnnnS[1] && 
                          validTri_R10H);
         // END CODE HERE
     end

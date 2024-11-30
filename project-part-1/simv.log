@@ -1,7 +1,7 @@
 Command: /home/users/eugenecm/ee271/project-part-1/simv -l /home/users/eugenecm/ee271/project-part-1/simv.log +testname=/afs/ir.stanford.edu/class/ee271/project/vect/vec_271_01_sv_short.dat
 Chronologic VCS simulator copyright 1991-2017
 Contains Synopsys proprietary information.
-Compiler version M-2017.03_Full64; Runtime version M-2017.03_Full64;  Nov 27 13:16 2024
+Compiler version M-2017.03_Full64; Runtime version M-2017.03_Full64;  Nov 30 03:37 2024
 time=         0 ************** Driver Is Initializing Input Signals *****************
 time=         0 ************** Loading Arguments *****************
 Simulation run with default random seed=12345
@@ -21,19 +21,21 @@ time=     52000 	         0 samples processed,          0 of them hit
 time=     53000 	         0 samples processed,          0 of them hit
 time=     54000 	         0 samples processed,          0 of them hit
 time=     55000 	         0 samples processed,          0 of them hit
-time= 104276000 	    100000 samples processed,      26662 of them hit
-time= 208852000 	    200000 samples processed,      56013 of them hit
-time= 235408000 ************** Driver Is Done *****************
-time= 235423010 ************** Writing Final Image to File *****************
-time= 235423030 ************** Finished Final Image to File *****************
-time= 235423040 ********************FINISH***********************
-Cycles:      235375 triangle:       10001 sampleTests:      225368 sampleHits:       62995 
+time=     56000 	         0 samples processed,          0 of them hit
+time=     57000 	         0 samples processed,          0 of them hit
+time= 104473000 	    100000 samples processed,      27993 of them hit
+time= 209091000 	    200000 samples processed,      57389 of them hit
+time= 230609000 ************** Driver Is Done *****************
+time= 230624010 ************** Writing Final Image to File *****************
+time= 230624030 ************** Finished Final Image to File *****************
+time= 230624040 ********************FINISH***********************
+Cycles:      230576 triangle:       10001 sampleTests:      220569 sampleHits:       62995 
 
-JJ: triangle / cycle : 0.042490 
-JJ: cycle / triangle : 23.535146 
+JJ: triangle / cycle : 0.043374 
+JJ: cycle / triangle : 23.055294 
 $finish called from file "verif/testbench.sv", line 306.
-$finish at simulation time            235423040
+$finish at simulation time            230624040
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 235423040 ns
-CPU Time:     13.640 seconds;       Data structure size:   0.2Mb
-Wed Nov 27 13:16:27 2024
+Time: 230624040 ns
+CPU Time:     12.480 seconds;       Data structure size:   0.2Mb
+Sat Nov 30 03:37:54 2024
