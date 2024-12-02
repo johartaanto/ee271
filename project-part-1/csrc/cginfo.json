@@ -1,298 +1,52 @@
 {
     "MlibObjs": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "archive": "archive.0/_278853_archive_1.a",
-        "bytes": 145333
-    },
-    "CompileStatus": "Successful",
-    "PEModules": [],
-    "PrevCompiledModules": {},
-    "NameTable": {
-        "dff2_0001": [
-            "dff2_0001",
-            "YYTYE",
-            "module",
-            6
-        ],
-        "_vcs_unit__4140305405": [
-            "_vcs_unit__4140305405",
-            "INiNY",
-            "module",
-            1
-        ],
-        "dff2_0000_0000": [
-            "dff2_0000_0000",
-            "m1pCR",
-            "module",
-            9
-        ],
-        "std": [
-            "std",
-            "reYIK",
-            "module",
-            2
-        ],
-        "rast_params": [
-            "rast_params",
-            "mT84W",
-            "module",
-            3
-        ],
-        "dff3_0001": [
-            "dff3_0001",
-            "wrGcc",
-            "module",
-            16
-        ],
-        "test_iterator_0000": [
-            "test_iterator_0000",
-            "adgUT",
-            "module",
-            30
-        ],
-        "dff3_0000_0003": [
-            "dff3_0000_0003",
-            "fjDt2",
-            "module",
-            20
-        ],
-        "bbx_sb": [
-            "bbx_sb",
-            "a8g0Z",
-            "module",
-            31
-        ],
-        "bbox_0000": [
-            "bbox_0000",
-            "d5BPu",
-            "module",
-            4
-        ],
-        "dff2_0002": [
-            "dff2_0002",
-            "yW5CM",
-            "module",
-            7
-        ],
-        "dff2_0003": [
-            "dff2_0003",
-            "FMRfU",
-            "module",
-            8
-        ],
-        "dff2_0000": [
-            "dff2_0000",
-            "HpNpL",
-            "module",
-            5
-        ],
-        "dff2_0002_0000": [
-            "dff2_0002_0000",
-            "KUIDG",
-            "module",
-            12
-        ],
-        "dff2_0001_0000": [
-            "dff2_0001_0000",
-            "tpBAT",
-            "module",
-            10
-        ],
-        "hash_jtree": [
-            "hash_jtree",
-            "sE4tC",
-            "module",
-            27
-        ],
-        "dff2_0001_0001": [
-            "dff2_0001_0001",
-            "UfTMx",
-            "module",
-            11
-        ],
-        "dff2_0002_0001": [
-            "dff2_0002_0001",
-            "mv96h",
-            "module",
-            13
-        ],
-        "rast": [
-            "rast",
-            "NNwFS",
-            "module",
-            28
-        ],
-        "dff2_0003_0000": [
-            "dff2_0003_0000",
-            "zxvEq",
-            "module",
-            14
-        ],
-        "dff_0000_0006": [
-            "dff_0000_0006",
-            "KE3qb",
-            "module",
-            25
-        ],
-        "dff3_0000": [
-            "dff3_0000",
-            "Fgck4",
-            "module",
-            15
-        ],
-        "dff3_0000_0000": [
-            "dff3_0000_0000",
-            "EJn6A",
-            "module",
-            17
-        ],
-        "dff3_0000_0001": [
-            "dff3_0000_0001",
-            "RmIf7",
-            "module",
-            18
-        ],
-        "dff3_0000_0002": [
-            "dff3_0000_0002",
-            "gG0sx",
-            "module",
-            19
-        ],
-        "dff_retime_0000": [
-            "dff_retime_0000",
-            "Qaq0g",
-            "module",
-            26
-        ],
-        "dff3_0001_0000": [
-            "dff3_0001_0000",
-            "aWGfp",
-            "module",
-            21
-        ],
-        "sampletest_0000": [
-            "sampletest_0000",
-            "fRYw9",
-            "module",
-            29
-        ],
-        "dff_0000_0002": [
-            "dff_0000_0002",
-            "xKfGv",
-            "module",
-            22
-        ],
-        "dff_0000_0003": [
-            "dff_0000_0003",
-            "ACtd6",
-            "module",
-            23
-        ],
-        "dff_0000_0005": [
-            "dff_0000_0005",
-            "qncW9",
-            "module",
-            24
-        ],
-        "perf_monitor": [
-            "perf_monitor",
-            "wiPAj",
-            "module",
-            32
-        ],
-        "rast_driver": [
-            "rast_driver",
-            "ZD3VR",
-            "module",
-            33
-        ],
-        "smpl_cnt_sb": [
-            "smpl_cnt_sb",
-            "hVvAG",
-            "module",
-            34
-        ],
-        "smpl_sb": [
-            "smpl_sb",
-            "xTIPv",
-            "module",
-            35
-        ],
-        "testbench": [
-            "testbench",
-            "iAVhC",
-            "module",
-            36
-        ],
-        "top_rast": [
-            "top_rast",
-            "xFwH6",
-            "module",
-            37
-        ],
-        "zbuff": [
-            "zbuff",
-            "K6ha2",
-            "module",
-            38
-        ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
-            "module",
-            39
-        ]
-    },
-    "CompileStrategy": "fullobj",
-    "CurCompileUdps": {},
     "stat": {
+        "peak_mem_kb": 216736,
         "ru_self_cgstart": {
-            "ru_stime_sec": 0.086467000000000002,
-            "ru_utime_sec": 0.56272900000000003,
-            "ru_nivcsw": 19,
-            "ru_maxrss_kb": 94268,
-            "ru_minflt": 8088,
+            "ru_utime_sec": 0.61088799999999999,
             "ru_majflt": 0,
-            "ru_nvcsw": 426
+            "ru_minflt": 7926,
+            "ru_stime_sec": 0.082999000000000003,
+            "ru_nivcsw": 20,
+            "ru_maxrss_kb": 94296,
+            "ru_nvcsw": 479
         },
-        "nQuads": 22731,
-        "ru_self_end": {
-            "ru_stime_sec": 0.149483,
-            "ru_utime_sec": 1.2819910000000001,
-            "ru_nivcsw": 27,
-            "ru_maxrss_kb": 102532,
-            "ru_minflt": 9550,
-            "ru_majflt": 0,
-            "ru_nvcsw": 615
-        },
-        "Frontend(%)": 43.894925939417675,
-        "quadSpeed": 31603.226640639987,
-        "ru_childs_cgstart": {
-            "ru_stime_sec": 0.046004000000000003,
-            "ru_utime_sec": 0.019505999999999999,
-            "ru_nivcsw": 3,
-            "ru_maxrss_kb": 91164,
-            "ru_minflt": 1883,
-            "ru_majflt": 0,
-            "ru_nvcsw": 35
-        },
-        "CodeGen(%)": 56.105074060582332,
         "ru_childs_end": {
-            "ru_stime_sec": 0.046004000000000003,
-            "ru_utime_sec": 0.019505999999999999,
-            "ru_nivcsw": 3,
-            "ru_maxrss_kb": 91164,
-            "ru_minflt": 1883,
+            "ru_utime_sec": 0.017087999999999999,
             "ru_majflt": 0,
+            "ru_minflt": 1883,
+            "ru_stime_sec": 0.048495000000000003,
+            "ru_nivcsw": 1,
+            "ru_maxrss_kb": 91188,
             "ru_nvcsw": 35
         },
-        "nMops": 55045,
-        "totalObjSize": 1407373,
-        "mopSpeed": 76529.831966654703,
-        "mop/quad": 2.4215828604108927,
-        "outputSizePerQuad": 61.914258061677884,
-        "peak_mem_kb": 216736
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.017087999999999999,
+            "ru_majflt": 0,
+            "ru_minflt": 1883,
+            "ru_stime_sec": 0.048495000000000003,
+            "ru_nivcsw": 1,
+            "ru_maxrss_kb": 91188,
+            "ru_nvcsw": 35
+        },
+        "outputSizePerQuad": 61.906707719375412,
+        "nMops": 55051,
+        "nQuads": 22735,
+        "totalObjSize": 1407449,
+        "ru_self_end": {
+            "ru_utime_sec": 1.3240970000000001,
+            "ru_majflt": 0,
+            "ru_minflt": 9384,
+            "ru_stime_sec": 0.146562,
+            "ru_nivcsw": 39,
+            "ru_maxrss_kb": 102560,
+            "ru_nvcsw": 681
+        },
+        "mopSpeed": 77187.752818598747,
+        "quadSpeed": 31877.051467381927,
+        "mop/quad": 2.4214207169562347,
+        "Frontend(%)": 46.136196970463644,
+        "CodeGen(%)": 53.863803029536356
     },
     "CurCompileModules": [
         "...MASTER...",
@@ -374,19 +128,265 @@
         "zbuff",
         "zbuff"
     ],
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 145333,
+        "archive": "archive.0/_408111_archive_1.a"
+    },
+    "CurCompileUdps": {},
+    "PrevCompiledModules": {},
+    "NameTable": {
+        "_vcs_unit__4140305405": [
+            "_vcs_unit__4140305405",
+            "INiNY",
+            "module",
+            1
+        ],
+        "dff3_0000": [
+            "dff3_0000",
+            "Fgck4",
+            "module",
+            15
+        ],
+        "dff3_0000_0002": [
+            "dff3_0000_0002",
+            "gG0sx",
+            "module",
+            19
+        ],
+        "zbuff": [
+            "zbuff",
+            "K6ha2",
+            "module",
+            38
+        ],
+        "rast_driver": [
+            "rast_driver",
+            "ZD3VR",
+            "module",
+            33
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module",
+            2
+        ],
+        "hash_jtree": [
+            "hash_jtree",
+            "sE4tC",
+            "module",
+            27
+        ],
+        "rast": [
+            "rast",
+            "NNwFS",
+            "module",
+            28
+        ],
+        "dff2_0000_0000": [
+            "dff2_0000_0000",
+            "m1pCR",
+            "module",
+            9
+        ],
+        "perf_monitor": [
+            "perf_monitor",
+            "wiPAj",
+            "module",
+            32
+        ],
+        "rast_params": [
+            "rast_params",
+            "mT84W",
+            "module",
+            3
+        ],
+        "test_iterator_0000": [
+            "test_iterator_0000",
+            "adgUT",
+            "module",
+            30
+        ],
+        "bbox_0000": [
+            "bbox_0000",
+            "d5BPu",
+            "module",
+            4
+        ],
+        "dff3_0001": [
+            "dff3_0001",
+            "wrGcc",
+            "module",
+            16
+        ],
+        "dff_retime_0000": [
+            "dff_retime_0000",
+            "Qaq0g",
+            "module",
+            26
+        ],
+        "dff2_0001_0001": [
+            "dff2_0001_0001",
+            "UfTMx",
+            "module",
+            11
+        ],
+        "dff2_0002": [
+            "dff2_0002",
+            "yW5CM",
+            "module",
+            7
+        ],
+        "dff2_0000": [
+            "dff2_0000",
+            "HpNpL",
+            "module",
+            5
+        ],
+        "dff2_0001": [
+            "dff2_0001",
+            "YYTYE",
+            "module",
+            6
+        ],
+        "dff2_0003": [
+            "dff2_0003",
+            "FMRfU",
+            "module",
+            8
+        ],
+        "dff2_0001_0000": [
+            "dff2_0001_0000",
+            "tpBAT",
+            "module",
+            10
+        ],
+        "dff2_0002_0000": [
+            "dff2_0002_0000",
+            "KUIDG",
+            "module",
+            12
+        ],
+        "dff2_0002_0001": [
+            "dff2_0002_0001",
+            "mv96h",
+            "module",
+            13
+        ],
+        "dff2_0003_0000": [
+            "dff2_0003_0000",
+            "zxvEq",
+            "module",
+            14
+        ],
+        "dff_0000_0003": [
+            "dff_0000_0003",
+            "ACtd6",
+            "module",
+            23
+        ],
+        "dff3_0000_0000": [
+            "dff3_0000_0000",
+            "EJn6A",
+            "module",
+            17
+        ],
+        "dff3_0000_0001": [
+            "dff3_0000_0001",
+            "RmIf7",
+            "module",
+            18
+        ],
+        "dff3_0000_0003": [
+            "dff3_0000_0003",
+            "fjDt2",
+            "module",
+            20
+        ],
+        "dff3_0001_0000": [
+            "dff3_0001_0000",
+            "aWGfp",
+            "module",
+            21
+        ],
+        "dff_0000_0002": [
+            "dff_0000_0002",
+            "xKfGv",
+            "module",
+            22
+        ],
+        "dff_0000_0005": [
+            "dff_0000_0005",
+            "qncW9",
+            "module",
+            24
+        ],
+        "dff_0000_0006": [
+            "dff_0000_0006",
+            "KE3qb",
+            "module",
+            25
+        ],
+        "sampletest_0000": [
+            "sampletest_0000",
+            "fRYw9",
+            "module",
+            29
+        ],
+        "bbx_sb": [
+            "bbx_sb",
+            "a8g0Z",
+            "module",
+            31
+        ],
+        "smpl_cnt_sb": [
+            "smpl_cnt_sb",
+            "hVvAG",
+            "module",
+            34
+        ],
+        "smpl_sb": [
+            "smpl_sb",
+            "xTIPv",
+            "module",
+            35
+        ],
+        "testbench": [
+            "testbench",
+            "iAVhC",
+            "module",
+            36
+        ],
+        "top_rast": [
+            "top_rast",
+            "xFwH6",
+            "module",
+            37
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module",
+            39
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "PEModules": [],
     "LVLData": [
         "SIM"
     ],
     "CompileProcesses": [
-        "cgproc.278853.json"
+        "cgproc.408111.json"
     ],
     "Misc": {
-        "daidir_abs": "/home/users/eugenecm/ee271/project-part-1/simv.daidir",
-        "csrc_abs": "/home/users/eugenecm/ee271/project-part-1/csrc",
-        "cwd": "/home/users/eugenecm/ee271/project-part-1",
-        "csrc": "csrc",
-        "daidir": "simv.daidir",
         "default_output_dir": "csrc",
-        "archive_dir": "archive.0"
-    }
+        "cwd": "/home/users/eugenecm/ee271/project-part-1",
+        "daidir_abs": "/home/users/eugenecm/ee271/project-part-1/simv.daidir",
+        "csrc": "csrc",
+        "csrc_abs": "/home/users/eugenecm/ee271/project-part-1/csrc",
+        "archive_dir": "archive.0",
+        "daidir": "simv.daidir"
+    },
+    "CompileStatus": "Successful"
 }

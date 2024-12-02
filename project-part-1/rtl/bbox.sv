@@ -405,10 +405,10 @@ endgenerate
                         //  out_box_R10S[0][1] < screen_RnnnnS[1] && 
                         //  validTri_R10H);
         outvalid_R10H = (cross_prod <= 0 &&
-                        out_box_R10S[0][0] >= 0 && 
-                         out_box_R10S[0][1] >= 0 &&
-                         out_box_R10S[1][0] < screen_RnnnnS[0] && 
-                         out_box_R10S[1][1] < screen_RnnnnS[1] && 
+                        out_box_R10S[0][0] < screen_RnnnnS[0] && 
+                         out_box_R10S[0][1] < screen_RnnnnS[1] &&
+                         out_box_R10S[1][0] >= 0 && 
+                         out_box_R10S[1][1] >= 0 && 
                          validTri_R10H);
         // END CODE HERE
     end
