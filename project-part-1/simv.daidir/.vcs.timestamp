@@ -57,7 +57,7 @@
 /home/users/eugenecm/ee271/project-part-1
 /packages/gtech/src_ver/
 top_rast
-112
+113
 which_declare=declare -f
 sysc_uni_pwd=/home/users/eugenecm/ee271/project-part-1
 _LMFILES__modshare=/etc/modulefiles/jaspergold/latest:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/syn/latest:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/hercules/B-2008.09-SP4:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/vcs/latest:1:/etc/modulefiles/matlab/caddy:1:/etc/modulefiles/incisive/latest:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/synopsys_edk/2011:1:/etc/modulefiles/base/1.0:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/starrc/F-2011.12-SP2:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/synopsys_pdk/2011:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/cx/F-2011.09-SP2:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/cdesigner/F-2011.09-SP2:1:/afs/ir.stanford.edu/class/ee/modules/modulefiles/tools/genesis2/latest:1
@@ -65,7 +65,7 @@ _LMFILES_=/etc/modulefiles/base/1.0:/etc/modulefiles/matlab/caddy:/afs/ir.stanfo
 _CE_M=
 _CE_CONDA=
 YOSYSHQ_LICENSE=/cad/tabby/license/tabbycad-Stanford.lic
-XDG_SESSION_ID=31751
+XDG_SESSION_ID=32006
 XDG_RUNTIME_DIR=/run/user/448161
 XDG_DATA_DIRS=/home/users/eugenecm/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VRST_HOME=/cad/cadence/INCISIVE15.20.022
@@ -89,9 +89,9 @@ SYNOPSYS_SYN_ROOT=/afs/ir.stanford.edu/class/ee/synopsys/syn/M-2016.12-SP2
 SYNOPSYS_STARRC_DIR=/usr/class/ee/synopsys/starrc/F-2011.12-SP2/amd64_starrc
 SYNOPSYS_STARRC=/usr/class/ee/synopsys/starrc/F-2011.12-SP2
 SYNOPSYS_LICENSE=27000@cadlic0.stanford.edu
-SSH_TTY=/dev/pts/6
-SSH_CONNECTION=171.67.96.125 38232 172.24.94.117 22
-SSH_CLIENT=171.67.96.125 38232 22
+SSH_TTY=/dev/pts/21
+SSH_CONNECTION=10.112.0.220 55412 172.24.94.104 22
+SSH_CLIENT=10.112.0.220 55412 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPRINGSOFT_LICENSE=5219@cadlic0.stanford.edu
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
@@ -101,7 +101,7 @@ SNPSLMD_QUEUE=true
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RUN=0
-REMOTEHOST=171.67.96.125
+REMOTEHOST=10.112.0.220
 PYTHONPATH=/afs/ir/class/ee/genesis2/r11012/PythonLibs:/usr/class/ee272/cell_lib//SAED_PDK90nm
 PERL5LIB_modshare=/afs/ir/class/ee/genesis2/r11012/gui/configs/install/perlfiles:1
 PERL5LIB=/afs/ir/class/ee/genesis2/r11012/gui/configs/install/perlfiles
@@ -129,7 +129,7 @@ MATLABPATH=/afs/.ir/class/ee114/matlab
 MANPATH_modshare=/afs/ir.stanford.edu/class/ee/synopsys/syn/M-2016.12-SP2/doc/snps_gui/man:1::1:/afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/doc/man:1:/afs/ir.stanford.edu/class/ee/synopsys/syn/M-2016.12-SP2/doc/snps_tcl/man:1:/afs/ir.stanford.edu/class/ee/synopsys/syn/M-2016.12-SP2/doc/syn/man:1:/usr/share/man:1
 MAKEOVERRIDES=${-*-command-variables-*-}
 MAKELEVEL=1
-MAKEFLAGS=RUN=+testname=/afs/ir.stanford.edu/class/ee271/project/vect/vec_271_02_sv_short.dat
+MAKEFLAGS=RUN=+testname=/afs/ir.stanford.edu/class/ee271/project/vect/vec_271_01_sv_short.dat
 LOADEDMODULES_modshare=starrc/F-2011.12-SP2:1:cx/F-2011.09-SP2:1:matlab/caddy:1:syn/latest:1:synopsys_edk/2011:1:hercules/B-2008.09-SP4:1:incisive/latest:1:vcs/latest:1:base/1.0:1:synopsys_pdk/2011:1:cdesigner/F-2011.09-SP2:1:genesis2/latest:1:jaspergold/latest:1
 LOADEDMODULES=base/1.0:matlab/caddy:genesis2/latest:syn/latest:vcs/latest:synopsys_edk/2011:cdesigner/F-2011.09-SP2:hercules/B-2008.09-SP4:starrc/F-2011.12-SP2:cx/F-2011.09-SP2:synopsys_pdk/2011:incisive/latest:jaspergold/latest
 LM_LICENSE_FILE_modshare=27000@cadlic0.stanford.edu:2:27000@cadlic0:1
@@ -145,11 +145,12 @@ HERCULES_HOME_DIR=/usr/class/ee/synopsys/hercules/B-2008.09-SP4
 GROUP=operator
 GENESIS_LIBS=/afs/ir/class/ee/genesis2/r11012/PerlLibs
 GENESIS_HOME=/afs/ir/class/ee/genesis2/r11012
+GDK_BACKEND=x11
 EE271_VECT=/afs/ir.stanford.edu/class/ee271/project/vect
 EE271_PROJ=/afs/ir.stanford.edu/class/ee271/project
 EDK_ROOT=/usr/class/ee272/cell_lib/
 DEBUGINFOD_URLS=https://debuginfod.centos.org/ 
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/448161/bus
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-vqT0TNzToj,guid=b27cdab7bdb84eff369f1c84674d79f4
 CSCOPE_HOME=/afs/ir.stanford.edu/class/ee/synopsys/CosmosScope64/I-2013.12/
 CONDA_SHLVL=1
 CONDA_PYTHON_EXE=/home/users/eugenecm/miniconda3/bin/python
@@ -193,15 +194,15 @@ AMSHOME=/cad/cadence/INCISIVE15.20.022
 1731712142 rtl/dff.sv
 1731712142 rtl/dff3.sv
 1731712142 rtl/dff2.sv
-1733098785 rtl/bbox.sv
-1732488870 params/rast_params.sv
+1733131299 rtl/bbox.sv
+1733131404 params/rast_params.sv
 1731712144 verif/verif_vlog.vf
 1731712143 rtl/vlog.vf
 1474973531 /cad/synopsys/verdi/L-2016.06-SP1-1//share/PLI/VCS/LINUX64/verdi.tab
 1487217861 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/vcsdp_lite.tab
 4
-1733097415 /home/users/eugenecm/ee271/project-part-1/gold/sv_gold.o
+1733131761 /home/users/eugenecm/ee271/project-part-1/gold/sv_gold.o
 1487220396 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libvirsim.so
 1487219634 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/liberrorinf.so
 1487219608 /afs/ir.stanford.edu/class/ee/synopsys/vcs/M-2017.03/linux64/lib/libsnpsmalloc.so
-1733098818 simv.daidir
+1733131774 simv.daidir
