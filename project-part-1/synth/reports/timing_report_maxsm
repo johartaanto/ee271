@@ -1,0 +1,69 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rast
+Version: M-2016.12-SP2
+Date   : Mon Dec  2 13:18:38 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: clk_r_REG1812_S1
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mult_x_15/clk_r_REG1420_S2
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rast               1K_hvratio_1_4        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  clk_r_REG1812_S1/CK (DFFR_X1)                         0.0000 #   0.0000 r
+  clk_r_REG1812_S1/QN (DFFR_X1)                         0.1035     0.1035 r
+  U1260/ZN (NOR2_X1)                                    0.0379     0.1414 f
+  U1262/ZN (OAI21_X1)                                   0.0853     0.2267 r
+  U1340/ZN (AOI21_X1)                                   0.0376     0.2643 f
+  U1341/ZN (OAI21_X1)                                   0.0445     0.3088 r
+  U1193/Z (BUF_X1)                                      0.0537     0.3625 r
+  U1352/ZN (XNOR2_X1)                                   0.0699     0.4324 r
+  U619/ZN (INV_X1)                                      0.0262     0.4586 f
+  U885/ZN (XNOR2_X1)                                    0.0533     0.5119 f
+  U488/ZN (AND2_X1)                                     0.0395     0.5514 f
+  U1435/ZN (INV_X1)                                     0.0409     0.5923 r
+  U492/Z (BUF_X1)                                       0.0628     0.6551 r
+  U1438/ZN (OAI22_X1)                                   0.0466     0.7016 f
+  U1486/S (FA_X1)                                       0.1477     0.8493 r
+  U1215/ZN (XNOR2_X1)                                   0.0644     0.9138 r
+  U630/ZN (XNOR2_X1)                                    0.0669     0.9806 r
+  U1003/ZN (OAI21_X1)                                   0.0380     1.0186 f
+  U1035/ZN (NAND2_X1)                                   0.0327     1.0513 r
+  U1131/ZN (OAI21_X1)                                   0.0289     1.0802 f
+  U1133/ZN (INV_X1)                                     0.0333     1.1135 r
+  U1132/ZN (OAI21_X1)                                   0.0298     1.1432 f
+  mult_x_15/clk_r_REG1420_S2/D (DFFS_X1)                0.0071     1.1503 f
+  data arrival time                                                1.1503
+
+  clock clk (rise edge)                                 1.2000     1.2000
+  clock network delay (ideal)                           0.0000     1.2000
+  mult_x_15/clk_r_REG1420_S2/CK (DFFS_X1)               0.0000     1.2000 r
+  library setup time                                   -0.0494     1.1506
+  data required time                                               1.1506
+  --------------------------------------------------------------------------
+  data required time                                               1.1506
+  data arrival time                                               -1.1503
+  --------------------------------------------------------------------------
+  slack (MET)                                                      0.0003
+
+
+1

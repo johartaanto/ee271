@@ -94,7 +94,7 @@ module sampletest
     // Signals in Access Order
     logic signed [SIGFIG-1:0]       tri_shift_R16S[VERTS-1:0][1:0]; // triangle after coordinate shift
     logic signed [SIGFIG-1:0]       edge_R16S[EDGES-1:0][1:0][1:0]; // Edges
-    logic signed [SIGFIG-12:0]       edge_R16S_quant[EDGES-1:0][1:0][1:0]; // Edges
+    logic signed [SIGFIG-8:0]       edge_R16S_quant[EDGES-1:0][1:0][1:0]; // Edges
     logic signed [(2*SHORTSF)-1:0]  dist_lg_R16S[EDGES-1:0]; // Result of x_1 * y_2 - x_2 * y_1
     logic                           hit_valid_R16H ; // Output (YOUR JOB!)
     logic signed [SIGFIG-1:0]       hit_R16S[AXIS-1:0]; // Sample position
@@ -135,10 +135,10 @@ module sampletest
     generate
         for(genvar i = 0; i < EDGES; i++) begin
             always_comb begin
-                edge_R16S_quant[i][0][0] = edge_R16S[i][0][0][12:0];
-                edge_R16S_quant[i][0][1] = edge_R16S[i][0][1][12:0];
-                edge_R16S_quant[i][1][0] = edge_R16S[i][1][0][12:0];
-                edge_R16S_quant[i][1][1] = edge_R16S[i][1][1][12:0];
+                edge_R16S_quant[i][0][0] = edge_R16S[i][0][0][16:0];
+                edge_R16S_quant[i][0][1] = edge_R16S[i][0][1][16:0];
+                edge_R16S_quant[i][1][0] = edge_R16S[i][1][0][16:0];
+                edge_R16S_quant[i][1][1] = edge_R16S[i][1][1][16:0];
                 dist_lg_R16S[i] = edge_R16S_quant[i][0][0] * edge_R16S_quant[i][1][1]
                                 -  edge_R16S_quant[i][0][1] * edge_R16S_quant[i][1][0];
             end
