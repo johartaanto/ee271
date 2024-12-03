@@ -82,7 +82,7 @@ module sampletest
 );
 
     localparam EDGES = (VERTS == 3) ? 3 : 5;
-    localparam SHORTSF = SIGFIG;
+    localparam SHORTSF = SIGFIG-8;
     localparam MROUND = (2 * SHORTSF) - RADIX;
 
     // output for retiming registers

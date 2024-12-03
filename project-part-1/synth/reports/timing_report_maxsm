@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : rast
 Version: M-2016.12-SP2
-Date   : Mon Dec  2 13:18:38 2024
+Date   : Mon Dec  2 16:51:36 2024
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -14,9 +14,9 @@ Date   : Mon Dec  2 13:18:38 2024
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: clk_r_REG1812_S1
+  Startpoint: clk_r_REG1521_S1
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: mult_x_15/clk_r_REG1420_S2
+  Endpoint: clk_r_REG1129_S2
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -25,45 +25,40 @@ Wire Load Model Mode: top
   ------------------------------------------------
   rast               1K_hvratio_1_4        NangateOpenCellLibrary
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock clk (rise edge)                                 0.0000     0.0000
-  clock network delay (ideal)                           0.0000     0.0000
-  clk_r_REG1812_S1/CK (DFFR_X1)                         0.0000 #   0.0000 r
-  clk_r_REG1812_S1/QN (DFFR_X1)                         0.1035     0.1035 r
-  U1260/ZN (NOR2_X1)                                    0.0379     0.1414 f
-  U1262/ZN (OAI21_X1)                                   0.0853     0.2267 r
-  U1340/ZN (AOI21_X1)                                   0.0376     0.2643 f
-  U1341/ZN (OAI21_X1)                                   0.0445     0.3088 r
-  U1193/Z (BUF_X1)                                      0.0537     0.3625 r
-  U1352/ZN (XNOR2_X1)                                   0.0699     0.4324 r
-  U619/ZN (INV_X1)                                      0.0262     0.4586 f
-  U885/ZN (XNOR2_X1)                                    0.0533     0.5119 f
-  U488/ZN (AND2_X1)                                     0.0395     0.5514 f
-  U1435/ZN (INV_X1)                                     0.0409     0.5923 r
-  U492/Z (BUF_X1)                                       0.0628     0.6551 r
-  U1438/ZN (OAI22_X1)                                   0.0466     0.7016 f
-  U1486/S (FA_X1)                                       0.1477     0.8493 r
-  U1215/ZN (XNOR2_X1)                                   0.0644     0.9138 r
-  U630/ZN (XNOR2_X1)                                    0.0669     0.9806 r
-  U1003/ZN (OAI21_X1)                                   0.0380     1.0186 f
-  U1035/ZN (NAND2_X1)                                   0.0327     1.0513 r
-  U1131/ZN (OAI21_X1)                                   0.0289     1.0802 f
-  U1133/ZN (INV_X1)                                     0.0333     1.1135 r
-  U1132/ZN (OAI21_X1)                                   0.0298     1.1432 f
-  mult_x_15/clk_r_REG1420_S2/D (DFFS_X1)                0.0071     1.1503 f
-  data arrival time                                                1.1503
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  clk_r_REG1521_S1/CK (DFFR_X1)          0.0000 #   0.0000 r
+  clk_r_REG1521_S1/Q (DFFR_X1)           0.0985     0.0985 r
+  U480/ZN (AND2_X1)                      0.0512     0.1497 r
+  U557/ZN (INV_X1)                       0.0223     0.1720 f
+  U524/ZN (AND2_X1)                      0.0399     0.2119 f
+  U563/ZN (AOI21_X2)                     0.0779     0.2898 r
+  U583/ZN (OAI21_X1)                     0.0407     0.3305 f
+  U585/ZN (XNOR2_X1)                     0.0698     0.4003 f
+  U593/ZN (XNOR2_X2)                     0.1681     0.5683 r
+  U1067/ZN (INV_X1)                      0.0398     0.6082 f
+  U1068/ZN (AND2_X1)                     0.0454     0.6535 f
+  U1077/S (FA_X1)                        0.1290     0.7826 r
+  U1294/S (FA_X1)                        0.1125     0.8951 f
+  U1083/ZN (NOR2_X1)                     0.0518     0.9468 r
+  U1084/ZN (INV_X1)                      0.0228     0.9697 f
+  U1086/ZN (NAND2_X1)                    0.0271     0.9968 r
+  U1129/Z (XOR2_X1)                      0.0615     1.0583 r
+  clk_r_REG1129_S2/D (DFFS_X1)           0.0074     1.0657 r
+  data arrival time                                 1.0657
 
-  clock clk (rise edge)                                 1.2000     1.2000
-  clock network delay (ideal)                           0.0000     1.2000
-  mult_x_15/clk_r_REG1420_S2/CK (DFFS_X1)               0.0000     1.2000 r
-  library setup time                                   -0.0494     1.1506
-  data required time                                               1.1506
-  --------------------------------------------------------------------------
-  data required time                                               1.1506
-  data arrival time                                               -1.1503
-  --------------------------------------------------------------------------
-  slack (MET)                                                      0.0003
+  clock clk (rise edge)                  1.1000     1.1000
+  clock network delay (ideal)            0.0000     1.1000
+  clk_r_REG1129_S2/CK (DFFS_X1)          0.0000     1.1000 r
+  library setup time                    -0.0343     1.0657
+  data required time                                1.0657
+  -----------------------------------------------------------
+  data required time                                1.0657
+  data arrival time                                -1.0657
+  -----------------------------------------------------------
+  slack (MET)                                       0.0001
 
 
 1

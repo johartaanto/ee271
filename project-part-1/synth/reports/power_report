@@ -7,13 +7,13 @@ Report : power
         -analysis_effort high
 Design : rast
 Version: M-2016.12-SP2
-Date   : Mon Dec  2 13:18:38 2024
+Date   : Mon Dec  2 16:51:36 2024
 ****************************************
 
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
+    NangateOpenCellLibrary (File: /home/users/eugenecm/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
 
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
@@ -33,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  20.3432 mW   (86%)
-  Net Switching Power  =   3.4046 mW   (14%)
+  Cell Internal Power  =  17.2208 mW   (78%)
+  Net Switching Power  =   4.8211 mW   (22%)
                          ---------
-Total Dynamic Power    =  23.7479 mW  (100%)
+Total Dynamic Power    =  22.0419 mW  (100%)
 
-Cell Leakage Power     = 594.0388 uW
+Cell Leakage Power     = 541.7147 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -47,10 +47,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       1.7614e+04          596.9251        2.5319e+05        1.8464e+04  (  75.85%)
+clock_network      7.4052          863.8810           58.9290          871.3451  (   3.86%)
+register       1.4382e+04          837.1115        2.2754e+05        1.5446e+04  (  68.40%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  2.7288e+03        2.8078e+03        3.4085e+05        5.8782e+03  (  24.15%)
+combinational  2.8317e+03        3.1202e+03        3.1412e+05        6.2661e+03  (  27.75%)
 --------------------------------------------------------------------------------------------------
-Total          2.0343e+04 uW     3.4048e+03 uW     5.9404e+05 nW     2.4343e+04 uW
+Total          1.7221e+04 uW     4.8212e+03 uW     5.4171e+05 nW     2.2584e+04 uW
 1

@@ -3,28 +3,28 @@
 Report : area
 Design : rast
 Version: M-2016.12-SP2
-Date   : Mon Dec  2 13:18:34 2024
+Date   : Mon Dec  2 16:51:32 2024
 ****************************************
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
+    NangateOpenCellLibrary (File: /home/users/eugenecm/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
 
-Number of ports:                         1218
-Number of nets:                         18203
-Number of cells:                        15078
-Number of combinational cells:          12035
-Number of sequential cells:              3042
+Number of ports:                         1706
+Number of nets:                         16537
+Number of cells:                        14163
+Number of combinational cells:          11424
+Number of sequential cells:              2736
 Number of macros/black boxes:               0
-Number of buf/inv:                       3709
-Number of references:                      41
+Number of buf/inv:                       3669
+Number of references:                      42
 
-Combinational area:              16386.664039
-Buf/Inv area:                     2027.984017
-Noncombinational area:           16170.140522
+Combinational area:              13576.373994
+Buf/Inv area:                     1986.754018
+Noncombinational area:           14557.648467
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 32556.804560
+Total cell area:                 28134.022461
 Total area:                 undefined
 1

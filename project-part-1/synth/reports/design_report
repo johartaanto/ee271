@@ -1,18 +1,18 @@
 Information: Updating design information... (UID-85)
-Warning: Design 'rast' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Design 'rast' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : design
 Design : rast
 Version: M-2016.12-SP2
-Date   : Mon Dec  2 13:18:34 2024
+Date   : Mon Dec  2 16:51:32 2024
 ****************************************
 
 Design allows ideal nets on clock nets.
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /home/users/jh99/Desktop/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
+    NangateOpenCellLibrary (File: /home/users/eugenecm/ee271/project-part-1/lib/NangateOpenCellLibrary.db)
 
 Local Link Library:
 
