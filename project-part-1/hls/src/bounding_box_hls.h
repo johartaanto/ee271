@@ -33,6 +33,54 @@ public:
             // clip to screen
             // check if bbox is valid
             // write to outputs if bbox is valid
+            // initialize bounding box to first vertex
+            bbox.lower_left.x = triangle.v[0].x;
+            bbox.lower_left.y = triangle.v[0].y;
+            bbox.upper_right.x = triangle.v[0].x;
+            bbox.upper_right.y = triangle.v[0].y;
+
+            // iterate over remaining vertices
+            for (int vertex = 1; vertex < 3; vertex++)
+            {
+                bbox.upper_right.x = max(bbox.upper_right.x, triangle.v[vertex].x);
+                bbox.upper_right.y = max(bbox.upper_right.y, triangle.v[vertex].y);
+                bbox.lower_left.x = min(bbox.lower_left.x, triangle.v[vertex].x);
+                bbox.lower_left.y = min(bbox.lower_left.y, triangle.v[vertex].y);
+            }
+
+            // round down to subsample grid
+            bbox.upper_right.x = floor_ss(bbox.upper_right.x, config);
+            bbox.upper_right.y = floor_ss(bbox.upper_right.y, config);
+            bbox.lower_left.x = floor_ss(bbox.lower_left.x, config);
+            bbox.lower_left.y = floor_ss(bbox.lower_left.y, config);
+
+            // clip to screen
+            bbox.upper_right.x = min(bbox.upper_right.x, screen.width);
+            bbox.upper_right.y = min(bbox.upper_right.y, screen.height);
+            bbox.lower_left.x = max(bbox.lower_left.x, 0);
+            bbox.lower_left.y = max(bbox.lower_left.y, 0);
+
+            // check if bbox is valid
+            bool valid;
+            int cross_product = (triangle.v[1].x - triangle.v[0].x) * (triangle.v[2].y - triangle.v[1].y)
+                            - (triangle.v[2].x - triangle.v[1].x) * (triangle.v[1].y - triangle.v[0].y);
+
+            if (cross_product <= 0) { // Triangle is valid
+                valid = (bbox.upper_right.x >= 0) &&
+                        (bbox.upper_right.y >= 0) &&
+                        (bbox.lower_left.x < screen.width) &&
+                        (bbox.lower_left.y < screen.height);
+            } else {
+                valid = false;
+            }
+            //bool valid = (bbox.lower_left.x >= 0) && (bbox.lower_left.y >= 0) && (bbox.upper_right.x < screen.width ) && (bbox.upper_right.y < screen.height);
+
+            // Write to outputs if everything is valid
+            if (valid) {
+                triangle_out.write(triangle);
+                bbox_out.write(bbox);
+                config_out.write(config);
+            }
             // END CODE HERE
         }
     }
@@ -40,12 +88,14 @@ private:
     SignedFixedPoint min(SignedFixedPoint a, SignedFixedPoint b)
     {
         // START CODE HERE
+        return (a < b) ? a : b;
         // END CODE HERE
     }
 
     SignedFixedPoint max(SignedFixedPoint a, SignedFixedPoint b)
     {
         // START CODE HERE
+        return (a > b) ? a : b;
         // END CODE HERE
     }
 
@@ -54,6 +104,25 @@ private:
         // START CODE HERE
         // set lower 8 bits to 0
         // set bits depending on subsample
+        ac_int<24, false> mask = 0xFFFFFF;
+        //printf("before %x\n", val);
+        // set bits depending on subsample
+        switch(config.subsample){
+          case 1: // MSAA 64: sample is 1/8 pixel
+            mask.set_slc(0, (ac_int<7,false>)0);
+            break;
+          case 2: // MSAA 16: sample is 1/4 a pixel
+            mask.set_slc(0, (ac_int<8,false>)0);
+            break;
+          case 4: // MSAA 4: sample is 1/2 a pixel
+            mask.set_slc(0, (ac_int<9,false>)0);
+            break;
+          case 8: // MSAA 1: sample is 1 pixel
+            mask.set_slc(0, (ac_int<10,false>)0);
+            break;
+        }
+        val = val & mask;
+        //printf("after %x\n", val);
         // END CODE HERE
         return val;
     }

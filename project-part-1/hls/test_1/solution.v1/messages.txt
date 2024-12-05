@@ -1,0 +1,46 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+project save
+Moving session transcript to file "/home/users/jh99/Desktop/ee271/project-part-1/hls/catapult.log"
+Pragma 'hls_design<top>' detected on class 'Rasterizer' (CIN-6)
+solution design add TestIterator -type block -unlocked (HC-1)
+solution design add BoundingBoxGenerator -type block -unlocked (HC-1)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/users/jh99/Desktop/ee271/project-part-1/hls/src/rasterizer_top.cpp (CIN-69)
+# Error: identifier "Triangle" is undefined (CRD-20)
+# Error: Compilation aborted (CIN-5)
+flow package require SCVerify
+/INPUTFILES/1
+false
+flow package option set /SCVerify/USE_CCS_BLOCK true
+solution design add JitterSample -type block -unlocked (HC-1)
+10.4
+solution design add SampleTest -type block -unlocked (HC-1)
+solution file add src/rasterizer_testbench.cpp -exclude true
+options set Input/TargetPlatform x86_64
+solution design add Rasterizer -type top -unlocked (HC-1)
+solution options set Flows/NCSim/NC_ROOT /cad/cadence/INCISIVE15.20.022/
+Saving project file '/home/users/jh99/Desktop/ee271/project-part-1/hls/test_1.ccs'. (PRJ-5)
+solution design add Hash40to8 -type block -unlocked (HC-1)
+8.2
+options set Output/OutputVHDL false
+solution file add src/rasterizer_top.cpp
+x86_64
+/cad/cadence/INCISIVE15.20.022/
+flow package option set /SCVerify/USE_MSIM false
+false
+go analyze
+flow package require /NCSim
+false
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+flow package option set /SCVerify/USE_NCSIM true
+/INPUTFILES/2
+true
+flow package option set /SCVerify/USE_VCS false
+/INPUTFILES/3
+true
+solution file add ../gold/rasterizer.c -exclude true
